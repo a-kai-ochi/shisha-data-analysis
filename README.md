@@ -18,3 +18,15 @@
 ## 4. 収集方法
 Python (Requests, BeautifulSoup) を用いたWebスクレイピング。
 ボット対策への対応として、Session管理やUser-Agentの設定、適切な待機時間（2秒）を実装している。
+
+## 5. ディレクトリ構成
+
+```
+├── README.md           # 課題の目的やデータの概要を記述
+├── data/               # 収集したCSVファイルを格納
+│   ├── aslaj_all_flavors.csv
+│   └── cloud_reviews_final.csv
+├── notebooks/          # スクレイピングや分析のコード
+│   └── scraping_flavor_data.ipynb (または .pyファイル)
+└── requirements.txt    # 必要なライブラリ（pandas, requests, bs4など）
+```
