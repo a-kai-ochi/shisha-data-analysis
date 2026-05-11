@@ -22,11 +22,12 @@ Python (Requests, BeautifulSoup) を用いたWebスクレイピング。
 ## 5. ディレクトリ構成
 
 ```
-├── README.md           # 課題の目的やデータの概要を記述
-├── data/               # 収集したCSVファイルを格納
-│   ├── aslaj_all_flavors.csv
-│   └── cloud_reviews_final.csv
-├── notebooks/          # スクレイピングや分析のコード
-│   └── scraping_flavor_data.ipynb (または .pyファイル)
-└── requirements.txt    # 必要なライブラリ（pandas, requests, bs4など）
+├── README.md                # 課題の目的・データ出典・分析の展望を記述
+├── requirements.txt         # 実行に必要なライブラリ (pandas, requests, bs4等)
+├── data/                    # 収集したデータセットを格納
+│   ├── aslaj_master_list.csv    # ASLAJから取得した販売価格・商品リスト
+│   └── cloud_reviews_final.csv   # CLOUDから取得したレビュー本文を含む最終データ
+└── notebooks/               # スクレイピング実行スクリプト
+    ├── flaver.py                # ASLAJ販売データ取得用コード
+    └── flavor-review-all.py     # CLOUDレビュー全文取得用コード
 ```
