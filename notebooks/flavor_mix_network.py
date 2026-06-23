@@ -331,12 +331,80 @@ comm_members: dict[int, list] = defaultdict(list)
 for node, comm_id in partition.items():
     comm_members[comm_id].append(node)
 
+
+COMMUNITY_PROFILES = [
+    ("シガーリーフ系 × スパイス・ウッド系", {
+        "シガー", "チェリー", "マンゴー", "ライチ", "パッションフルーツ",
+        "ラズベリー", "ザクロ", "LYCHEE", "MANGO",
+    }),
+    ("南国フルーツ系 × 甘味系", {
+        "ミルク", "ハニー", "バナナ", "キャラメル", "ストロベリー",
+        "メロン", "ココナッツ", "モヒート", "カルダモンミルク",
+        "ウォーターメロン/スイカ",
+    }),
+    ("ミント・清涼系 × フルーツ系", {
+        "ミント", "レモン", "オレンジ", "ブルーベリー", "ベリー",
+        "GRAPE", "グアバ", "ライム", "グレープフルーツ", "ピーチ",
+        "パイナップル", "ジャスミン", "キウイ", "アイス", "ツーアップル",
+        "COLA", "アサイー", "チョコレート", "タンジェリン", "ブルーヘブン",
+        "グレープ",
+    }),
+    ("スイーツ系 × フローラル系", {
+        "バニラ", "アールグレイ", "ゴールデンデリシャスアップル", "ローズ",
+        "ジンジャー", "バター", "コニャック", "ミントクリーム",
+        "EARL GREY", "カプチーノ", "CHOCOLATE", "ペア",
+    }),
+]
+
+
+def relabel_partition_stably(
+    partition_map: dict[str, int],
+    graph: nx.Graph,
+) -> tuple[dict[str, int], dict[int, str]]:
+    """コミュニティIDを意味ベースで安定化し、再実行で色が変わりにくくする。"""
+    raw_members: dict[int, list[str]] = defaultdict(list)
+    for node, cid in partition_map.items():
+        raw_members[cid].append(node)
+
+    scored = []
+    for cid, members in raw_members.items():
+        member_set = set(members)
+        top_member = sorted(
+            members, key=lambda n: graph.nodes[n]["freq"], reverse=True
+        )[0]
+        best_idx = len(COMMUNITY_PROFILES)
+        best_score = -1
+        best_label = None
+        for idx, (label, keywords) in enumerate(COMMUNITY_PROFILES):
+            score = len(member_set & keywords)
+            if score > best_score:
+                best_idx = idx
+                best_score = score
+                best_label = label
+        scored.append((best_idx, -best_score, top_member, cid, best_label))
+
+    scored.sort()
+    old_to_new = {old_cid: new_cid for new_cid, (_, _, _, old_cid, _) in enumerate(scored)}
+    stable_labels = {
+        new_cid: label if label is not None else f"C{new_cid}"
+        for new_cid, (_, _, _, _, label) in enumerate(scored)
+    }
+    remapped = {node: old_to_new[cid] for node, cid in partition_map.items()}
+    return remapped, stable_labels
+
+
+partition, community_labels = relabel_partition_stably(partition, G)
+comm_members = defaultdict(list)
+for node, comm_id in partition.items():
+    comm_members[comm_id].append(node)
+
 for comm_id in sorted(comm_members.keys()):
     members = sorted(comm_members[comm_id],
                      key=lambda n: G.nodes[n]["freq"], reverse=True)
     top3 = " / ".join(members[:3])
+    label = community_labels.get(comm_id, top3)
     color = COMMUNITY_COLORS[comm_id % len(COMMUNITY_COLORS)]
-    print(f"  C{comm_id} [{color}] ({len(members)}ノード): {top3}")
+    print(f"  C{comm_id} [{color}] ({len(members)}ノード): {label} :: {top3}")
 
 # ============================================================
 # ステップ 6: ネットワーク可視化
@@ -430,25 +498,25 @@ legend_handles = []
 for comm_id in sorted(comm_members.keys()):
     members = sorted(comm_members[comm_id],
                      key=lambda n: G.nodes[n]["freq"], reverse=True)
-    top2   = " / ".join(members[:2])
+    label  = community_labels.get(comm_id, " / ".join(members[:2]))
     color  = COMMUNITY_COLORS[comm_id % len(COMMUNITY_COLORS)]
     n_mem  = len(members)
     patch  = mpatches.Patch(
         color=color,
-        label=f"C{comm_id} ({n_mem}): {top2}",
+        label=f"C{comm_id} ({n_mem}): {label}",
     )
     legend_handles.append(patch)
 
 ax.legend(
     handles=legend_handles,
     loc="lower left",
-    fontsize=8.5,
+    fontsize=12,
     framealpha=0.75,
     facecolor="#2C2C3E",
     edgecolor="#555555",
     labelcolor="white",
     title="コミュニティ（Louvain法）",
-    title_fontsize=9,
+    title_fontsize=13,
 )
 
 # ---- ノードサイズ凡例（右上）----
@@ -461,13 +529,13 @@ for label, freq in [("低頻度 (3-5件)", 4), ("中頻度 (10件)", 10), ("高�
 size_legend = ax.legend(
     handles=size_legend_items,
     loc="upper right",
-    fontsize=8,
+    fontsize=10,
     framealpha=0.75,
     facecolor="#2C2C3E",
     edgecolor="#555555",
     labelcolor="white",
     title="ノードサイズ（登場件数）",
-    title_fontsize=9,
+    title_fontsize=11,
     scatterpoints=1,
 )
 ax.add_artist(size_legend)
@@ -475,13 +543,13 @@ ax.add_artist(size_legend)
 ax.legend(
     handles=legend_handles,
     loc="lower left",
-    fontsize=8.5,
+    fontsize=12,
     framealpha=0.75,
     facecolor="#2C2C3E",
     edgecolor="#555555",
     labelcolor="white",
     title="コミュニティ（Louvain法）",
-    title_fontsize=9,
+    title_fontsize=13,
 )
 
 # ---- タイトル・注釈 ----
