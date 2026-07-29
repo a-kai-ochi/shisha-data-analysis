@@ -21,8 +21,12 @@ from extended_analysis_utils import (  # noqa: E402
     add_normalized_features,
     add_normalized_features_v2,
     build_cooccurrence_graph,
+    build_manual_validation_tier1_dataframe,
     build_pair_ranking,
     build_pair_ranking_v2,
+    compute_manual_validation_agreement,
+    compute_manual_validation_disagreements,
+    compute_manual_validation_outputs,
     compute_centrality_dataframe,
     compute_manual_validation_summary,
     compute_pair_statistics,
@@ -35,10 +39,13 @@ from extended_analysis_utils import (  # noqa: E402
     merge_pair_features_v2,
     manual_validation_has_labels,
     output_paths,
+    representative_context_rows_for_pair,
     role_terms_for_sentence,
     split_ranking_tiers_v2,
     spearman_rank_correlation,
     write_manual_validation_summary_markdown,
+    write_manual_validation_guideline,
+    write_manual_validation_summary_markdown_v2,
     analyze_sentence_categories,
 )
 
@@ -320,6 +327,229 @@ class ExtendedAnalysisTests(unittest.TestCase):
             & (summary_df["metric"] == "explicit_mix_rate")
         ]["value"].iloc[0]
         self.assertAlmostEqual(float(explicit_top1), 1.0)
+
+    def test_manual_validation_tier1_contains_all_17_candidates(self) -> None:
+        ranking_df = pd.DataFrame(
+            [
+                {
+                    "rank_overall": idx,
+                    "pair_key": f"A{idx}||B{idx}",
+                    "flavor_a": f"A{idx}",
+                    "flavor_b": f"B{idx}",
+                    "pair_count": 3,
+                    "same_sentence_evidence_document_count": 2,
+                    "support": 0.05,
+                    "lift": 2.0,
+                    "adjusted_lift": 0.04,
+                    "centrality_mean": 0.1,
+                    "smoothed_positive_ratio": 0.1,
+                    "smoothed_negative_ratio": 0.0,
+                    "smoothed_role_ratio": 0.05,
+                    "overall_score_v2": 0.2,
+                    "ranking_tier": "Tier1",
+                }
+                for idx in range(1, 18)
+            ]
+        )
+        evidence_df = pd.DataFrame(
+            [
+                {
+                    "pair_key": f"A{idx}||B{idx}",
+                    "document_id": f"R{idx:04d}",
+                    "sentence": f"A{idx}とB{idx}をミックスする。",
+                    "is_same_sentence_pair": True,
+                    "has_explicit_mix_expression": True,
+                    "is_template_sentence": False,
+                    "has_positive_expression": False,
+                    "has_negative_expression": False,
+                    "has_taste_role_explanation": False,
+                }
+                for idx in range(1, 18)
+            ]
+        )
+        manual_df = build_manual_validation_tier1_dataframe(ranking_df, evidence_df)
+        self.assertEqual(len(manual_df), 17)
+        self.assertEqual(manual_df["rank"].tolist(), list(range(1, 18)))
+        self.assertEqual(len(set(manual_df["rank"].tolist())), 17)
+
+    def test_representative_context_prefers_same_sentence_and_non_template(self) -> None:
+        evidence_df = pd.DataFrame(
+            [
+                {
+                    "pair_key": "A||B",
+                    "document_id": "R0001",
+                    "sentence": "AとBをミックスすると美味しい。",
+                    "is_same_sentence_pair": True,
+                    "has_explicit_mix_expression": True,
+                    "is_template_sentence": False,
+                    "has_positive_expression": True,
+                    "has_negative_expression": False,
+                    "has_taste_role_explanation": False,
+                },
+                {
+                    "pair_key": "A||B",
+                    "document_id": "R0002",
+                    "sentence": "AとBのおすすめミックス",
+                    "is_same_sentence_pair": True,
+                    "has_explicit_mix_expression": True,
+                    "is_template_sentence": True,
+                    "has_positive_expression": False,
+                    "has_negative_expression": False,
+                    "has_taste_role_explanation": False,
+                },
+                {
+                    "pair_key": "A||B",
+                    "document_id": "R0003",
+                    "sentence": "AとBを組み合わせると甘さが加わる。",
+                    "is_same_sentence_pair": True,
+                    "has_explicit_mix_expression": True,
+                    "is_template_sentence": False,
+                    "has_positive_expression": False,
+                    "has_negative_expression": False,
+                    "has_taste_role_explanation": True,
+                },
+            ]
+        )
+        contexts = representative_context_rows_for_pair(evidence_df, "A||B")
+        self.assertEqual(len(contexts), 2)
+        self.assertEqual(contexts[0]["document_id"], "R0001")
+        self.assertEqual(contexts[1]["document_id"], "R0003")
+        self.assertNotIn("おすすめミックス", " ".join(item["sentence"] for item in contexts))
+
+    def test_manual_validation_outputs_ignore_unfilled_labels(self) -> None:
+        df = pd.DataFrame(
+            {
+                "rank": [1, 2],
+                "pair_key": ["A||B", "C||D"],
+                "flavor_a": ["A", "C"],
+                "flavor_b": ["B", "D"],
+                "smoothed_positive_ratio": [0.2, 0.0],
+                "smoothed_negative_ratio": [0.0, 0.1],
+                "smoothed_role_ratio": [0.1, 0.0],
+                "overall_score_v2": [0.3, 0.2],
+                "mix_relation_label": ["", ""],
+                "evaluation_label": ["", ""],
+                "taste_role_label": ["", ""],
+                "recommendation_validity": ["", ""],
+                "semantic_overlap_label": ["", ""],
+            }
+        )
+        summary_df, crosstab_df, agreement_df, disagreements_df, primary_source = compute_manual_validation_outputs(
+            df,
+            k_values=[5, 10, 17],
+        )
+        self.assertTrue(summary_df.empty)
+        self.assertTrue(crosstab_df.empty)
+        self.assertIsNone(primary_source)
+        self.assertTrue(disagreements_df.empty)
+        self.assertIn("status", agreement_df.columns)
+
+    def test_manual_validation_outputs_support_single_reviewer(self) -> None:
+        df = pd.DataFrame(
+            {
+                "rank": [1, 2],
+                "pair_key": ["A||B", "C||D"],
+                "flavor_a": ["A", "C"],
+                "flavor_b": ["B", "D"],
+                "smoothed_positive_ratio": [0.8, 0.0],
+                "smoothed_negative_ratio": [0.0, 0.6],
+                "smoothed_role_ratio": [0.5, 0.0],
+                "overall_score_v2": [0.9, 0.2],
+                "mix_relation_label": ["explicit_mix", "co_mention_only"],
+                "evaluation_label": ["positive", "negative"],
+                "taste_role_label": ["explained", "not_explained"],
+                "recommendation_validity": ["valid", "invalid"],
+                "semantic_overlap_label": ["distinct", "duplicate"],
+            }
+        )
+        summary_df, crosstab_df, _agreement_df, _disagreements_df, primary_source = compute_manual_validation_outputs(
+            df,
+            k_values=[5, 10, 17],
+        )
+        self.assertEqual(primary_source, "base")
+        candidate_count = summary_df[
+            (summary_df["section"] == "scope_metric")
+            & (summary_df["scope"] == "all")
+            & (summary_df["metric"] == "candidate_count")
+        ]["value"].iloc[0]
+        explicit_rate = summary_df[
+            (summary_df["section"] == "scope_metric")
+            & (summary_df["scope"] == "all")
+            & (summary_df["metric"] == "explicit_mix_rate")
+        ]["value"].iloc[0]
+        self.assertEqual(int(candidate_count), 2)
+        self.assertAlmostEqual(float(explicit_rate), 0.5)
+        self.assertFalse(crosstab_df.empty)
+        self.assertTrue({"top_5", "top_10", "top_17"}.issubset(set(summary_df["scope"])))
+
+    def test_manual_validation_agreement_and_disagreements_for_two_reviewers(self) -> None:
+        df = pd.DataFrame(
+            {
+                "rank": [1, 2],
+                "pair_key": ["A||B", "C||D"],
+                "flavor_a": ["A", "C"],
+                "flavor_b": ["B", "D"],
+                "context_1": ["ctx1", "ctx2"],
+                "context_2": ["", ""],
+                "context_3": ["", ""],
+                "reviewer1_mix_relation_label": ["explicit_mix", "likely_mix"],
+                "reviewer2_mix_relation_label": ["explicit_mix", "co_mention_only"],
+                "reviewer1_evaluation_label": ["positive", "negative"],
+                "reviewer2_evaluation_label": ["positive", "negative"],
+                "reviewer1_taste_role_label": ["explained", "not_explained"],
+                "reviewer2_taste_role_label": ["explained", "not_explained"],
+                "reviewer1_recommendation_validity": ["valid", "invalid"],
+                "reviewer2_recommendation_validity": ["valid", "unclear"],
+                "reviewer1_semantic_overlap_label": ["distinct", "similar"],
+                "reviewer2_semantic_overlap_label": ["distinct", "duplicate"],
+                "reviewer1_comment": ["ok", "r1"],
+                "reviewer2_comment": ["ok", "r2"],
+            }
+        )
+        agreement_df = compute_manual_validation_agreement(df)
+        disagreements_df = compute_manual_validation_disagreements(df)
+        mix_row = agreement_df[agreement_df["field"] == "mix_relation_label"].iloc[0]
+        self.assertEqual(int(mix_row["comparable_count"]), 2)
+        self.assertAlmostEqual(float(mix_row["simple_agreement"]), 0.5)
+        self.assertEqual(len(disagreements_df), 1)
+        self.assertIn("mix_relation_label", disagreements_df.iloc[0]["disagreement_fields"])
+
+    def test_manual_validation_summary_markdown_v2_handles_single_reviewer(self) -> None:
+        summary_df = pd.DataFrame(
+            [
+                {
+                    "section": "scope_metric",
+                    "scope": "all",
+                    "metric": "candidate_count",
+                    "label": "",
+                    "value": 17,
+                    "n_labeled": 17,
+                }
+            ]
+        )
+        agreement_df = pd.DataFrame(
+            [{"field": "", "comparable_count": 0, "simple_agreement": math.nan, "cohen_kappa": math.nan, "status": "評価者間一致は未計算"}]
+        )
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output_dir = Path(tmpdir)
+            paths = output_paths(output_dir)
+            write_manual_validation_summary_markdown_v2(
+                summary_df,
+                agreement_df,
+                paths.manual_validation_summary_md,
+                primary_source="base",
+            )
+            content = paths.manual_validation_summary_md.read_text(encoding="utf-8")
+            self.assertIn("primary_label_source", content)
+            self.assertIn("評価者間一致は未計算", content)
+
+    def test_manual_validation_guideline_is_written(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "guideline.md"
+            write_manual_validation_guideline(path)
+            content = path.read_text(encoding="utf-8")
+            self.assertIn("mix_relation_label", content)
+            self.assertIn("semantic_overlap_label", content)
 
     def test_spearman_helper(self) -> None:
         corr = spearman_rank_correlation([1, 2, 3], [1, 2, 3])

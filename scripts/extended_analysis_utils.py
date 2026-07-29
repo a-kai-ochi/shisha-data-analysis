@@ -9,7 +9,7 @@ import re
 import unicodedata
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from itertools import combinations
+from itertools import combinations, product
 from pathlib import Path
 from typing import Any
 
@@ -97,6 +97,81 @@ STANDARD_OVERALL_COLUMNS = [
     "normalized_taste_role_explanation_ratio",
 ]
 
+MANUAL_VALIDATION_BASE_FIELDS = [
+    "mix_relation_label",
+    "evaluation_label",
+    "taste_role_label",
+    "recommendation_validity",
+    "semantic_overlap_label",
+    "comment",
+]
+
+MANUAL_VALIDATION_REVIEWER_PREFIXES = ["reviewer1", "reviewer2"]
+
+MANUAL_VALIDATION_GUIDELINE = """# Manual Validation Guideline
+
+## mix_relation_label
+
+- `explicit_mix`
+  実際に2つのフレーバーを混ぜる、加える、組み合わせる記述が明確にある
+- `likely_mix`
+  配合は明示されていないが、同じミックスとして説明されている可能性が高い
+- `co_mention_only`
+  同じ文にあるだけで、ミックス関係はない
+- `unclear`
+  文脈だけでは判定できない
+
+## evaluation_label
+
+- `positive`
+  ペアまたはミックス全体への肯定的評価がある
+- `neutral`
+  配合説明のみで評価はない
+- `negative`
+  ペアまたはミックス全体への否定的評価がある
+- `mixed`
+  肯定と否定の両方がある
+- `unclear`
+  評価対象が単体かペアか分からない
+
+## taste_role_label
+
+- `explained`
+  少なくとも一方のフレーバーが、甘さ、清涼感、香り、コク、アクセントなどをどのように与えるか説明されている
+- `not_explained`
+  組合せの記述のみで役割説明はない
+- `unclear`
+  役割説明か判断できない
+
+## recommendation_validity
+
+- `valid`
+  明示的または可能性の高いミックスで、肯定評価または役割説明がある
+- `partially_valid`
+  ミックス関係は確認できるが、評価・役割説明が弱い
+- `invalid`
+  共起のみ、商品名由来、意味的重複、または否定的な候補
+- `unclear`
+  根拠不足で判断できない
+
+## semantic_overlap_label
+
+- `distinct`
+  別のフレーバーとして扱える
+- `similar`
+  近い意味だが別候補として残しうる
+- `duplicate`
+  実質的に同じ意味で、候補としての重複が大きい
+- `unclear`
+  文脈だけでは判断できない
+
+## Reviewer Columns
+
+- 1名評価の場合は、基本列 `mix_relation_label` から `reviewer_comment` までを入力する
+- 2名評価の場合は、`reviewer1_*` と `reviewer2_*` の列を使用する
+- 未評価の項目は空欄のままにする
+"""
+
 
 @dataclass(frozen=True)
 class ConditionSpec:
@@ -129,6 +204,8 @@ class OutputPaths:
     excluded_product_name_pairs_csv: Path
     excluded_parent_child_pairs_csv: Path
     manual_validation_candidates_csv: Path
+    manual_validation_tier1_csv: Path
+    manual_validation_guideline_md: Path
     ranking_sensitivity_csv: Path
     ranking_sensitivity_md: Path
     ranking_before_after_comparison_csv: Path
@@ -143,6 +220,8 @@ class OutputPaths:
     figure_manual_validity_png: Path
     manual_validation_summary_csv: Path
     manual_validation_summary_md: Path
+    manual_validation_crosstab_csv: Path
+    manual_validation_disagreements_csv: Path
 
 
 def output_paths(output_dir: Path) -> OutputPaths:
@@ -158,6 +237,8 @@ def output_paths(output_dir: Path) -> OutputPaths:
         excluded_product_name_pairs_csv=output_dir / "excluded_product_name_pairs.csv",
         excluded_parent_child_pairs_csv=output_dir / "excluded_parent_child_pairs.csv",
         manual_validation_candidates_csv=output_dir / "manual_validation_candidates.csv",
+        manual_validation_tier1_csv=output_dir / "manual_validation_tier1.csv",
+        manual_validation_guideline_md=output_dir / "manual_validation_guideline.md",
         ranking_sensitivity_csv=output_dir / "ranking_sensitivity.csv",
         ranking_sensitivity_md=output_dir / "ranking_sensitivity.md",
         ranking_before_after_comparison_csv=output_dir / "ranking_before_after_comparison.csv",
@@ -172,6 +253,8 @@ def output_paths(output_dir: Path) -> OutputPaths:
         figure_manual_validity_png=output_dir / "figure_manual_validity.png",
         manual_validation_summary_csv=output_dir / "manual_validation_summary.csv",
         manual_validation_summary_md=output_dir / "manual_validation_summary.md",
+        manual_validation_crosstab_csv=output_dir / "manual_validation_crosstab.csv",
+        manual_validation_disagreements_csv=output_dir / "manual_validation_disagreements.csv",
     )
 
 
@@ -1695,10 +1778,11 @@ def split_ranking_tiers_v2(pair_ranking_df: pd.DataFrame) -> tuple[pd.DataFrame,
     return tier1_df, tier2_df, excluded_df
 
 
-def representative_contexts_for_pair(
+def representative_context_rows_for_pair(
     evidence_df: pd.DataFrame,
     pair_key: str,
-) -> list[str]:
+    max_contexts: int = 3,
+) -> list[dict[str, str]]:
     pair_evidence = evidence_df[evidence_df["pair_key"] == pair_key].copy()
     if pair_evidence.empty:
         return []
@@ -1707,30 +1791,58 @@ def representative_contexts_for_pair(
     ].copy()
     if eligible.empty:
         return []
-    eligible["priority"] = (
-        eligible["is_same_sentence_pair"].astype(int) * 100
-        + eligible["has_explicit_mix_expression"].astype(int) * 50
-        + (~eligible["is_template_sentence"]).astype(int) * 20
-        + (
-            eligible["has_positive_expression"].astype(int)
-            + eligible["has_negative_expression"].astype(int)
-            + eligible["has_taste_role_explanation"].astype(int)
-        )
+    eligible = eligible[~eligible["is_template_sentence"]].copy()
+    if eligible.empty:
+        return []
+    eligible["expression_count"] = (
+        eligible["has_positive_expression"].astype(int)
+        + eligible["has_negative_expression"].astype(int)
+        + eligible["has_taste_role_explanation"].astype(int)
     )
+    eligible["has_any_expression"] = eligible["expression_count"] > 0
     eligible = eligible.sort_values(
-        by=["priority", "document_id", "sentence"],
-        ascending=[False, True, True],
+        by=[
+            "is_same_sentence_pair",
+            "has_explicit_mix_expression",
+            "has_any_expression",
+            "expression_count",
+            "document_id",
+            "sentence",
+        ],
+        ascending=[False, False, False, False, True, True],
     )
-    contexts: list[str] = []
-    seen = set()
-    for sentence in eligible["sentence"].tolist():
-        if sentence in seen:
+
+    contexts: list[dict[str, str]] = []
+    seen_sentences: set[str] = set()
+    seen_documents: set[str] = set()
+    for row in eligible.itertuples(index=False):
+        sentence = str(row.sentence)
+        document_id = str(row.document_id)
+        if sentence in seen_sentences or document_id in seen_documents:
             continue
-        seen.add(sentence)
-        contexts.append(sentence)
-        if len(contexts) >= 3:
+        seen_sentences.add(sentence)
+        seen_documents.add(document_id)
+        contexts.append({"sentence": sentence, "document_id": document_id})
+        if len(contexts) >= max_contexts:
             break
+
+    if len(contexts) < max_contexts:
+        for row in eligible.itertuples(index=False):
+            sentence = str(row.sentence)
+            if sentence in seen_sentences:
+                continue
+            seen_sentences.add(sentence)
+            contexts.append({"sentence": sentence, "document_id": str(row.document_id)})
+            if len(contexts) >= max_contexts:
+                break
     return contexts
+
+
+def representative_contexts_for_pair(
+    evidence_df: pd.DataFrame,
+    pair_key: str,
+) -> list[str]:
+    return [item["sentence"] for item in representative_context_rows_for_pair(evidence_df, pair_key)]
 
 
 def build_manual_validation_candidates_v2(
@@ -1776,13 +1888,13 @@ def build_manual_validation_candidates_v2(
 
     rows = []
     for row in aggregated.itertuples(index=False):
-        contexts = representative_contexts_for_pair(evidence_df, row.pair_key)
+        contexts = representative_context_rows_for_pair(evidence_df, row.pair_key)
         rows.append(
             {
                 **row._asdict(),
-                "representative_context_1": contexts[0] if len(contexts) >= 1 else "",
-                "representative_context_2": contexts[1] if len(contexts) >= 2 else "",
-                "representative_context_3": contexts[2] if len(contexts) >= 3 else "",
+                "representative_context_1": contexts[0]["sentence"] if len(contexts) >= 1 else "",
+                "representative_context_2": contexts[1]["sentence"] if len(contexts) >= 2 else "",
+                "representative_context_3": contexts[2]["sentence"] if len(contexts) >= 3 else "",
                 "mix_relation_label": "",
                 "evaluation_label": "",
                 "taste_role_label": "",
@@ -1795,6 +1907,105 @@ def build_manual_validation_candidates_v2(
         by=["rank_overall", "pair_count", "adjusted_lift", "flavor_a", "flavor_b"],
         ascending=[True, False, False, True, True],
     ).reset_index(drop=True)
+
+
+def build_manual_validation_tier1_dataframe(
+    pair_ranking_df: pd.DataFrame,
+    evidence_df: pd.DataFrame,
+) -> pd.DataFrame:
+    tier1_df = pair_ranking_df.copy()
+    if "ranking_tier" in tier1_df.columns:
+        tier1_df = tier1_df[tier1_df["ranking_tier"] == "Tier1"].copy()
+    tier1_df = tier1_df.sort_values(
+        by=["rank_overall", "pair_count", "adjusted_lift", "flavor_a", "flavor_b"],
+        ascending=[True, False, False, True, True],
+    ).reset_index(drop=True)
+
+    rows: list[dict[str, Any]] = []
+    for row in tier1_df.itertuples(index=False):
+        contexts = representative_context_rows_for_pair(evidence_df, row.pair_key, max_contexts=3)
+        record: dict[str, Any] = {
+            "rank": int(row.rank_overall),
+            "pair_key": row.pair_key,
+            "flavor_a": row.flavor_a,
+            "flavor_b": row.flavor_b,
+            "pair_count": int(row.pair_count),
+            "same_sentence_evidence_document_count": int(row.same_sentence_evidence_document_count),
+            "support": float(row.support),
+            "lift": float(row.lift),
+            "adjusted_lift": float(row.adjusted_lift),
+            "centrality_mean": float(row.centrality_mean),
+            "smoothed_positive_ratio": float(row.smoothed_positive_ratio),
+            "smoothed_negative_ratio": float(row.smoothed_negative_ratio),
+            "smoothed_role_ratio": float(row.smoothed_role_ratio),
+            "overall_score_v2": float(row.overall_score_v2),
+            "context_1": contexts[0]["sentence"] if len(contexts) >= 1 else "",
+            "context_2": contexts[1]["sentence"] if len(contexts) >= 2 else "",
+            "context_3": contexts[2]["sentence"] if len(contexts) >= 3 else "",
+            "context_1_document_id": contexts[0]["document_id"] if len(contexts) >= 1 else "",
+            "context_2_document_id": contexts[1]["document_id"] if len(contexts) >= 2 else "",
+            "context_3_document_id": contexts[2]["document_id"] if len(contexts) >= 3 else "",
+            "mix_relation_label": "",
+            "evaluation_label": "",
+            "taste_role_label": "",
+            "recommendation_validity": "",
+            "semantic_overlap_label": "",
+            "reviewer_comment": "",
+        }
+        for prefix in MANUAL_VALIDATION_REVIEWER_PREFIXES:
+            record[f"{prefix}_mix_relation_label"] = ""
+            record[f"{prefix}_evaluation_label"] = ""
+            record[f"{prefix}_taste_role_label"] = ""
+            record[f"{prefix}_recommendation_validity"] = ""
+            record[f"{prefix}_semantic_overlap_label"] = ""
+            record[f"{prefix}_comment"] = ""
+        rows.append(record)
+
+    columns = [
+        "rank",
+        "pair_key",
+        "flavor_a",
+        "flavor_b",
+        "pair_count",
+        "same_sentence_evidence_document_count",
+        "support",
+        "lift",
+        "adjusted_lift",
+        "centrality_mean",
+        "smoothed_positive_ratio",
+        "smoothed_negative_ratio",
+        "smoothed_role_ratio",
+        "overall_score_v2",
+        "context_1",
+        "context_2",
+        "context_3",
+        "context_1_document_id",
+        "context_2_document_id",
+        "context_3_document_id",
+        "mix_relation_label",
+        "evaluation_label",
+        "taste_role_label",
+        "recommendation_validity",
+        "semantic_overlap_label",
+        "reviewer_comment",
+        "reviewer1_mix_relation_label",
+        "reviewer1_evaluation_label",
+        "reviewer1_taste_role_label",
+        "reviewer1_recommendation_validity",
+        "reviewer1_semantic_overlap_label",
+        "reviewer1_comment",
+        "reviewer2_mix_relation_label",
+        "reviewer2_evaluation_label",
+        "reviewer2_taste_role_label",
+        "reviewer2_recommendation_validity",
+        "reviewer2_semantic_overlap_label",
+        "reviewer2_comment",
+    ]
+    return pd.DataFrame(rows, columns=columns)
+
+
+def write_manual_validation_guideline(path: Path) -> None:
+    path.write_text(MANUAL_VALIDATION_GUIDELINE + "\n", encoding="utf-8")
 
 
 def compute_sensitivity_v2(pair_ranking_df: pd.DataFrame, top_k: int) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -2367,4 +2578,607 @@ def write_manual_validation_summary_markdown(summary_df: pd.DataFrame, path: Pat
         lines.append(
             f"| {row.ranking_name} | {row.k} | {row.metric} | {float(row.value):.4f} |"
         )
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+MANUAL_VALIDATION_BASE_COLUMNS = {
+    "mix_relation_label": "mix_relation_label",
+    "evaluation_label": "evaluation_label",
+    "taste_role_label": "taste_role_label",
+    "recommendation_validity": "recommendation_validity",
+    "semantic_overlap_label": "semantic_overlap_label",
+    "comment": "reviewer_comment",
+}
+
+
+def _manual_label_columns_for_source(source: str) -> dict[str, str]:
+    if source == "base":
+        return MANUAL_VALIDATION_BASE_COLUMNS
+    return {
+        "mix_relation_label": f"{source}_mix_relation_label",
+        "evaluation_label": f"{source}_evaluation_label",
+        "taste_role_label": f"{source}_taste_role_label",
+        "recommendation_validity": f"{source}_recommendation_validity",
+        "semantic_overlap_label": f"{source}_semantic_overlap_label",
+        "comment": f"{source}_comment",
+    }
+
+
+def _series_text(df: pd.DataFrame, column: str) -> pd.Series:
+    if column not in df.columns:
+        return pd.Series([""] * len(df), index=df.index, dtype="object")
+    return df[column].fillna("").astype(str).str.strip()
+
+
+def _has_any_labels_for_source(df: pd.DataFrame, source: str) -> bool:
+    columns = _manual_label_columns_for_source(source)
+    label_keys = [
+        "mix_relation_label",
+        "evaluation_label",
+        "taste_role_label",
+        "recommendation_validity",
+        "semantic_overlap_label",
+    ]
+    for key in label_keys:
+        if _series_text(df, columns[key]).ne("").any():
+            return True
+    return False
+
+
+def manual_validation_has_labels(df: pd.DataFrame) -> bool:
+    if _has_any_labels_for_source(df, "base"):
+        return True
+    return any(_has_any_labels_for_source(df, prefix) for prefix in MANUAL_VALIDATION_REVIEWER_PREFIXES)
+
+
+def manual_validation_primary_source(df: pd.DataFrame) -> str | None:
+    if _has_any_labels_for_source(df, "base"):
+        return "base"
+    for prefix in MANUAL_VALIDATION_REVIEWER_PREFIXES:
+        if _has_any_labels_for_source(df, prefix):
+            return prefix
+    return None
+
+
+def _scope_label(k_value: int | None) -> str:
+    return "all" if k_value is None else f"top_{k_value}"
+
+
+def _scope_dataframe(df: pd.DataFrame, k_value: int | None) -> pd.DataFrame:
+    sorted_df = df.sort_values("rank").reset_index(drop=True)
+    if k_value is None:
+        return sorted_df
+    return sorted_df.head(k_value).copy()
+
+
+def _rate_from_labels(values: pd.Series, accepted: set[str]) -> tuple[float, int]:
+    normalized = values.fillna("").astype(str).str.strip()
+    eligible = normalized.ne("")
+    count = int(eligible.sum())
+    if count == 0:
+        return math.nan, 0
+    return float(normalized[eligible].isin(accepted).mean()), count
+
+
+def _unclear_rate(scope_df: pd.DataFrame, columns: dict[str, str]) -> tuple[float, int]:
+    label_columns = [
+        columns["mix_relation_label"],
+        columns["evaluation_label"],
+        columns["taste_role_label"],
+        columns["recommendation_validity"],
+        columns["semantic_overlap_label"],
+    ]
+    normalized = pd.DataFrame({col: _series_text(scope_df, col) for col in label_columns})
+    eligible = normalized.ne("").any(axis=1)
+    count = int(eligible.sum())
+    if count == 0:
+        return math.nan, 0
+    unclear_mask = normalized.eq("unclear").any(axis=1)
+    return float(unclear_mask[eligible].mean()), count
+
+
+def _summary_metric_row(
+    scope: str,
+    metric: str,
+    value: float | int | None,
+    labeled_count: int,
+    section: str = "scope_metric",
+    label: str = "",
+) -> dict[str, Any]:
+    return {
+        "section": section,
+        "scope": scope,
+        "metric": metric,
+        "label": label,
+        "value": value,
+        "n_labeled": labeled_count,
+    }
+
+
+def _spearman_if_possible(x: pd.Series, y: pd.Series) -> float:
+    valid = x.notna() & y.notna()
+    if valid.sum() < 2:
+        return math.nan
+    x_valid = x[valid]
+    y_valid = y[valid]
+    if x_valid.nunique() < 2 or y_valid.nunique() < 2:
+        return math.nan
+    return spearman_rank_correlation(x_valid.tolist(), y_valid.tolist())
+
+
+def _build_binary_feature_relation(
+    scope_df: pd.DataFrame,
+    feature_col: str,
+    label_values: pd.Series,
+    positive_labels: set[str],
+    analysis_name: str,
+    scope: str,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    rows: list[dict[str, Any]] = []
+    crosstabs: list[dict[str, Any]] = []
+    normalized_labels = label_values.fillna("").astype(str).str.strip()
+    eligible = normalized_labels.ne("")
+    if not eligible.any():
+        return rows, crosstabs
+
+    binary = normalized_labels.isin(positive_labels)
+    feature = pd.to_numeric(scope_df[feature_col], errors="coerce")
+    eligible_feature = eligible & feature.notna()
+    if not eligible_feature.any():
+        return rows, crosstabs
+
+    subset = pd.DataFrame(
+        {
+            "feature": feature[eligible_feature],
+            "manual_binary": binary[eligible_feature],
+        }
+    )
+    for label_name, label_mask in [("manual_no", ~subset["manual_binary"]), ("manual_yes", subset["manual_binary"])]:
+        label_df = subset[label_mask]
+        if label_df.empty:
+            continue
+        rows.append(
+            _summary_metric_row(
+                scope=scope,
+                metric=f"{analysis_name}_feature_mean",
+                value=float(label_df["feature"].mean()),
+                labeled_count=int(len(label_df)),
+                section="feature_relation",
+                label=label_name,
+            )
+        )
+        rows.append(
+            _summary_metric_row(
+                scope=scope,
+                metric=f"{analysis_name}_feature_median",
+                value=float(label_df["feature"].median()),
+                labeled_count=int(len(label_df)),
+                section="feature_relation",
+                label=label_name,
+            )
+        )
+
+    rows.append(
+        _summary_metric_row(
+            scope=scope,
+            metric=f"{analysis_name}_spearman",
+            value=_spearman_if_possible(subset["feature"], subset["manual_binary"].astype(float)),
+            labeled_count=int(len(subset)),
+            section="feature_relation",
+            label="manual_binary",
+        )
+    )
+
+    subset["auto_positive"] = subset["feature"] > 0
+    for manual_label, auto_label in product([False, True], [False, True]):
+        count = int(((subset["manual_binary"] == manual_label) & (subset["auto_positive"] == auto_label)).sum())
+        crosstabs.append(
+            {
+                "analysis": analysis_name,
+                "scope": scope,
+                "row_label": "manual_yes" if manual_label else "manual_no",
+                "column_label": "auto_positive" if auto_label else "auto_zero",
+                "count": count,
+            }
+        )
+    return rows, crosstabs
+
+
+def _score_bin_labels(values: pd.Series) -> pd.Series:
+    valid = pd.to_numeric(values, errors="coerce")
+    if valid.notna().sum() < 3:
+        return pd.Series([""] * len(values), index=values.index, dtype="object")
+    ranks = valid.rank(method="average", pct=True)
+    bins = pd.Series(index=values.index, dtype="object")
+    bins[ranks <= (1 / 3)] = "low"
+    bins[(ranks > (1 / 3)) & (ranks <= (2 / 3))] = "mid"
+    bins[ranks > (2 / 3)] = "high"
+    bins[valid.isna()] = ""
+    return bins.fillna("")
+
+
+def _build_validity_feature_relation(
+    scope_df: pd.DataFrame,
+    label_values: pd.Series,
+    scope: str,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    rows: list[dict[str, Any]] = []
+    crosstabs: list[dict[str, Any]] = []
+    normalized = label_values.fillna("").astype(str).str.strip()
+    feature = pd.to_numeric(scope_df["overall_score_v2"], errors="coerce")
+    eligible = normalized.ne("") & feature.notna()
+    if not eligible.any():
+        return rows, crosstabs
+
+    subset = pd.DataFrame(
+        {
+            "validity": normalized[eligible],
+            "overall_score_v2": feature[eligible],
+        }
+    )
+    for label_name in sorted(subset["validity"].unique()):
+        label_df = subset[subset["validity"] == label_name]
+        rows.append(
+            _summary_metric_row(
+                scope=scope,
+                metric="recommendation_validity_score_mean",
+                value=float(label_df["overall_score_v2"].mean()),
+                labeled_count=int(len(label_df)),
+                section="feature_relation",
+                label=label_name,
+            )
+        )
+        rows.append(
+            _summary_metric_row(
+                scope=scope,
+                metric="recommendation_validity_score_median",
+                value=float(label_df["overall_score_v2"].median()),
+                labeled_count=int(len(label_df)),
+                section="feature_relation",
+                label=label_name,
+            )
+        )
+
+    ordinal = subset["validity"].map({"invalid": 0, "partially_valid": 1, "valid": 2})
+    rows.append(
+        _summary_metric_row(
+            scope=scope,
+            metric="recommendation_validity_score_spearman",
+            value=_spearman_if_possible(subset["overall_score_v2"], ordinal.astype(float)),
+            labeled_count=int(ordinal.notna().sum()),
+            section="feature_relation",
+            label="ordinal_validity",
+        )
+    )
+
+    score_bins = _score_bin_labels(subset["overall_score_v2"])
+    for validity_label in sorted(subset["validity"].unique()):
+        for score_bin in ["low", "mid", "high"]:
+            count = int(((subset["validity"] == validity_label) & (score_bins == score_bin)).sum())
+            crosstabs.append(
+                {
+                    "analysis": "recommendation_validity_vs_overall_score",
+                    "scope": scope,
+                    "row_label": validity_label,
+                    "column_label": score_bin,
+                    "count": count,
+                }
+            )
+    return rows, crosstabs
+
+
+def compute_manual_validation_agreement(manual_df: pd.DataFrame) -> pd.DataFrame:
+    if not (_has_any_labels_for_source(manual_df, "reviewer1") and _has_any_labels_for_source(manual_df, "reviewer2")):
+        return pd.DataFrame(
+            [
+                {
+                    "field": "",
+                    "comparable_count": 0,
+                    "simple_agreement": math.nan,
+                    "cohen_kappa": math.nan,
+                    "status": "評価者間一致は未計算",
+                }
+            ]
+        )
+
+    rows = []
+    for field in [
+        "mix_relation_label",
+        "evaluation_label",
+        "taste_role_label",
+        "recommendation_validity",
+        "semantic_overlap_label",
+    ]:
+        col1 = _manual_label_columns_for_source("reviewer1")[field]
+        col2 = _manual_label_columns_for_source("reviewer2")[field]
+        values1 = _series_text(manual_df, col1)
+        values2 = _series_text(manual_df, col2)
+        comparable = values1.ne("") & values2.ne("")
+        count = int(comparable.sum())
+        if count == 0:
+            rows.append(
+                {
+                    "field": field,
+                    "comparable_count": 0,
+                    "simple_agreement": math.nan,
+                    "cohen_kappa": math.nan,
+                    "status": "評価者間一致は未計算",
+                }
+            )
+            continue
+        comparable1 = values1[comparable].tolist()
+        comparable2 = values2[comparable].tolist()
+        simple_agreement = float(np.mean([a == b for a, b in zip(comparable1, comparable2)]))
+        categories = sorted(set(comparable1) | set(comparable2))
+        p1 = {label: comparable1.count(label) / count for label in categories}
+        p2 = {label: comparable2.count(label) / count for label in categories}
+        expected = sum(p1[label] * p2[label] for label in categories)
+        kappa = math.nan if math.isclose(expected, 1.0) else (simple_agreement - expected) / (1 - expected)
+        rows.append(
+            {
+                "field": field,
+                "comparable_count": count,
+                "simple_agreement": simple_agreement,
+                "cohen_kappa": kappa,
+                "status": "computed",
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def compute_manual_validation_disagreements(manual_df: pd.DataFrame) -> pd.DataFrame:
+    columns = [
+        "rank",
+        "pair_key",
+        "flavor_a",
+        "flavor_b",
+        "context_1",
+        "context_2",
+        "context_3",
+        "reviewer1_mix_relation_label",
+        "reviewer2_mix_relation_label",
+        "reviewer1_evaluation_label",
+        "reviewer2_evaluation_label",
+        "reviewer1_taste_role_label",
+        "reviewer2_taste_role_label",
+        "reviewer1_recommendation_validity",
+        "reviewer2_recommendation_validity",
+        "reviewer1_semantic_overlap_label",
+        "reviewer2_semantic_overlap_label",
+        "reviewer1_comment",
+        "reviewer2_comment",
+        "disagreement_fields",
+    ]
+    if not (_has_any_labels_for_source(manual_df, "reviewer1") and _has_any_labels_for_source(manual_df, "reviewer2")):
+        return pd.DataFrame(columns=columns)
+
+    rows: list[dict[str, Any]] = []
+    field_names = [
+        "mix_relation_label",
+        "evaluation_label",
+        "taste_role_label",
+        "recommendation_validity",
+        "semantic_overlap_label",
+    ]
+    for row in manual_df.itertuples(index=False):
+        differing_fields: list[str] = []
+        for field in field_names:
+            col1 = f"reviewer1_{field}"
+            col2 = f"reviewer2_{field}"
+            value1 = str(getattr(row, col1, "") or "").strip()
+            value2 = str(getattr(row, col2, "") or "").strip()
+            if value1 and value2 and value1 != value2:
+                differing_fields.append(field)
+        if not differing_fields:
+            continue
+        rows.append(
+            {
+                "rank": getattr(row, "rank", ""),
+                "pair_key": getattr(row, "pair_key", ""),
+                "flavor_a": getattr(row, "flavor_a", ""),
+                "flavor_b": getattr(row, "flavor_b", ""),
+                "context_1": getattr(row, "context_1", ""),
+                "context_2": getattr(row, "context_2", ""),
+                "context_3": getattr(row, "context_3", ""),
+                "reviewer1_mix_relation_label": getattr(row, "reviewer1_mix_relation_label", ""),
+                "reviewer2_mix_relation_label": getattr(row, "reviewer2_mix_relation_label", ""),
+                "reviewer1_evaluation_label": getattr(row, "reviewer1_evaluation_label", ""),
+                "reviewer2_evaluation_label": getattr(row, "reviewer2_evaluation_label", ""),
+                "reviewer1_taste_role_label": getattr(row, "reviewer1_taste_role_label", ""),
+                "reviewer2_taste_role_label": getattr(row, "reviewer2_taste_role_label", ""),
+                "reviewer1_recommendation_validity": getattr(row, "reviewer1_recommendation_validity", ""),
+                "reviewer2_recommendation_validity": getattr(row, "reviewer2_recommendation_validity", ""),
+                "reviewer1_semantic_overlap_label": getattr(row, "reviewer1_semantic_overlap_label", ""),
+                "reviewer2_semantic_overlap_label": getattr(row, "reviewer2_semantic_overlap_label", ""),
+                "reviewer1_comment": getattr(row, "reviewer1_comment", ""),
+                "reviewer2_comment": getattr(row, "reviewer2_comment", ""),
+                "disagreement_fields": "|".join(differing_fields),
+            }
+        )
+    return pd.DataFrame(rows, columns=columns)
+
+
+def compute_manual_validation_outputs(
+    manual_df: pd.DataFrame,
+    k_values: list[int],
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, str | None]:
+    primary_source = manual_validation_primary_source(manual_df)
+    summary_rows: list[dict[str, Any]] = []
+    crosstab_rows: list[dict[str, Any]] = []
+    if primary_source is None:
+        return (
+            pd.DataFrame(columns=["section", "scope", "metric", "label", "value", "n_labeled"]),
+            pd.DataFrame(columns=["analysis", "scope", "row_label", "column_label", "count"]),
+            compute_manual_validation_agreement(manual_df),
+            compute_manual_validation_disagreements(manual_df),
+            None,
+        )
+
+    columns = _manual_label_columns_for_source(primary_source)
+    scopes: list[tuple[str, pd.DataFrame]] = [("all", _scope_dataframe(manual_df, None))]
+    scopes.extend((_scope_label(k_value), _scope_dataframe(manual_df, k_value)) for k_value in k_values)
+
+    for scope, scope_df in scopes:
+        summary_rows.append(
+            _summary_metric_row(
+                scope=scope,
+                metric="candidate_count",
+                value=int(len(scope_df)),
+                labeled_count=int(len(scope_df)),
+            )
+        )
+
+        explicit_rate, n_mix = _rate_from_labels(_series_text(scope_df, columns["mix_relation_label"]), {"explicit_mix"})
+        explicit_likely_rate, _ = _rate_from_labels(
+            _series_text(scope_df, columns["mix_relation_label"]),
+            {"explicit_mix", "likely_mix"},
+        )
+        positive_rate, n_eval = _rate_from_labels(
+            _series_text(scope_df, columns["evaluation_label"]),
+            {"positive", "mixed"},
+        )
+        negative_rate, _ = _rate_from_labels(
+            _series_text(scope_df, columns["evaluation_label"]),
+            {"negative", "mixed"},
+        )
+        role_rate, n_role = _rate_from_labels(
+            _series_text(scope_df, columns["taste_role_label"]),
+            {"explained"},
+        )
+        valid_rate, n_valid = _rate_from_labels(
+            _series_text(scope_df, columns["recommendation_validity"]),
+            {"valid"},
+        )
+        valid_partial_rate, _ = _rate_from_labels(
+            _series_text(scope_df, columns["recommendation_validity"]),
+            {"valid", "partially_valid"},
+        )
+        overlap_rate, n_overlap = _rate_from_labels(
+            _series_text(scope_df, columns["semantic_overlap_label"]),
+            {"similar", "duplicate"},
+        )
+        unclear_rate, n_unclear = _unclear_rate(scope_df, columns)
+
+        summary_rows.extend(
+            [
+                _summary_metric_row(scope, "explicit_mix_rate", explicit_rate, n_mix),
+                _summary_metric_row(scope, "explicit_or_likely_mix_rate", explicit_likely_rate, n_mix),
+                _summary_metric_row(scope, "positive_rate", positive_rate, n_eval),
+                _summary_metric_row(scope, "negative_rate", negative_rate, n_eval),
+                _summary_metric_row(scope, "role_explained_rate", role_rate, n_role),
+                _summary_metric_row(scope, "recommendation_valid_rate", valid_rate, n_valid),
+                _summary_metric_row(scope, "valid_or_partially_valid_rate", valid_partial_rate, n_valid),
+                _summary_metric_row(scope, "semantic_overlap_similar_or_duplicate_rate", overlap_rate, n_overlap),
+                _summary_metric_row(scope, "unclear_rate", unclear_rate, n_unclear),
+            ]
+        )
+
+        relation_rows, relation_crosstabs = _build_binary_feature_relation(
+            scope_df,
+            "smoothed_positive_ratio",
+            _series_text(scope_df, columns["evaluation_label"]),
+            {"positive", "mixed"},
+            "smoothed_positive_ratio_vs_manual_positive",
+            scope,
+        )
+        summary_rows.extend(relation_rows)
+        crosstab_rows.extend(relation_crosstabs)
+
+        relation_rows, relation_crosstabs = _build_binary_feature_relation(
+            scope_df,
+            "smoothed_negative_ratio",
+            _series_text(scope_df, columns["evaluation_label"]),
+            {"negative", "mixed"},
+            "smoothed_negative_ratio_vs_manual_negative",
+            scope,
+        )
+        summary_rows.extend(relation_rows)
+        crosstab_rows.extend(relation_crosstabs)
+
+        relation_rows, relation_crosstabs = _build_binary_feature_relation(
+            scope_df,
+            "smoothed_role_ratio",
+            _series_text(scope_df, columns["taste_role_label"]),
+            {"explained"},
+            "smoothed_role_ratio_vs_manual_role",
+            scope,
+        )
+        summary_rows.extend(relation_rows)
+        crosstab_rows.extend(relation_crosstabs)
+
+        validity_rows, validity_crosstabs = _build_validity_feature_relation(
+            scope_df,
+            _series_text(scope_df, columns["recommendation_validity"]),
+            scope,
+        )
+        summary_rows.extend(validity_rows)
+        crosstab_rows.extend(validity_crosstabs)
+
+    agreement_df = compute_manual_validation_agreement(manual_df)
+    disagreements_df = compute_manual_validation_disagreements(manual_df)
+    summary_df = pd.DataFrame(summary_rows)
+    crosstab_df = pd.DataFrame(crosstab_rows)
+    return summary_df, crosstab_df, agreement_df, disagreements_df, primary_source
+
+
+def write_manual_validation_summary_markdown_v2(
+    summary_df: pd.DataFrame,
+    agreement_df: pd.DataFrame,
+    path: Path,
+    primary_source: str | None,
+) -> None:
+    if primary_source is None or summary_df.empty:
+        path.write_text("# Manual Validation Summary\n\n未評価のため集計できない。\n", encoding="utf-8")
+        return
+
+    lines = [
+        "# Manual Validation Summary",
+        "",
+        f"- primary_label_source: `{primary_source}`",
+        "",
+        "## Scope Metrics",
+        "",
+        "| Scope | Metric | Value | Labeled N |",
+        "| --- | --- | ---: | ---: |",
+    ]
+    scope_df = summary_df[summary_df["section"] == "scope_metric"].copy()
+    for row in scope_df.itertuples(index=False):
+        value = "" if pd.isna(row.value) else (
+            f"{float(row.value):.4f}" if isinstance(row.value, (float, np.floating)) else str(row.value)
+        )
+        lines.append(f"| {row.scope} | {row.metric} | {value} | {row.n_labeled} |")
+
+    feature_df = summary_df[summary_df["section"] == "feature_relation"].copy()
+    if not feature_df.empty:
+        lines.extend(
+            [
+                "",
+                "## Feature Relations",
+                "",
+                "| Scope | Metric | Label | Value | N |",
+                "| --- | --- | --- | ---: | ---: |",
+            ]
+        )
+        for row in feature_df.itertuples(index=False):
+            value = "" if pd.isna(row.value) else f"{float(row.value):.4f}"
+            lines.append(f"| {row.scope} | {row.metric} | {row.label} | {value} | {row.n_labeled} |")
+
+    lines.extend(["", "## Inter-Rater Agreement", ""])
+    if agreement_df.empty or (
+        "status" in agreement_df.columns
+        and agreement_df["status"].eq("評価者間一致は未計算").all()
+    ):
+        lines.append("評価者間一致は未計算。")
+    else:
+        lines.extend(
+            [
+                "| Field | Comparable N | Simple Agreement | Cohen's Kappa |",
+                "| --- | ---: | ---: | ---: |",
+            ]
+        )
+        for row in agreement_df.itertuples(index=False):
+            simple = "" if pd.isna(row.simple_agreement) else f"{float(row.simple_agreement):.4f}"
+            kappa = "" if pd.isna(row.cohen_kappa) else f"{float(row.cohen_kappa):.4f}"
+            lines.append(f"| {row.field} | {row.comparable_count} | {simple} | {kappa} |")
+
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
