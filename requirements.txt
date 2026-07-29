@@ -1,3 +1,6 @@
 pandas
 requests
 beautifulsoup4
+numpy
+networkx
+matplotlib

@@ -1,0 +1,530 @@
+﻿document_id,flavor_a,flavor_b,pair_key,sentence,matched_categories,matched_terms,is_same_sentence_pair,has_positive_expression,has_negative_expression,has_taste_role_explanation,review_title,review_url
+R0044,グレープ,ミント,グレープ||ミント,・ベリー×ブルーヘブン×ミント – ベリーの甘酸っぱさ、ブルーヘブンのすっきりとした酸味・甘み・清涼感、そしてミントの清涼感の調和を楽しむミックスです。,experience:balance|experience:coolness|taste:acidity|taste_role,ミックス|清涼感|調和|酸味,False,False,False,True,MALAKI – Berry(ベリー),https://cloud-jp.net/malaki-berry/
+R0044,グレープ,ミント,グレープ||ミント,・ベリー×グレープ×グレナデン – ベリーとグレナデンの酸味を生かしつつ、グレープの優しい甘さのバランスを楽しむミックスです。,experience:balance|experience:smoothness|taste:acidity|taste_role,バランス|ミックス|優しい|酸味,False,False,False,True,MALAKI – Berry(ベリー),https://cloud-jp.net/malaki-berry/
+R0047,グレープ,ミント,グレープ||ミント,MALAKI – Grape Mint(グレープミント)の特徴,,,True,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープ,ミント,グレープ||ミント,MALAKI – Grape Mint(グレープミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープ,ミント,グレープ||ミント,MALAKI – Grape Mint(グレープミント)の特徴,,,True,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープ,ミント,グレープ||ミント,MALAKI – Grape Mint(グレープミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープ,ミント,グレープ||ミント,MALAKI – Grape Mint(グレープミント)はCLOUD SHOPにてご購入いただけます！,,,True,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0070,グレープ,ミント,グレープ||ミント,・グレープ×ライム×ミント – スッキリとグレープを楽しみたい方に向けたミックス。,taste_role,ミックス,True,False,False,True,DOZAJ – Grape(グレープ)レビュー,https://cloud-jp.net/dozaj-grape/
+R0107,グレープ,ミント,グレープ||ミント,tabu Grape Mint(グレープミント)の特徴,,,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,ミント,グレープ||ミント,tabu Grape Mint(グレープミント)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,True,True,False,True,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,ミント,グレープ||ミント,tabu Grape Mint(グレープミント)の特徴,,,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,ミント,グレープ||ミント,TabuのGrape Mintは、中東系のワインのような独特なクセのあるいわゆるグレープ味とは違い、一般的なグレープの香りを再現したフレーバーです。,experience:aroma,香り,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,ミント,グレープ||ミント,tabu Grape Mint(グレープミント)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,True,True,False,True,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,ミント,グレープ||ミント,GrapeMint自体が清涼感のあるさっぱりとしたフレーバーなので、その系統でミックスするのであれば、グレープフルーツやレモンんアドの柑橘系がおすすめです。,evaluation:positive|experience:coolness|taste_role,おすすめ|さっぱり|ミックス|清涼感,True,True,False,True,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,ミント,グレープ||ミント,Tabu(タブ) – Grape Mint(グレープミント)はCLOUD SHOPにてご購入いただけます！,,,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0134,グレープ,ミント,グレープ||ミント,個人的なおすすめのミックスとしては、TrifectaのPeppermint Shakeとの相性がよかったです。,evaluation:positive|experience:balance|taste_role,おすすめ|ミックス|相性,False,True,False,True,DOZAJ – Cuba Dream(キューバドリーム)レビュー,https://cloud-jp.net/dozaj-cubadream/
+R0134,グレープ,ミント,グレープ||ミント,AzureのNape Grapeあたりが無難でイケる味です。,,,False,False,False,False,DOZAJ – Cuba Dream(キューバドリーム)レビュー,https://cloud-jp.net/dozaj-cubadream/
+R0171,グレープ,ミント,グレープ||ミント,・【Al Fakher】GRAPE(60%)　＋　【旬-SHUN-】MINT(30%),,,True,False,False,False,旬-SHUN- MINT,https://cloud-jp.net/shun-mint/
+R0173,グレープ,ミント,グレープ||ミント,・【Social Smoke】 GRAPE CHILL (40%)＋【旬-SHUN-】WHITE GRAPE(30%) +【旬-SHUN-】MINT(30%),,,True,False,False,False,旬-SHUN- WHITEGRAPE,https://cloud-jp.net/shun-white-grape/
+R0035,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Wild(ワイルド),https://cloud-jp.net/malaki-wild/
+R0035,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Wild(ワイルド),https://cloud-jp.net/malaki-wild/
+R0037,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Velvet(ベルベット),https://cloud-jp.net/malaki-velvet/
+R0037,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Velvet(ベルベット),https://cloud-jp.net/malaki-velvet/
+R0038,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Specra(スペクトラ),https://cloud-jp.net/malaki-specra/
+R0038,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Specra(スペクトラ),https://cloud-jp.net/malaki-specra/
+R0039,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Sour Asia(サワーアジア),https://cloud-jp.net/malaki-sourasia/
+R0039,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Sour Asia(サワーアジア),https://cloud-jp.net/malaki-sourasia/
+R0040,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Lemon(レモン),https://cloud-jp.net/malaki-lemon/
+R0040,アールグレイ,バニラ,アールグレイ||バニラ,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Lemon(レモン),https://cloud-jp.net/malaki-lemon/
+R0166,アールグレイ,バニラ,アールグレイ||バニラ,・【旬-shun-】ペアー(40%)・【Debaj】ミルク(30%)・【AlFakher】バニラ(30%),,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,アールグレイ,バニラ,アールグレイ||バニラ,・【旬-shun-】ペアー(50%)・【Afzal】アールグレイ(50%),,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0051,ミント,レモン,ミント||レモン,・クールブリーズ×ミント×レモン – レモンの酸味とミントの清涼感、そしてクールブリーズの特徴ある後味が調和されたミックスです。,experience:balance|experience:coolness|taste:acidity|taste_role,クール|ミックス|清涼感|調和|酸味,True,False,False,True,MALAKI – Cool Breeze(クールブリーズ),https://cloud-jp.net/malaki-coolbreeze/
+R0064,ミント,レモン,ミント||レモン,・ミント×レモン×ライチ – ミントの幅の広さを考え、あえて王道に近いミックスを選びました。,taste_role,ミックス,True,False,False,True,MALAKI – Mint(ミント),https://cloud-jp.net/malaki-mint/
+R0122,ミント,レモン,ミント||レモン,おすすめミックスとしてはハーブっぽさやフローラルさを足すために、Azure LemonGrassやTrifecta DarkのLavenderMint、Dozaj Jasminあたりを入れてあげると、更に上品な香りが楽しめます。,evaluation:positive|experience:aroma|taste_role,おすすめ|ミックス|足す|香り,True,True,False,True,DOZAJ – LindenTea(リンデンティー)レビュー,https://cloud-jp.net/dozaj-lindentea/
+R0132,ミント,レモン,ミント||レモン,DOZAJの中では、PearやTangerine、Lemonといったスッキリ系のフレーバーとの相性は抜群ですし、さらにIceやMintを足して、清涼感マシマシで吸っていただくのもオススメです。,experience:balance|experience:coolness|taste_role,清涼感|相性,True,False,False,True,DOZAJ – Cucumber(キューカンバー)レビュー,https://cloud-jp.net/dozaj-cucumber/
+R0170,ミント,レモン,ミント||レモン,・【旬-SHUN-】 LEMON(30%)　＋　【旬-SHUN-】MINT(30%) ＋　【AZURE】LIME(40%),,,True,False,False,False,旬-SHUN- LEMON,https://cloud-jp.net/shun-lemon/
+R0199,ミント,レモン,ミント||レモン,アルファーヘルのスイカを使ったミックスには、さっぱり系のミックスではグレープフルーツ、ミント、レモン、パッションフルーツなどがおすすめです。,evaluation:positive|experience:coolness|taste_role,おすすめ|さっぱり|ミックス,True,True,False,True,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0158,ハニー,ミルク,ハニー||ミルク,こちらの記事では、TROY(トロイ)のHoney Milk(ハニーミルク)のフレーバーレビューをご紹介します。,,,True,False,False,False,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ハニー,ミルク,ハニー||ミルク,Honey Milkの特徴,,,True,False,False,False,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ハニー,ミルク,ハニー||ミルク,Honey Milkを使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ハニー,ミルク,ハニー||ミルク,Honey Milkの特徴,,,True,False,False,False,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ハニー,ミルク,ハニー||ミルク,TROY HONEY MILKは、その名の通りハニーとミルクのミックスフレーバー。,taste_role,ミックス,True,False,False,True,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ハニー,ミルク,ハニー||ミルク,Honey Milkを使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ハニー,ミルク,ハニー||ミルク,TROY(トロイ) – HONEY MILK(ハニーミルク)はCLOUD SHOPにてご購入いただけます！,,,True,False,False,False,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0161,ハニー,ミルク,ハニー||ミルク,Baklavaのおすすめmixとしては、甘いシーシャが好きな方であれば、Social SmokeのDulce de lecheや同じくTROYのHoney Milkが合うのではないでしょうか。,evaluation:positive|taste:sweetness,おすすめ|好き|甘い,True,True,False,False,TROY – BAKLAVA(バクラヴァ) レビュー,https://cloud-jp.net/troy-baklava/
+R0169,ハニー,ミルク,ハニー||ミルク,・【Social Smoke】 honeydew,,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,ミルク,ハニー||ミルク,・【DOZAJ】MILK (50%)　＋　【旬-SHUN-】MELON(50%),,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0197,ハニー,ミルク,ハニー||ミルク,シガーを使ったミックスには、チョコレートやココナッツ、ミルク、ハニーなどの甘いフレーバーや、カルダモンなどのスパイス系、それ以外にもスイカやアールグレイなどがおすすめです。,evaluation:positive|taste:spicy|taste:sweetness|taste_role,おすすめ|スパイス|ミックス|甘い,True,True,False,True,Social Smoke Cigar(シガー)レビュー,https://cloud-jp.net/socialsmoke-cigar-review/
+R0198,ハニー,ミルク,ハニー||ミルク,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,experience:balance|taste:sweetness|taste_role,ミックス|甘い|相性,True,False,False,True,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0207,ハニー,ミルク,ハニー||ミルク,Social Smoke(ソーシャルスモーク) Honeydew Melon(ハニーデューメロン)のレビューです。,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,ミルク,ハニー||ミルク,Social Smoke Honeydew Melon(ハニーデューメロン)の特徴,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,ミルク,ハニー||ミルク,Social Smoke Honeydew Melon(ハニーデューメロン)を使ったMIX,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,ミルク,ハニー||ミルク,Social Smoke Honeydew Melon(ハニーデューメロン)の特徴,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,ミルク,ハニー||ミルク,Social Smoke Honeydew Melon(ハニーデューメロン)を使ったMIX,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,ミルク,ハニー||ミルク,Social SmokeHoneydew Melon(ハニーデューメロン),,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,ミルク,ハニー||ミルク,は単体で濃厚な甘さが楽しめるので、同系統で合わせるのであればバニラやココナッツ、ミルク、さっぱりした感じをプラスしたい時はオレンジやミント、レモンなどがおすすめです！,evaluation:positive|experience:coolness|taste:richness,おすすめ|さっぱり|濃厚,False,True,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0140,バニラ,ミルク,バニラ||ミルク,また、バニラ、キャラメル、ミルク、チョコでもったり甘々にしてもいいですし、意外なところでいうとグレープやベリー系統のフレーバーとの相性もいいです。,experience:balance|taste_role,相性,True,False,False,True,DOZAJ – Cappuccino(カプチーノ)レビュー,https://cloud-jp.net/dozaj-cappccino/
+R0152,バニラ,ミルク,バニラ||ミルク,・ヘーゼルナッツ、シナモン、バニラ ヘーゼルナッツとシナモンの上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/
+R0152,バニラ,ミルク,バニラ||ミルク,・ヘーゼルナッツ、キャラメル、ミルク キャラメルでぐっとお菓子寄りに、ほんのりミルクを添えて。,,,False,False,False,False,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/
+R0166,バニラ,ミルク,バニラ||ミルク,・【旬-shun-】ペアー(40%)・【Debaj】ミルク(30%)・【AlFakher】バニラ(30%),,,True,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0188,バニラ,ミルク,バニラ||ミルク,ミックスにおすすめのフレーバーは、ミルク、バニラ、ココナッツ、キャラメルなどの甘い系のフレーバーがおすすめです。,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,True,True,False,True,DeCloud Mango(マンゴー)レビュー,https://cloud-jp.net/decloud-mango/
+R0189,バニラ,ミルク,バニラ||ミルク,ミックスにおすすめのフレーバーは、ミルク、バニラ、チョコレートなどの甘い系のフレーバーでスムージーのように仕上げるもよし、酸味が好きな方はレモンやグアバなどとミックスするのがおすすめです。,evaluation:positive|taste:acidity|taste:sweetness|taste_role,おすすめ|ミックス|好き|甘い|酸味,True,True,False,True,DeCloud StrawBerry(ストロベリー)レビュー,https://cloud-jp.net/post-3891/
+R0198,バニラ,ミルク,バニラ||ミルク,AlFakher(アルファーヘル)のVanilla(バニラ)のレビューです。,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,ミルク,バニラ||ミルク,AlFakher(アルファーヘル) Vanilla(バニラ)の特徴,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,ミルク,バニラ||ミルク,AlFakher(アルファーヘル) Vanilla(バニラ)を使ったMIX,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,ミルク,バニラ||ミルク,AlFakher(アルファーヘル) Vanilla(バニラ)の特徴,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,ミルク,バニラ||ミルク,AlFakher(アルファーヘル) Vanilla(バニラ)を使ったMIX,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,ミルク,バニラ||ミルク,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,experience:balance|taste:sweetness|taste_role,ミックス|甘い|相性,False,False,False,True,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0035,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Wild(ワイルド),https://cloud-jp.net/malaki-wild/
+R0035,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Wild(ワイルド),https://cloud-jp.net/malaki-wild/
+R0037,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Velvet(ベルベット),https://cloud-jp.net/malaki-velvet/
+R0037,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Velvet(ベルベット),https://cloud-jp.net/malaki-velvet/
+R0038,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Specra(スペクトラ),https://cloud-jp.net/malaki-specra/
+R0038,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Specra(スペクトラ),https://cloud-jp.net/malaki-specra/
+R0039,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Sour Asia(サワーアジア),https://cloud-jp.net/malaki-sourasia/
+R0039,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Sour Asia(サワーアジア),https://cloud-jp.net/malaki-sourasia/
+R0040,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Lemon(レモン),https://cloud-jp.net/malaki-lemon/
+R0040,アールグレイ,コニャック,アールグレイ||コニャック,・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,experience:aroma,香り,False,False,False,False,MALAKI – Lemon(レモン),https://cloud-jp.net/malaki-lemon/
+R0035,コニャック,バニラ,コニャック||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,True,False,False,True,MALAKI – Wild(ワイルド),https://cloud-jp.net/malaki-wild/
+R0037,コニャック,バニラ,コニャック||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,True,False,False,True,MALAKI – Velvet(ベルベット),https://cloud-jp.net/malaki-velvet/
+R0038,コニャック,バニラ,コニャック||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,True,False,False,True,MALAKI – Specra(スペクトラ),https://cloud-jp.net/malaki-specra/
+R0039,コニャック,バニラ,コニャック||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,True,False,False,True,MALAKI – Sour Asia(サワーアジア),https://cloud-jp.net/malaki-sourasia/
+R0040,コニャック,バニラ,コニャック||バニラ,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,True,False,False,True,MALAKI – Lemon(レモン),https://cloud-jp.net/malaki-lemon/
+R0090,ミルク,メロン,ミルク||メロン,TROY – Melon Milk(メロンミルク)の特徴,,,True,False,False,False,TROY – Melon Milk(メロンミルク)レビュー,https://cloud-jp.net/troy-melonmilk/
+R0090,ミルク,メロン,ミルク||メロン,TROY – Melon Milk(メロンミルク)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,TROY – Melon Milk(メロンミルク)レビュー,https://cloud-jp.net/troy-melonmilk/
+R0090,ミルク,メロン,ミルク||メロン,TROY – Melon Milk(メロンミルク)の特徴,,,True,False,False,False,TROY – Melon Milk(メロンミルク)レビュー,https://cloud-jp.net/troy-melonmilk/
+R0090,ミルク,メロン,ミルク||メロン,TROY – Melon Milk(メロンミルク)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,TROY – Melon Milk(メロンミルク)レビュー,https://cloud-jp.net/troy-melonmilk/
+R0169,ミルク,メロン,ミルク||メロン,・【DOZAJ】MILK (50%)　＋　【旬-SHUN-】MELON(50%),,,True,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0198,ミルク,メロン,ミルク||メロン,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,experience:balance|taste:sweetness|taste_role,ミックス|甘い|相性,True,False,False,True,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0207,ミルク,メロン,ミルク||メロン,Social Smoke(ソーシャルスモーク) Honeydew Melon(ハニーデューメロン)のレビューです。,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ミルク,メロン,ミルク||メロン,Social Smoke Honeydew Melon(ハニーデューメロン)の特徴,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ミルク,メロン,ミルク||メロン,Social Smoke Honeydew Melon(ハニーデューメロン)を使ったMIX,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ミルク,メロン,ミルク||メロン,Social Smoke Honeydew Melon(ハニーデューメロン)の特徴,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ミルク,メロン,ミルク||メロン,Social Smoke Honeydew Melon(ハニーデューメロン)を使ったMIX,,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ミルク,メロン,ミルク||メロン,Social SmokeHoneydew Melon(ハニーデューメロン),,,False,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ミルク,メロン,ミルク||メロン,は単体で濃厚な甘さが楽しめるので、同系統で合わせるのであればバニラやココナッツ、ミルク、さっぱりした感じをプラスしたい時はオレンジやミント、レモンなどがおすすめです！,evaluation:positive|experience:coolness|taste:richness,おすすめ|さっぱり|濃厚,False,True,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0212,ミルク,メロン,ミルク||メロン,Debaj Cardamom Milkを使ったおすすめのミックスには、キャラメルやミルクティー、メロン、チャイなどミルクの甘い香りを活かしたMIXがおすすめです。,evaluation:positive|experience:aroma|taste:sweetness|taste_role,おすすめ|ミックス|甘い|香り,True,True,False,True,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0091,バナナ,ミルク,バナナ||ミルク,TROY – Banana Milk(バナナミルク)の特徴,,,True,False,False,False,TROY – Banana Milk(バナナミルク)レビュー,https://cloud-jp.net/troy-bananamilk/
+R0091,バナナ,ミルク,バナナ||ミルク,TROY – Banana Milk(バナナミルク)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,TROY – Banana Milk(バナナミルク)レビュー,https://cloud-jp.net/troy-bananamilk/
+R0091,バナナ,ミルク,バナナ||ミルク,TROY – Banana Milk(バナナミルク)の特徴,,,True,False,False,False,TROY – Banana Milk(バナナミルク)レビュー,https://cloud-jp.net/troy-bananamilk/
+R0091,バナナ,ミルク,バナナ||ミルク,TROY – Banana Milk(バナナミルク)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,TROY – Banana Milk(バナナミルク)レビュー,https://cloud-jp.net/troy-bananamilk/
+R0157,バナナ,ミルク,バナナ||ミルク,こちらの記事では、TROY(トロイ)のICE BANANA(アイスバナナ)のフレーバーレビューをご紹介します。,,,False,False,False,False,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/
+R0157,バナナ,ミルク,バナナ||ミルク,Ice Bananaの特徴,,,False,False,False,False,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/
+R0157,バナナ,ミルク,バナナ||ミルク,Ice Bananaを使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/
+R0157,バナナ,ミルク,バナナ||ミルク,Ice Bananaの特徴,,,False,False,False,False,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/
+R0157,バナナ,ミルク,バナナ||ミルク,TROY IceBananaは、くどい甘さのない、すっきりとしたバナナフレーバーです。,,,False,False,False,False,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/
+R0157,バナナ,ミルク,バナナ||ミルク,Ice Bananaを使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/
+R0157,バナナ,ミルク,バナナ||ミルク,TROY Ice Bananaを使ったミックスには、まったりとした甘さを加えてあげるのが無難な気がします。,taste_role,ミックス,False,False,False,True,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/
+R0157,バナナ,ミルク,バナナ||ミルク,TROYのラインナップではハニーミルク、それ以外ではチョコ系やミルク系のフレーバーとは相性抜群です。,experience:balance|taste_role,相性,False,False,False,True,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/
+R0157,バナナ,ミルク,バナナ||ミルク,TROY(トロイ) -ICE BANANA(アイスバナナ)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/
+R0213,バナナ,ミルク,バナナ||ミルク,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,バナナ,ミルク,バナナ||ミルク,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0214,バナナ,ミルク,バナナ||ミルク,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0214,バナナ,ミルク,バナナ||ミルク,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0216,バナナ,ミルク,バナナ||ミルク,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0216,バナナ,ミルク,バナナ||ミルク,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0056,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,・ビタースイート×オレンジ×グレープフルーツ – ピールの風味が特徴的な柑橘系とのミックス。,taste:bitterness|taste:sweetness|taste_role,スイート|ビター|ミックス,True,False,False,True,MALAKI – Bitter Sweet(ビタースイート),https://cloud-jp.net/malaki-bittersweet/
+R0195,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,グアバやレモン、グレープフルーツ、オレンジ、ベリー系などとミックスすれば間違いなしです。,taste_role,ミックス,True,False,False,True,Al Fakher Grenadine(グレナデン)レビュー,https://cloud-jp.net/alfakher-grenadine-review/
+R0202,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,ジャパニーズゆずを使ったミックスには、グレープフルーツ、オレンジ、レモンなどの同系統は間違いなくぴったりです。,taste_role,ミックス,True,False,False,True,Social Smoke JapaneseYuzu(ジャパニーズユズ)レビュー,https://cloud-jp.net/socialsmoke-japaneseyuzu-review/
+R0210,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,Social Smoke Lime(ライム)を使ったMIXには、さっぱり系ではレモンやスイカ、オレンジ、ミント、グレープフルーツ、それ以外でもダブルアップルやハニー、アイススパイシーコーラ、ジンジャエールなど、幅広く活躍するフレーバーなので一度お試しあれ！,experience:coolness|taste:spicy,さっぱり|スパイシー,True,False,False,False,Social Smoke Lime(ライム)レビュー,https://cloud-jp.net/socialsmoke-lime-review/
+R0212,カルダモンミルク,ミルク,カルダモンミルク||ミルク,Debaj(デバジ) Cardamom Milk(カルダモンミルク)のレビューです。,,,True,False,False,False,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0213,カルダモンミルク,ミルク,カルダモンミルク||ミルク,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,True,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0214,カルダモンミルク,ミルク,カルダモンミルク||ミルク,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,True,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0216,カルダモンミルク,ミルク,カルダモンミルク||ミルク,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,True,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0106,ハニー,メロン,ハニー||メロン,tabu Melon(メロン)の特徴,,,False,False,False,False,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,ハニー,メロン,ハニー||メロン,tabu Melon(メロン)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,ハニー,メロン,ハニー||メロン,tabu Melon(メロン)の特徴,,,False,False,False,False,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,ハニー,メロン,ハニー||メロン,tabu Melon(メロン)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,ハニー,メロン,ハニー||メロン,Tabu メロンを使ったおすすめのミックスは、ミルクや香港ミルクティー、バニラ、バナナ、ハニーなどでメロンジュースのような甘いミックスにしたり、,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,False,True,False,True,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,ハニー,メロン,ハニー||メロン,Tabu(タブ) – Melon(メロン)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0169,ハニー,メロン,ハニー||メロン,MELON(メロン)のレビュー,,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,MELON(メロン）の味,,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,MELON(メロン）で作るとき,,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,MELON(メロン）を使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,MELON(メロン)のレビュー,,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,MELON(メロン）の味,,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,MELON(メロン）で作るとき,,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,MELON(メロン）を使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,・【Social Smoke】 honeydew,,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,melon,,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,(60%)　＋　【旬-SHUN-】MELON(40%),,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,・【DOZAJ】MILK (50%)　＋　【旬-SHUN-】MELON(50%),,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0169,ハニー,メロン,ハニー||メロン,・【旬-SHUN-】PEACH (50%)　＋　【旬-SHUN-】MELON(50%),,,False,False,False,False,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/
+R0198,ハニー,メロン,ハニー||メロン,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,experience:balance|taste:sweetness|taste_role,ミックス|甘い|相性,True,False,False,True,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0207,ハニー,メロン,ハニー||メロン,Social Smoke(ソーシャルスモーク) Honeydew Melon(ハニーデューメロン)のレビューです。,,,True,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,メロン,ハニー||メロン,Social Smoke Honeydew Melon(ハニーデューメロン)の特徴,,,True,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,メロン,ハニー||メロン,Social Smoke Honeydew Melon(ハニーデューメロン)を使ったMIX,,,True,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,メロン,ハニー||メロン,Social Smoke Honeydew Melon(ハニーデューメロン)の特徴,,,True,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,メロン,ハニー||メロン,Social Smoke Honeydew Melon(ハニーデューメロン)を使ったMIX,,,True,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0207,ハニー,メロン,ハニー||メロン,Social SmokeHoneydew Melon(ハニーデューメロン),,,True,False,False,False,Social Smoke Honeydew Melon(ハニーデューメロン)レビュー,https://cloud-jp.net/socialsmoke-honeydewmelon-review/
+R0158,ココナッツ,ミルク,ココナッツ||ミルク,こちらの記事では、TROY(トロイ)のHoney Milk(ハニーミルク)のフレーバーレビューをご紹介します。,,,False,False,False,False,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ココナッツ,ミルク,ココナッツ||ミルク,Honey Milkの特徴,,,False,False,False,False,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ココナッツ,ミルク,ココナッツ||ミルク,Honey Milkを使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ココナッツ,ミルク,ココナッツ||ミルク,Honey Milkの特徴,,,False,False,False,False,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ココナッツ,ミルク,ココナッツ||ミルク,TROY HONEY MILKは、その名の通りハニーとミルクのミックスフレーバー。,taste_role,ミックス,False,False,False,True,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ココナッツ,ミルク,ココナッツ||ミルク,Honey Milkを使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ココナッツ,ミルク,ココナッツ||ミルク,ハニーミルクを使った濃厚なお菓子のような甘さを感じられるミックスには、ミルクやSocial Smokeの香港ミルクティー、ココナッツ、REVOSHIのビスケットなどがおすすめです。,evaluation:positive|taste:richness|taste_role,おすすめ|ミックス|濃厚,False,True,False,True,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0158,ココナッツ,ミルク,ココナッツ||ミルク,TROY(トロイ) – HONEY MILK(ハニーミルク)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0188,ココナッツ,ミルク,ココナッツ||ミルク,ミックスにおすすめのフレーバーは、ミルク、バニラ、ココナッツ、キャラメルなどの甘い系のフレーバーがおすすめです。,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,True,True,False,True,DeCloud Mango(マンゴー)レビュー,https://cloud-jp.net/decloud-mango/
+R0198,ココナッツ,ミルク,ココナッツ||ミルク,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,experience:balance|taste:sweetness|taste_role,ミックス|甘い|相性,True,False,False,True,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0206,ココナッツ,ミルク,ココナッツ||ミルク,は単体で濃厚な甘さが楽しめるので、同系統で合わせるのであればバニラやチョコ、ココナッツ、ミルク、香港ミルクティー、さっぱりした感じをプラスしたい時はベリー、ミントなどがおすすめです！,evaluation:positive|experience:coolness|taste:richness,おすすめ|さっぱり|濃厚,True,True,False,False,Social Smoke Pistachio Breeze(ピスタチオブリーズ)レビュー,https://cloud-jp.net/socialsmoke-pistachiobreeze-review/
+R0213,カルダモンミルク,モヒート,カルダモンミルク||モヒート,AlFakher(アルファーヘル) Mojito(モヒート)のレビューです。,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,カルダモンミルク,モヒート,カルダモンミルク||モヒート,AlFakher Mojitoの特徴,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,カルダモンミルク,モヒート,カルダモンミルク||モヒート,AlFakher Mojitoを使ったMIX,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,カルダモンミルク,モヒート,カルダモンミルク||モヒート,AlFakher Mojitoの特徴,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,カルダモンミルク,モヒート,カルダモンミルク||モヒート,AlFakher Mojitoを使ったMIX,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,カルダモンミルク,モヒート,カルダモンミルク||モヒート,AlFakher Mojitoを使ったMIXには、レモンやグレープフルーツ、シトラスティーなどでさっぱり仕上げるのがおすすめ。,evaluation:positive|experience:coolness|taste:acidity,おすすめ|さっぱり|シトラス,False,True,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,カルダモンミルク,モヒート,カルダモンミルク||モヒート,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,カルダモンミルク,モヒート,カルダモンミルク||モヒート,ALFAKHER MOJITO(モヒート)レビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0214,カルダモンミルク,モヒート,カルダモンミルク||モヒート,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0214,カルダモンミルク,モヒート,カルダモンミルク||モヒート,ALFAKHER MOJITO(モヒート)レビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0216,カルダモンミルク,モヒート,カルダモンミルク||モヒート,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0216,カルダモンミルク,モヒート,カルダモンミルク||モヒート,ALFAKHER MOJITO(モヒート)レビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0056,グアバ,パッションフルーツ,グアバ||パッションフルーツ,・ビタースイート×グアバ×パッションフルーツ – 南国系のフルーツミックスにちょい足しです。,taste:bitterness|taste:sweetness|taste_role,スイート|ビター|ミックス,True,False,False,True,MALAKI – Bitter Sweet(ビタースイート),https://cloud-jp.net/malaki-bittersweet/
+R0067,グアバ,パッションフルーツ,グアバ||パッションフルーツ,・フィグ×グアバ×パッションフルーツ – 甘さのバランスがよく、後味の渋味で南国っぽい気分になれるミックスです。,experience:balance|taste_role,バランス|ミックス,True,False,False,True,DOZAJ – Fig(フィグ)レビュー,https://cloud-jp.net/dozaj-fig/
+R0102,グアバ,パッションフルーツ,グアバ||パッションフルーツ,しっかり熟したマンゴーの芳醇な甘味に、パッションフルーツ、パイナップルの甘酸っぱさが相まって壮大な南国の恵みを感じさせてくれます。,,,False,False,False,False,Tabu – Tropical Juice(トロピカルジュース)レビュー,https://cloud-jp.net/tabu-tropicaljuice/
+R0102,グアバ,パッションフルーツ,グアバ||パッションフルーツ,ただ、ミックスするとすればココナッツやバナナ、グアバ、キウイなどを加えてよりトロピカル感を味わえるミックスにしたり、グレープフルーツやゆず、レモン、ミントなどで酸味、清涼感を加えてすっきりとしたミックスにするのがおすすめです。,evaluation:positive|experience:coolness|taste:acidity|taste_role,おすすめ|ミックス|清涼感|酸味,False,True,False,True,Tabu – Tropical Juice(トロピカルジュース)レビュー,https://cloud-jp.net/tabu-tropicaljuice/
+R0213,カルダモンミルク,バナナ,カルダモンミルク||バナナ,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,カルダモンミルク,バナナ,カルダモンミルク||バナナ,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0214,カルダモンミルク,バナナ,カルダモンミルク||バナナ,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0214,カルダモンミルク,バナナ,カルダモンミルク||バナナ,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0216,カルダモンミルク,バナナ,カルダモンミルク||バナナ,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0216,カルダモンミルク,バナナ,カルダモンミルク||バナナ,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0213,バナナ,モヒート,バナナ||モヒート,AlFakher(アルファーヘル) Mojito(モヒート)のレビューです。,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,バナナ,モヒート,バナナ||モヒート,AlFakher Mojitoの特徴,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,バナナ,モヒート,バナナ||モヒート,AlFakher Mojitoを使ったMIX,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,バナナ,モヒート,バナナ||モヒート,AlFakher Mojitoの特徴,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,バナナ,モヒート,バナナ||モヒート,AlFakher Mojitoを使ったMIX,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,バナナ,モヒート,バナナ||モヒート,AlFakher Mojitoを使ったMIXには、レモンやグレープフルーツ、シトラスティーなどでさっぱり仕上げるのがおすすめ。,evaluation:positive|experience:coolness|taste:acidity,おすすめ|さっぱり|シトラス,False,True,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,バナナ,モヒート,バナナ||モヒート,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,バナナ,モヒート,バナナ||モヒート,ALFAKHER MOJITO(モヒート)レビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0214,バナナ,モヒート,バナナ||モヒート,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0214,バナナ,モヒート,バナナ||モヒート,ALFAKHER MOJITO(モヒート)レビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0216,バナナ,モヒート,バナナ||モヒート,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0216,バナナ,モヒート,バナナ||モヒート,ALFAKHER MOJITO(モヒート)レビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0067,ココナッツ,ハニー,ココナッツ||ハニー,・フィグ×ハニー×ココナッツ – イチジクの甘さとココナッツの甘さがうまくマッチします。,,,True,False,False,False,DOZAJ – Fig(フィグ)レビュー,https://cloud-jp.net/dozaj-fig/
+R0158,ココナッツ,ハニー,ココナッツ||ハニー,ハニーミルクを使った濃厚なお菓子のような甘さを感じられるミックスには、ミルクやSocial Smokeの香港ミルクティー、ココナッツ、REVOSHIのビスケットなどがおすすめです。,evaluation:positive|taste:richness|taste_role,おすすめ|ミックス|濃厚,True,True,False,True,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/
+R0198,ココナッツ,ハニー,ココナッツ||ハニー,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,experience:balance|taste:sweetness|taste_role,ミックス|甘い|相性,True,False,False,True,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0084,ブルーベリー,ベリー,ブルーベリー||ベリー,TROY – Ice Blueberry(アイスブルーベリー)の特徴,,,True,False,False,False,TROY – Ice Blueberry(アイスブルーベリー)レビュー,https://cloud-jp.net/troy-iceblueberry/
+R0084,ブルーベリー,ベリー,ブルーベリー||ベリー,TROY – Ice Blueberry(アイスブルーベリー)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,TROY – Ice Blueberry(アイスブルーベリー)レビュー,https://cloud-jp.net/troy-iceblueberry/
+R0084,ブルーベリー,ベリー,ブルーベリー||ベリー,TROY – Ice Blueberry(アイスブルーベリー)の特徴,,,True,False,False,False,TROY – Ice Blueberry(アイスブルーベリー)レビュー,https://cloud-jp.net/troy-iceblueberry/
+R0084,ブルーベリー,ベリー,ブルーベリー||ベリー,ブルーベリーの香りは、他のブランドのブルーベリーフレーバーと特に差異のない吸い慣れた香りで、完成度が高く満足できる仕上がりです。,experience:aroma,香り,True,False,False,False,TROY – Ice Blueberry(アイスブルーベリー)レビュー,https://cloud-jp.net/troy-iceblueberry/
+R0084,ブルーベリー,ベリー,ブルーベリー||ベリー,TROY – Ice Blueberry(アイスブルーベリー)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,TROY – Ice Blueberry(アイスブルーベリー)レビュー,https://cloud-jp.net/troy-iceblueberry/
+R0095,ブルーベリー,ベリー,ブルーベリー||ベリー,Berry Tic-Tacは、甘酸っぱくて爽やかなジューシーベリーと、ミントのミックスフレーバーです。,experience:coolness|taste:fruity|taste_role,ジューシー|ミックス|爽やか,False,False,False,True,Tabu – Berry Tic-Tac(ベリーティックタック)レビュー,https://cloud-jp.net/tabu-berrytictac/
+R0095,ブルーベリー,ベリー,ブルーベリー||ベリー,ミントの清涼感いよって、ブルーベリーのまったりとした甘味を和らげ、さっぱりとした仕上がりになっています。,experience:coolness,さっぱり|清涼感,False,False,False,False,Tabu – Berry Tic-Tac(ベリーティックタック)レビュー,https://cloud-jp.net/tabu-berrytictac/
+R0095,ブルーベリー,ベリー,ブルーベリー||ベリー,ブルーベリー特有のくどさも感じないため吸いやすい印象です。,experience:smoothness,吸いやすい,False,False,False,False,Tabu – Berry Tic-Tac(ベリーティックタック)レビュー,https://cloud-jp.net/tabu-berrytictac/
+R0095,ブルーベリー,ベリー,ブルーベリー||ベリー,また、ラズベリーやストロベリー、アサイーベリーなど他のベリー系のフレーバーとミックスするのもおすすめです。,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,Tabu – Berry Tic-Tac(ベリーティックタック)レビュー,https://cloud-jp.net/tabu-berrytictac/
+R0095,ブルーベリー,ベリー,ブルーベリー||ベリー,Tabu(タブ) – Berry Tic-Tac(ベリーティックタック)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,Tabu – Berry Tic-Tac(ベリーティックタック)レビュー,https://cloud-jp.net/tabu-berrytictac/
+R0160,ブルーベリー,ベリー,ブルーベリー||ベリー,こちらの記事では、TROY(トロイ)のSpecial Blueberry(スペシャルブルーベリー)のフレーバーレビューをご紹介します。,,,True,False,False,False,TROY – SPECIAL BLUEBERRY(スペシャルブルーベリー)レビュー,https://cloud-jp.net/troy-specialblueberry/
+R0160,ブルーベリー,ベリー,ブルーベリー||ベリー,TROY(トロイ) – SPECIAL BLUEBERRY(スペシャルブルーベリー)はCLOUD SHOPにてご購入いただけます！,,,True,False,False,False,TROY – SPECIAL BLUEBERRY(スペシャルブルーベリー)レビュー,https://cloud-jp.net/troy-specialblueberry/
+R0213,ミルク,モヒート,ミルク||モヒート,AlFakher(アルファーヘル) Mojito(モヒート)のレビューです。,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,ミルク,モヒート,ミルク||モヒート,AlFakher Mojitoの特徴,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,ミルク,モヒート,ミルク||モヒート,AlFakher Mojitoを使ったMIX,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,ミルク,モヒート,ミルク||モヒート,AlFakher Mojitoの特徴,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,ミルク,モヒート,ミルク||モヒート,AlFakher Mojitoを使ったMIX,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,ミルク,モヒート,ミルク||モヒート,AlFakher Mojitoを使ったMIXには、レモンやグレープフルーツ、シトラスティーなどでさっぱり仕上げるのがおすすめ。,evaluation:positive|experience:coolness|taste:acidity,おすすめ|さっぱり|シトラス,False,True,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,ミルク,モヒート,ミルク||モヒート,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,ミルク,モヒート,ミルク||モヒート,ALFAKHER MOJITO(モヒート)レビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0214,ミルク,モヒート,ミルク||モヒート,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0214,ミルク,モヒート,ミルク||モヒート,ALFAKHER MOJITO(モヒート)レビュー,,,False,False,False,False,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/
+R0216,ミルク,モヒート,ミルク||モヒート,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0216,ミルク,モヒート,ミルク||モヒート,ALFAKHER MOJITO(モヒート)レビュー,,,False,False,False,False,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/
+R0070,ミント,ライム,ミント||ライム,・グレープ×ライム×ミント – スッキリとグレープを楽しみたい方に向けたミックス。,taste_role,ミックス,True,False,False,True,DOZAJ – Grape(グレープ)レビュー,https://cloud-jp.net/dozaj-grape/
+R0170,ミント,ライム,ミント||ライム,・【旬-SHUN-】 LEMON(30%)　＋　【旬-SHUN-】MINT(30%) ＋　【AZURE】LIME(40%),,,True,False,False,False,旬-SHUN- LEMON,https://cloud-jp.net/shun-lemon/
+R0210,ミント,ライム,ミント||ライム,Social Smoke Lime(ライム)を使ったMIXには、さっぱり系ではレモンやスイカ、オレンジ、ミント、グレープフルーツ、それ以外でもダブルアップルやハニー、アイススパイシーコーラ、ジンジャエールなど、幅広く活躍するフレーバーなので一度お試しあれ！,experience:coolness|taste:spicy,さっぱり|スパイシー,True,False,False,False,Social Smoke Lime(ライム)レビュー,https://cloud-jp.net/socialsmoke-lime-review/
+R0051,メロン,レモン,メロン||レモン,・クールブリーズ×パイナップルグアバ×メロン – 瓜系の甘いミックスが清涼感とグアバの苦味でしっかりとまとまります。,experience:balance|experience:coolness|taste:bitterness|taste:sweetness|taste_role,まとまり|クール|ミックス|清涼感|甘い|苦味,False,False,False,True,MALAKI – Cool Breeze(クールブリーズ),https://cloud-jp.net/malaki-coolbreeze/
+R0051,メロン,レモン,メロン||レモン,・クールブリーズ×ミント×レモン – レモンの酸味とミントの清涼感、そしてクールブリーズの特徴ある後味が調和されたミックスです。,experience:balance|experience:coolness|taste:acidity|taste_role,クール|ミックス|清涼感|調和|酸味,False,False,False,True,MALAKI – Cool Breeze(クールブリーズ),https://cloud-jp.net/malaki-coolbreeze/
+R0132,メロン,レモン,メロン||レモン,DOZAJの中では、PearやTangerine、Lemonといったスッキリ系のフレーバーとの相性は抜群ですし、さらにIceやMintを足して、清涼感マシマシで吸っていただくのもオススメです。,experience:balance|experience:coolness|taste_role,清涼感|相性,False,False,False,True,DOZAJ – Cucumber(キューカンバー)レビュー,https://cloud-jp.net/dozaj-cucumber/
+R0132,メロン,レモン,メロン||レモン,個人的には、やはりグアバ、メロン、スイカとミックスして、しっかり青臭く吸うのが好きです。,evaluation:positive|taste_role,ミックス|好き,False,True,False,True,DOZAJ – Cucumber(キューカンバー)レビュー,https://cloud-jp.net/dozaj-cucumber/
+R0199,メロン,レモン,メロン||レモン,アルファーヘルのスイカを使ったミックスには、さっぱり系のミックスではグレープフルーツ、ミント、レモン、パッションフルーツなどがおすすめです。,evaluation:positive|experience:coolness|taste_role,おすすめ|さっぱり|ミックス,False,True,False,True,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0199,メロン,レモン,メロン||レモン,他にもフルーツ系の甘いミックスであればオレンジ、メロン、ストロベリーなどがおすすめです。,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,False,True,False,True,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0044,グレープ,ベリー,グレープ||ベリー,・ベリー×グレープ×グレナデン – ベリーとグレナデンの酸味を生かしつつ、グレープの優しい甘さのバランスを楽しむミックスです。,experience:balance|experience:smoothness|taste:acidity|taste_role,バランス|ミックス|優しい|酸味,True,False,False,True,MALAKI – Berry(ベリー),https://cloud-jp.net/malaki-berry/
+R0142,グレープ,ベリー,グレープ||ベリー,Blue Skyはブルーベリー、アイスがミックスされたフレーバーです。,taste_role,ミックス,False,False,False,True,DOZAJ – Blue Sky(ブルースカイ)レビュー,https://cloud-jp.net/dozaj-bluesky-2/
+R0142,グレープ,ベリー,グレープ||ベリー,これによってブルーベリーの香りがぼやけずに吸うことができます。,experience:aroma,香り,False,False,False,False,DOZAJ – Blue Sky(ブルースカイ)レビュー,https://cloud-jp.net/dozaj-bluesky-2/
+R0142,グレープ,ベリー,グレープ||ベリー,あとはDecloudのWhite Grapeなんかも甘さっぱりになってとても美味しかったです。,experience:coolness,さっぱり,False,False,False,False,DOZAJ – Blue Sky(ブルースカイ)レビュー,https://cloud-jp.net/dozaj-bluesky-2/
+R0209,グレープ,ベリー,グレープ||ベリー,Social Smoke(ソーシャルスモーク) Grape Chill(グレープチル)のレビューです。,,,False,False,False,False,Social Smoke Grape Chill(グレープチル)レビュー,https://cloud-jp.net/socialsmoke-grapechill-review/
+R0209,グレープ,ベリー,グレープ||ベリー,Social Smoke Grape Chill(グレープチル)の特徴,,,False,False,False,False,Social Smoke Grape Chill(グレープチル)レビュー,https://cloud-jp.net/socialsmoke-grapechill-review/
+R0209,グレープ,ベリー,グレープ||ベリー,Social Smoke Grape Chill(グレープチル)を使ったMIX,,,False,False,False,False,Social Smoke Grape Chill(グレープチル)レビュー,https://cloud-jp.net/socialsmoke-grapechill-review/
+R0209,グレープ,ベリー,グレープ||ベリー,Social Smoke Grape Chill(グレープチル)の特徴,,,False,False,False,False,Social Smoke Grape Chill(グレープチル)レビュー,https://cloud-jp.net/socialsmoke-grapechill-review/
+R0209,グレープ,ベリー,グレープ||ベリー,Social Smoke Grape Chill(グレープチル)を使ったMIX,,,False,False,False,False,Social Smoke Grape Chill(グレープチル)レビュー,https://cloud-jp.net/socialsmoke-grapechill-review/
+R0209,グレープ,ベリー,グレープ||ベリー,Grape Chill(グレープチル)は単体で甘さとさっぱりさを兼ね備えているので、さっぱり系や甘さを活かしたMIXがおすすめです。,evaluation:positive|experience:coolness,おすすめ|さっぱり,False,True,False,False,Social Smoke Grape Chill(グレープチル)レビュー,https://cloud-jp.net/socialsmoke-grapechill-review/
+R0209,グレープ,ベリー,グレープ||ベリー,ベリー系やマウンテンフォグ、ホワイトグミベア、レモン、ライムなどがおすすめです。,evaluation:positive,おすすめ,False,True,False,False,Social Smoke Grape Chill(グレープチル)レビュー,https://cloud-jp.net/socialsmoke-grapechill-review/
+R0051,ミント,メロン,ミント||メロン,・クールブリーズ×パイナップルグアバ×メロン – 瓜系の甘いミックスが清涼感とグアバの苦味でしっかりとまとまります。,experience:balance|experience:coolness|taste:bitterness|taste:sweetness|taste_role,まとまり|クール|ミックス|清涼感|甘い|苦味,False,False,False,True,MALAKI – Cool Breeze(クールブリーズ),https://cloud-jp.net/malaki-coolbreeze/
+R0051,ミント,メロン,ミント||メロン,・クールブリーズ×ミント×レモン – レモンの酸味とミントの清涼感、そしてクールブリーズの特徴ある後味が調和されたミックスです。,experience:balance|experience:coolness|taste:acidity|taste_role,クール|ミックス|清涼感|調和|酸味,False,False,False,True,MALAKI – Cool Breeze(クールブリーズ),https://cloud-jp.net/malaki-coolbreeze/
+R0132,ミント,メロン,ミント||メロン,DOZAJの中では、PearやTangerine、Lemonといったスッキリ系のフレーバーとの相性は抜群ですし、さらにIceやMintを足して、清涼感マシマシで吸っていただくのもオススメです。,experience:balance|experience:coolness|taste_role,清涼感|相性,False,False,False,True,DOZAJ – Cucumber(キューカンバー)レビュー,https://cloud-jp.net/dozaj-cucumber/
+R0132,ミント,メロン,ミント||メロン,個人的には、やはりグアバ、メロン、スイカとミックスして、しっかり青臭く吸うのが好きです。,evaluation:positive|taste_role,ミックス|好き,False,True,False,True,DOZAJ – Cucumber(キューカンバー)レビュー,https://cloud-jp.net/dozaj-cucumber/
+R0199,ミント,メロン,ミント||メロン,アルファーヘルのスイカを使ったミックスには、さっぱり系のミックスではグレープフルーツ、ミント、レモン、パッションフルーツなどがおすすめです。,evaluation:positive|experience:coolness|taste_role,おすすめ|さっぱり|ミックス,False,True,False,True,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0199,ミント,メロン,ミント||メロン,他にもフルーツ系の甘いミックスであればオレンジ、メロン、ストロベリーなどがおすすめです。,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,False,True,False,True,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0021,オレンジ,ミント,オレンジ||ミント,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,,,True,False,False,False,Oduman blend – Choco Orange（チョコオレンジ） フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-chocoorange/
+R0060,オレンジ,ミント,オレンジ||ミント,MALAKI – Orange Mint(オレンジミント)の特徴,,,True,False,False,False,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0060,オレンジ,ミント,オレンジ||ミント,MALAKI – Orange Mint(オレンジミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0060,オレンジ,ミント,オレンジ||ミント,MALAKI – Orange Mint(オレンジミント)の特徴,,,True,False,False,False,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0060,オレンジ,ミント,オレンジ||ミント,MALAKI – Orange Mint(オレンジミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0060,オレンジ,ミント,オレンジ||ミント,MALAKI – Orange Mint(オレンジミント)はCLOUD SHOPにてご購入いただけます！,,,True,False,False,False,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0210,オレンジ,ミント,オレンジ||ミント,Social Smoke Lime(ライム)を使ったMIXには、さっぱり系ではレモンやスイカ、オレンジ、ミント、グレープフルーツ、それ以外でもダブルアップルやハニー、アイススパイシーコーラ、ジンジャエールなど、幅広く活躍するフレーバーなので一度お試しあれ！,experience:coolness|taste:spicy,さっぱり|スパイシー,True,False,False,False,Social Smoke Lime(ライム)レビュー,https://cloud-jp.net/socialsmoke-lime-review/
+R0074,ハニー,バニラ,ハニー||バニラ,・ジンジャーココナッツ×バニラ×ハニー – 甘さを前面に出しつつ、ピリッとしたジンジャーが後味をまとめてくれます。,,,True,False,False,False,DOZAJ – Ginger Coconuts(ジンジャーココナッツ)レビュー,https://cloud-jp.net/dozaj-gingercoconuts/
+R0106,ハニー,バニラ,ハニー||バニラ,Tabu メロンを使ったおすすめのミックスは、ミルクや香港ミルクティー、バニラ、バナナ、ハニーなどでメロンジュースのような甘いミックスにしたり、,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,True,True,False,True,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0198,ハニー,バニラ,ハニー||バニラ,AlFakher(アルファーヘル)のVanilla(バニラ)のレビューです。,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ハニー,バニラ,ハニー||バニラ,AlFakher(アルファーヘル) Vanilla(バニラ)の特徴,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ハニー,バニラ,ハニー||バニラ,AlFakher(アルファーヘル) Vanilla(バニラ)を使ったMIX,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ハニー,バニラ,ハニー||バニラ,AlFakher(アルファーヘル) Vanilla(バニラ)の特徴,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ハニー,バニラ,ハニー||バニラ,AlFakher(アルファーヘル) Vanilla(バニラ)を使ったMIX,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ハニー,バニラ,ハニー||バニラ,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,experience:balance|taste:sweetness|taste_role,ミックス|甘い|相性,False,False,False,True,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0054,カルダモン,チェリー,カルダモン||チェリー,癖の少ないグアバやキウイフルーツの甘み、苦味、チェリーのような酸味、メインの印象で、カルダモンのようなスパイシーさも若干感じられます。,taste:acidity|taste:bitterness|taste:spicy,スパイシー|苦味|酸味,False,False,False,False,MALAKI – Amazon(アマゾン),https://cloud-jp.net/malaki-amazon/
+R0054,カルダモン,チェリー,カルダモン||チェリー,・アマゾン×キウイフルーツ×カルダモン – アマゾンに感じられたキウイの甘さとスパイシーなカルダモンの香りを足し、同系統の味わいで味の輪郭がはっきりとするミックスです。,experience:aroma|taste:spicy|taste_role,スパイシー|ミックス|香り,False,False,False,True,MALAKI – Amazon(アマゾン),https://cloud-jp.net/malaki-amazon/
+R0062,カルダモン,チェリー,カルダモン||チェリー,・ガムシナモン×カルダモン×レバニーズボムシェル – スパイシーでフローラルなカルダモンとウッディな森林の香りを足したミックスです。,experience:aroma|taste:spicy|taste_role,スパイシー|ミックス|香り,False,False,False,True,MALAKI – Gum Cinnamon(ガムシナモン),https://cloud-jp.net/malaki-gumcinnamon/
+R0062,カルダモン,チェリー,カルダモン||チェリー,・ガムシナモン×パンドラボックス×チェリー – チェリーの甘酸っぱさを足すことで、アメリカのお菓子のような面白い味わいを実現します。,taste_role,足す,False,False,False,True,MALAKI – Gum Cinnamon(ガムシナモン),https://cloud-jp.net/malaki-gumcinnamon/
+R0047,グレープ,グレープミント,グレープ||グレープミント,MALAKI – Grape Mint(グレープミント)の特徴,,,True,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープ,グレープミント,グレープ||グレープミント,MALAKI – Grape Mint(グレープミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープ,グレープミント,グレープ||グレープミント,MALAKI – Grape Mint(グレープミント)の特徴,,,True,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープ,グレープミント,グレープ||グレープミント,MALAKI – Grape Mint(グレープミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープ,グレープミント,グレープ||グレープミント,MALAKI – Grape Mint(グレープミント)はCLOUD SHOPにてご購入いただけます！,,,True,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0107,グレープ,グレープミント,グレープ||グレープミント,tabu Grape Mint(グレープミント)の特徴,,,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,グレープミント,グレープ||グレープミント,tabu Grape Mint(グレープミント)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,True,True,False,True,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,グレープミント,グレープ||グレープミント,tabu Grape Mint(グレープミント)の特徴,,,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,グレープミント,グレープ||グレープミント,tabu Grape Mint(グレープミント)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,True,True,False,True,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープ,グレープミント,グレープ||グレープミント,Tabu(タブ) – Grape Mint(グレープミント)はCLOUD SHOPにてご購入いただけます！,,,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0048,ブルーベリー,ミントクリーム,ブルーベリー||ミントクリーム,・ガム×ブルーベリー×ミントクリーム – 清涼感のあるガムと、ブルーベリーの甘酸っぱくて爽やかな香りが良く合っています。,experience:aroma|experience:coolness,清涼感|爽やか|香り,True,False,False,False,MALAKI – Gum(ガム),https://cloud-jp.net/malaki-gum/
+R0052,ブルーベリー,ミントクリーム,ブルーベリー||ミントクリーム,・ブルークラウド×ミントクリーム×バニラ – ブルーベリーのお菓子屋シェイクのようなミックスです。,taste_role,ミックス,True,False,False,True,MALAKI – Blue Cloud(ブルークラウド),https://cloud-jp.net/malaki-bluecloud/
+R0095,アサイー,ベリー,アサイー||ベリー,また、ラズベリーやストロベリー、アサイーベリーなど他のベリー系のフレーバーとミックスするのもおすすめです。,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,Tabu – Berry Tic-Tac(ベリーティックタック)レビュー,https://cloud-jp.net/tabu-berrytictac/
+R0177,アサイー,ベリー,アサイー||ベリー,アサイーベリー,,,True,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0177,アサイー,ベリー,アサイー||ベリー,アサイーベリー,,,True,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0177,アサイー,ベリー,アサイー||ベリー,最後に紹介するフレーバーは、アサイーベリーです。,,,True,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0177,アサイー,ベリー,アサイー||ベリー,アサイーベリー単体で吸っても、美味しく吸えますが、MIXの汎用性が非常に高いフレーバーです。,,,True,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0177,アサイー,ベリー,アサイー||ベリー,柑橘系のスッキリとフレーバーには、アサイーの酸味が生き、甘味の強いフレーバーには、ベリーの甘味が出ます。,experience:heaviness|taste:acidity,強い|酸味,True,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0048,カルダモン,シナモン,カルダモン||シナモン,・ガム×シナモン×カルダモン – ガムシナモンにカルダモンを足したようなスパイシーでフローラルなミックス。,taste:spicy|taste_role,スパイシー|ミックス,True,False,False,True,MALAKI – Gum(ガム),https://cloud-jp.net/malaki-gum/
+R0212,カルダモン,シナモン,カルダモン||シナモン,その他にも、カルダモンを活かしてパンラズナやヒノキ、カルダモン、シナモン、ラベンダーなどもおすすめです。,evaluation:positive,おすすめ,True,True,False,False,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0184,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,この記事では、ICE ROCKZのIce-Watermelon(アイスウォーターメロン)のレビューを紹介しています。,,,True,False,False,False,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)レビュー,https://cloud-jp.net/icerockz-icewatermelon/
+R0184,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)の特徴,,,True,False,False,False,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)レビュー,https://cloud-jp.net/icerockz-icewatermelon/
+R0184,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)を使ったおすすめMIX,evaluation:positive,おすすめ,True,True,False,False,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)レビュー,https://cloud-jp.net/icerockz-icewatermelon/
+R0184,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)の特徴,,,True,False,False,False,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)レビュー,https://cloud-jp.net/icerockz-icewatermelon/
+R0184,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)を使ったおすすめMIX,evaluation:positive,おすすめ,True,True,False,False,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)レビュー,https://cloud-jp.net/icerockz-icewatermelon/
+R0184,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)は、メロンのような濃厚な甘味がしっかりと出るフレーバーなので、バニラやミルク、バナナなどで甘さを足したり、レモンやミントでさっぱりさせるのもおすすめです。,evaluation:positive|experience:coolness|taste:richness,おすすめ|さっぱり|濃厚,True,True,False,False,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)レビュー,https://cloud-jp.net/icerockz-icewatermelon/
+R0184,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,ShiICE ROCKZ Ice-Watermelon(アイスウォーターメロン)は、,,,True,False,False,False,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)レビュー,https://cloud-jp.net/icerockz-icewatermelon/
+R0199,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,AlFakher(アルファーヘル) Watermelon(スイカ)のレビューです。,,,False,False,False,False,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0199,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,AlFakher(アルファーヘル) Watermelon(スイカ)の特徴,,,False,False,False,False,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0199,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,AlFakher(アルファーヘル) Watermelon(スイカ)を使ったMIX,,,False,False,False,False,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0199,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,AlFakher(アルファーヘル) Watermelon(スイカ)の特徴,,,False,False,False,False,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0199,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,AlFakher(アルファーヘル) Watermelon(スイカ)を使ったMIX,,,False,False,False,False,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0199,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,他にもフルーツ系の甘いミックスであればオレンジ、メロン、ストロベリーなどがおすすめです。,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,False,True,False,True,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0055,オレンジ,タンジェリン,オレンジ||タンジェリン,・オレンジ×アイスオレンジクリーム×タンジェリン – オレンジやみかん系のフレーバーで、甘みの強いフレーバーとのミックス。,experience:heaviness|taste_role,ミックス|強い,True,False,False,True,MALAKI – Orange(オレンジ),https://cloud-jp.net/malaki-orange/
+R0144,オレンジ,タンジェリン,オレンジ||タンジェリン,この場合は柚子やグレープフルーツ、オレンジ、ライムあたりが考えられます。,,,False,False,False,False,DOZAJ – Tangerine(タンジェリン)レビュー,https://cloud-jp.net/dozaj-tangerine/
+R0144,オレンジ,タンジェリン,オレンジ||タンジェリン,DOZAJ(ドザジ) – Tangerine(タンジェリン)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,DOZAJ – Tangerine(タンジェリン)レビュー,https://cloud-jp.net/dozaj-tangerine/
+R0140,カプチーノ,バニラ,カプチーノ||バニラ,また、バニラ、キャラメル、ミルク、チョコでもったり甘々にしてもいいですし、意外なところでいうとグレープやベリー系統のフレーバーとの相性もいいです。,experience:balance|taste_role,相性,False,False,False,True,DOZAJ – Cappuccino(カプチーノ)レビュー,https://cloud-jp.net/dozaj-cappccino/
+R0140,カプチーノ,バニラ,カプチーノ||バニラ,DOZAJ(ドザジ) – Cappuccino(カプチーノ)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,DOZAJ – Cappuccino(カプチーノ)レビュー,https://cloud-jp.net/dozaj-cappccino/
+R0155,カプチーノ,バニラ,カプチーノ||バニラ,こちらの記事では、TROY(トロイ)のCAPPUCCINO(カプチーノ)のフレーバーレビューをご紹介します。,,,False,False,False,False,TROY – CAPPUCCINO(カプチーノ)レビュー,https://cloud-jp.net/troy-cappuccino/
+R0155,カプチーノ,バニラ,カプチーノ||バニラ,ミックスに関して、ビターさを出してあげるのであればYa LaylのCoffeeやDookahのCoffeeあたり、甘みを足すのであればAl fakherのVanillaやSocial SmokeのDulce de leche、AzureのChocolate Cakeあたりが鉄板かと思います。,taste:bitterness|taste_role,ビター|ミックス|足す,False,False,False,True,TROY – CAPPUCCINO(カプチーノ)レビュー,https://cloud-jp.net/troy-cappuccino/
+R0155,カプチーノ,バニラ,カプチーノ||バニラ,TROY(トロイ) – CAPPUCCINO(カプチーノ)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,TROY – CAPPUCCINO(カプチーノ)レビュー,https://cloud-jp.net/troy-cappuccino/
+R0065,ゴールデンデリシャスアップル,シナモン,ゴールデンデリシャスアップル||シナモン,・ダブルアップル×ゴールデンデリシャスアップル×グアバ – 青リンゴの熟し切っていない甘さとグアバの風味がリコリスの風味をしっかりと引き立てます。,,,False,False,False,False,MALAKI – Double Apple(ダブルアップル),https://cloud-jp.net/malaki-doubleapple/
+R0065,ゴールデンデリシャスアップル,シナモン,ゴールデンデリシャスアップル||シナモン,・ダブルアップル×シナモン×アップルサイダー – アップルパイ風ミックスです。,taste_role,ミックス,False,False,False,True,MALAKI – Double Apple(ダブルアップル),https://cloud-jp.net/malaki-doubleapple/
+R0208,ゴールデンデリシャスアップル,シナモン,ゴールデンデリシャスアップル||シナモン,Social Smoke(ソーシャルスモーク) GoldenDeliciousApple(ゴールデンデリシャスアップル)のレビューです。,,,False,False,False,False,Social Smoke Golden Delicious Apple(ゴールデンデリシャスアップル)レビュー,https://cloud-jp.net/socialsmoke-goldendeliciousapple-review/
+R0208,ゴールデンデリシャスアップル,シナモン,ゴールデンデリシャスアップル||シナモン,Social Smoke GoldenDeliciousApple(ゴールデンデリシャスアップル),,,False,False,False,False,Social Smoke Golden Delicious Apple(ゴールデンデリシャスアップル)レビュー,https://cloud-jp.net/socialsmoke-goldendeliciousapple-review/
+R0208,ゴールデンデリシャスアップル,シナモン,ゴールデンデリシャスアップル||シナモン,パンラズナやカルダモン、シナモン、タイガ,,,False,False,False,False,Social Smoke Golden Delicious Apple(ゴールデンデリシャスアップル)レビュー,https://cloud-jp.net/socialsmoke-goldendeliciousapple-review/
+R0208,ゴールデンデリシャスアップル,シナモン,ゴールデンデリシャスアップル||シナモン,Social Smoke(ソーシャルスモーク) Golden Delicious Apple(ゴールデンデリシャスアップル)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,Social Smoke Golden Delicious Apple(ゴールデンデリシャスアップル)レビュー,https://cloud-jp.net/socialsmoke-goldendeliciousapple-review/
+R0054,グアバ,パイナップル,グアバ||パイナップル,・アマゾン×グアバ×パイナップル – 南国風ミックスのイメージです。,taste_role,ミックス,True,False,False,True,MALAKI – Amazon(アマゾン),https://cloud-jp.net/malaki-amazon/
+R0168,グアバ,パイナップル,グアバ||パイナップル,・【旬-shun-】グアバ(30%)　+ 【旬-shun-】パイナップル(30%)　+　【AlFakher】ブルーベリー(40%),,,True,False,False,False,旬-SHUN- GUAVA,https://cloud-jp.net/shun-guava/
+R0047,グレープミント,ミント,グレープミント||ミント,MALAKI – Grape Mint(グレープミント)の特徴,,,True,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープミント,ミント,グレープミント||ミント,MALAKI – Grape Mint(グレープミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープミント,ミント,グレープミント||ミント,MALAKI – Grape Mint(グレープミント)の特徴,,,True,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープミント,ミント,グレープミント||ミント,MALAKI – Grape Mint(グレープミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,グレープミント,ミント,グレープミント||ミント,MALAKI – Grape Mint(グレープミント)はCLOUD SHOPにてご購入いただけます！,,,True,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0107,グレープミント,ミント,グレープミント||ミント,tabu Grape Mint(グレープミント)の特徴,,,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープミント,ミント,グレープミント||ミント,tabu Grape Mint(グレープミント)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,True,True,False,True,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープミント,ミント,グレープミント||ミント,tabu Grape Mint(グレープミント)の特徴,,,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープミント,ミント,グレープミント||ミント,tabu Grape Mint(グレープミント)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,True,True,False,True,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0107,グレープミント,ミント,グレープミント||ミント,Tabu(タブ) – Grape Mint(グレープミント)はCLOUD SHOPにてご購入いただけます！,,,True,False,False,False,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/
+R0068,キャラメル,ココナッツ,キャラメル||ココナッツ,・コットンキャンディ×キャラメル×ココナッツ – お菓子系フレーバーに似たフレーバーが少ないこともあり、甘めミックスを作るときにも重宝しそうです。,taste:sweetness|taste_role,キャンディ|ミックス|甘め,True,False,False,True,DOZAJ – Cotton Candy(コットンキャンディー)レビュー,https://cloud-jp.net/dozaj-cottoncandy/
+R0069,キャラメル,ココナッツ,キャラメル||ココナッツ,・コットンキャンディ×キャラメル×ココナッツ – お菓子系フレーバーに似たフレーバーが少ないこともあり、甘めミックスを作るときにも重宝しそうです。,taste:sweetness|taste_role,キャンディ|ミックス|甘め,True,False,False,True,DOZAJ – Brown Sugar(ブラウンシュガー)レビュー,https://cloud-jp.net/dozaj-brownsugar/
+R0105,キャラメル,シナモン,キャラメル||シナモン,Tabuのバナナを使ったおすすめのミックスには、バナナの甘さを生かしてミルクやバニラ、シナモン、チョコ、キャラメル、ハニーなどをミックスしたバナナジュースのようなミックスがおすすめです。,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0152,キャラメル,シナモン,キャラメル||シナモン,・ヘーゼルナッツ、シナモン、バニラ ヘーゼルナッツとシナモンの上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/
+R0152,キャラメル,シナモン,キャラメル||シナモン,・ヘーゼルナッツ、キャラメル、ミルク キャラメルでぐっとお菓子寄りに、ほんのりミルクを添えて。,,,False,False,False,False,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/
+R0058,バナナ,ピーチ,バナナ||ピーチ,・グラニーズキス×バナナ×ゴールデンデリシャスアップル – 完熟し切っていないフルーツの特徴的な甘みを足したミックスです。,taste_role,ミックス,False,False,False,True,MALAKI – Granny’s Kiss(グラニーズキス),https://cloud-jp.net/malaki-grannyskiss/
+R0058,バナナ,ピーチ,バナナ||ピーチ,・グラニーズキス×マンゴー×ピーチ – ミックスジュース風のフルーツミックス。,taste_role,ミックス,False,False,False,True,MALAKI – Granny’s Kiss(グラニーズキス),https://cloud-jp.net/malaki-grannyskiss/
+R0073,バナナ,ピーチ,バナナ||ピーチ,・バナナ×ピーチ×キウイ×オレンジ – ミックスジュース風のミックス。,taste_role,ミックス,True,False,False,True,DOZAJ – Banana(バナナ)レビュー,https://cloud-jp.net/dozaj-banana/
+R0166,アールグレイ,ライチ,アールグレイ||ライチ,・【旬-shun-】ペアー(50%)・【Afzal】ライチ(50%),,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,アールグレイ,ライチ,アールグレイ||ライチ,・【旬-shun-】ペアー(50%)・【Afzal】アールグレイ(50%),,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0177,アールグレイ,ライチ,アールグレイ||ライチ,アールグレイ,,,False,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0177,アールグレイ,ライチ,アールグレイ||ライチ,ライチ,,,False,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0177,アールグレイ,ライチ,アールグレイ||ライチ,アールグレイ,,,False,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0177,アールグレイ,ライチ,アールグレイ||ライチ,アフザルの超人気フレーバーでもある、アールグレイ。,,,False,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0177,アールグレイ,ライチ,アールグレイ||ライチ,ライチ,,,False,False,False,False,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/
+R0134,グレープ,ピーチ,グレープ||ピーチ,煙を吐いたときの香りの順番ではパイン、ピーチ、モヒートの順番です。,experience:aroma|experience:smoke,煙|香り,False,False,False,False,DOZAJ – Cuba Dream(キューバドリーム)レビュー,https://cloud-jp.net/dozaj-cubadream/
+R0134,グレープ,ピーチ,グレープ||ピーチ,AzureのNape Grapeあたりが無難でイケる味です。,,,False,False,False,False,DOZAJ – Cuba Dream(キューバドリーム)レビュー,https://cloud-jp.net/dozaj-cubadream/
+R0221,グレープ,ピーチ,グレープ||ピーチ,グレープ,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0221,グレープ,ピーチ,グレープ||ピーチ,ピーチ,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0221,グレープ,ピーチ,グレープ||ピーチ,グレープ,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0221,グレープ,ピーチ,グレープ||ピーチ,AFのGrape(グレープ)についてもっと詳しく知りたい方は,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0221,グレープ,ピーチ,グレープ||ピーチ,Al Fakher Grape(グレープ)レビュー,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0221,グレープ,ピーチ,グレープ||ピーチ,ピーチ,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0068,キャラメル,バナナ,キャラメル||バナナ,・コットンキャンディ×バナナ – コットンキャンディのバナナ感を更に強め、砂糖の甘さで全体をお菓子のようにまとめます。,taste:sweetness,キャンディ|砂糖,False,False,False,False,DOZAJ – Cotton Candy(コットンキャンディー)レビュー,https://cloud-jp.net/dozaj-cottoncandy/
+R0068,キャラメル,バナナ,キャラメル||バナナ,・コットンキャンディ×キャラメル×ココナッツ – お菓子系フレーバーに似たフレーバーが少ないこともあり、甘めミックスを作るときにも重宝しそうです。,taste:sweetness|taste_role,キャンディ|ミックス|甘め,False,False,False,True,DOZAJ – Cotton Candy(コットンキャンディー)レビュー,https://cloud-jp.net/dozaj-cottoncandy/
+R0105,キャラメル,バナナ,キャラメル||バナナ,tabu Banana(バナナ)の特徴,,,False,False,False,False,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,キャラメル,バナナ,キャラメル||バナナ,tabu Banana(バナナ)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,キャラメル,バナナ,キャラメル||バナナ,tabu Banana(バナナ)の特徴,,,False,False,False,False,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,キャラメル,バナナ,キャラメル||バナナ,tabu Banana(バナナ)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,キャラメル,バナナ,キャラメル||バナナ,Tabuのバナナを使ったおすすめのミックスには、バナナの甘さを生かしてミルクやバニラ、シナモン、チョコ、キャラメル、ハニーなどをミックスしたバナナジュースのようなミックスがおすすめです。,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,キャラメル,バナナ,キャラメル||バナナ,Tabu(タブ) – Banana(バナナ)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0120,オレンジ,ライム,オレンジ||ライム,公式によると、ブラウニー、オレンジ、クリームの香りだそうです。,experience:aroma,香り,False,False,False,False,DOZAJ – Marshall(マーシャル)レビュー,https://cloud-jp.net/dozaj-marshall/
+R0120,オレンジ,ライム,オレンジ||ライム,DozajのTangerine、Lime、Lemonあたりですね。,,,False,False,False,False,DOZAJ – Marshall(マーシャル)レビュー,https://cloud-jp.net/dozaj-marshall/
+R0210,オレンジ,ライム,オレンジ||ライム,Social Smoke Lime(ライム)を使ったMIXには、さっぱり系ではレモンやスイカ、オレンジ、ミント、グレープフルーツ、それ以外でもダブルアップルやハニー、アイススパイシーコーラ、ジンジャエールなど、幅広く活躍するフレーバーなので一度お試しあれ！,experience:coolness|taste:spicy,さっぱり|スパイシー,True,False,False,False,Social Smoke Lime(ライム)レビュー,https://cloud-jp.net/socialsmoke-lime-review/
+R0116,ストロベリー,ミント,ストロベリー||ミント,吸った感じとしてライチ、ストロベリー、パイナップルのようなフルーティーさを感じます。,taste:fruity,フルーティ,False,False,False,False,DOZAJ – The Good(ザ・グッド)レビュー,https://cloud-jp.net/dozaj-thegood/
+R0116,ストロベリー,ミント,ストロベリー||ミント,個人的には、AzureのRoyal Queen✗TrifectaのPeppermint Shakeとのミックスが好きでした。,evaluation:positive|taste_role,ミックス|好き,False,True,False,True,DOZAJ – The Good(ザ・グッド)レビュー,https://cloud-jp.net/dozaj-thegood/
+R0199,ストロベリー,ミント,ストロベリー||ミント,アルファーヘルのスイカを使ったミックスには、さっぱり系のミックスではグレープフルーツ、ミント、レモン、パッションフルーツなどがおすすめです。,evaluation:positive|experience:coolness|taste_role,おすすめ|さっぱり|ミックス,False,True,False,True,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0199,ストロベリー,ミント,ストロベリー||ミント,他にもフルーツ系の甘いミックスであればオレンジ、メロン、ストロベリーなどがおすすめです。,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,False,True,False,True,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/
+R0056,オレンジ,グアバ,オレンジ||グアバ,・ビタースイート×オレンジ×グレープフルーツ – ピールの風味が特徴的な柑橘系とのミックス。,taste:bitterness|taste:sweetness|taste_role,スイート|ビター|ミックス,False,False,False,True,MALAKI – Bitter Sweet(ビタースイート),https://cloud-jp.net/malaki-bittersweet/
+R0056,オレンジ,グアバ,オレンジ||グアバ,・ビタースイート×グアバ×パッションフルーツ – 南国系のフルーツミックスにちょい足しです。,taste:bitterness|taste:sweetness|taste_role,スイート|ビター|ミックス,False,False,False,True,MALAKI – Bitter Sweet(ビタースイート),https://cloud-jp.net/malaki-bittersweet/
+R0073,オレンジ,グアバ,オレンジ||グアバ,・バナナ×グアバ – バナナの甘みをしっかりと楽しめ、グアバが青臭さで後味をさっぱりとまとめてくれます。,experience:coolness,さっぱり,False,False,False,False,DOZAJ – Banana(バナナ)レビュー,https://cloud-jp.net/dozaj-banana/
+R0073,オレンジ,グアバ,オレンジ||グアバ,・バナナ×ピーチ×キウイ×オレンジ – ミックスジュース風のミックス。,taste_role,ミックス,False,False,False,True,DOZAJ – Banana(バナナ)レビュー,https://cloud-jp.net/dozaj-banana/
+R0105,キャラメル,ハニー,キャラメル||ハニー,Tabuのバナナを使ったおすすめのミックスには、バナナの甘さを生かしてミルクやバニラ、シナモン、チョコ、キャラメル、ハニーなどをミックスしたバナナジュースのようなミックスがおすすめです。,evaluation:positive|taste_role,おすすめ|ミックス,True,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0124,キャラメル,ハニー,キャラメル||ハニー,甘い系のバニラ、キャラメル、チョコあたりなんかにHoneyちょっと足してあげるのも味に深みが出ていいですね。,taste:richness|taste:sweetness,深み|甘い,True,False,False,False,DOZAJ – Honey(ハニー)レビュー,https://cloud-jp.net/dozaj-honey/
+R0132,ペア,レモン,ペア||レモン,DOZAJの中では、PearやTangerine、Lemonといったスッキリ系のフレーバーとの相性は抜群ですし、さらにIceやMintを足して、清涼感マシマシで吸っていただくのもオススメです。,experience:balance|experience:coolness|taste_role,清涼感|相性,True,False,False,True,DOZAJ – Cucumber(キューカンバー)レビュー,https://cloud-jp.net/dozaj-cucumber/
+R0205,ペア,レモン,ペア||レモン,Social Smoke Pear Chill(ペアーチル)は単体でさっぱりした味わいを楽しめるので、同系統でMIXするならグアバ、オレンジ、モヒート、レモン、シトラスティー。,experience:coolness|taste:acidity,さっぱり|シトラス,True,False,False,False,Social Smoke Pear Chill(ペアーチル)レビュー,https://cloud-jp.net/socialsmoke-pearchill-review/
+R0061,モヒート,レモン,モヒート||レモン,・モヒート×マウンテンフォグ×レモン – 同系統のミックスで、ライムやレモンとの相性が非常に良いです。,evaluation:positive|experience:balance|taste_role,ミックス|相性|良い,True,True,False,True,MALAKI – Mojito(モヒート),https://cloud-jp.net/malaki-mojito/
+R0205,モヒート,レモン,モヒート||レモン,Social Smoke Pear Chill(ペアーチル)は単体でさっぱりした味わいを楽しめるので、同系統でMIXするならグアバ、オレンジ、モヒート、レモン、シトラスティー。,experience:coolness|taste:acidity,さっぱり|シトラス,True,False,False,False,Social Smoke Pear Chill(ペアーチル)レビュー,https://cloud-jp.net/socialsmoke-pearchill-review/
+R0140,キャラメル,バニラ,キャラメル||バニラ,また、バニラ、キャラメル、ミルク、チョコでもったり甘々にしてもいいですし、意外なところでいうとグレープやベリー系統のフレーバーとの相性もいいです。,experience:balance|taste_role,相性,True,False,False,True,DOZAJ – Cappuccino(カプチーノ)レビュー,https://cloud-jp.net/dozaj-cappccino/
+R0152,キャラメル,バニラ,キャラメル||バニラ,・ヘーゼルナッツ、シナモン、バニラ ヘーゼルナッツとシナモンの上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/
+R0152,キャラメル,バニラ,キャラメル||バニラ,・ヘーゼルナッツ、キャラメル、ミルク キャラメルでぐっとお菓子寄りに、ほんのりミルクを添えて。,,,False,False,False,False,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/
+R0116,ストロベリー,ミルク,ストロベリー||ミルク,吸った感じとしてライチ、ストロベリー、パイナップルのようなフルーティーさを感じます。,taste:fruity,フルーティ,False,False,False,False,DOZAJ – The Good(ザ・グッド)レビュー,https://cloud-jp.net/dozaj-thegood/
+R0116,ストロベリー,ミルク,ストロベリー||ミルク,もったりめな煙感なので、それに合わせるように甘めのバナナやマンゴー、ミルク、ココナッツといったフレーバーをミックスするのが良いと思います。,evaluation:positive|experience:smoke|taste:sweetness|taste_role,ミックス|煙|甘め|良い,False,True,False,True,DOZAJ – The Good(ザ・グッド)レビュー,https://cloud-jp.net/dozaj-thegood/
+R0189,ストロベリー,ミルク,ストロベリー||ミルク,DeCloud(デクラウド) – StrawBerry(ストロベリー)のレビューです。,,,False,False,False,False,DeCloud StrawBerry(ストロベリー)レビュー,https://cloud-jp.net/post-3891/
+R0189,ストロベリー,ミルク,ストロベリー||ミルク,DeCloud StrawBerry(ストロベリー)の特徴,,,False,False,False,False,DeCloud StrawBerry(ストロベリー)レビュー,https://cloud-jp.net/post-3891/
+R0189,ストロベリー,ミルク,ストロベリー||ミルク,DeCloud StrawBerry(ストロベリー)を使ったおすすめMIX,evaluation:positive,おすすめ,False,True,False,False,DeCloud StrawBerry(ストロベリー)レビュー,https://cloud-jp.net/post-3891/
+R0189,ストロベリー,ミルク,ストロベリー||ミルク,DeCloud StrawBerry(ストロベリー)の特徴,,,False,False,False,False,DeCloud StrawBerry(ストロベリー)レビュー,https://cloud-jp.net/post-3891/
+R0189,ストロベリー,ミルク,ストロベリー||ミルク,DeCloud StrawBerry(ストロベリー)を使ったおすすめMIX,evaluation:positive,おすすめ,False,True,False,False,DeCloud StrawBerry(ストロベリー)レビュー,https://cloud-jp.net/post-3891/
+R0189,ストロベリー,ミルク,ストロベリー||ミルク,ミックスにおすすめのフレーバーは、ミルク、バニラ、チョコレートなどの甘い系のフレーバーでスムージーのように仕上げるもよし、酸味が好きな方はレモンやグアバなどとミックスするのがおすすめです。,evaluation:positive|taste:acidity|taste:sweetness|taste_role,おすすめ|ミックス|好き|甘い|酸味,False,True,False,True,DeCloud StrawBerry(ストロベリー)レビュー,https://cloud-jp.net/post-3891/
+R0060,オレンジ,マンゴー,オレンジ||マンゴー,MALAKI – Orange Mint(オレンジミント)の特徴,,,False,False,False,False,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0060,オレンジ,マンゴー,オレンジ||マンゴー,MALAKI – Orange Mint(オレンジミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0060,オレンジ,マンゴー,オレンジ||マンゴー,MALAKI – Orange Mint(オレンジミント)の特徴,,,False,False,False,False,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0060,オレンジ,マンゴー,オレンジ||マンゴー,MALAKI – Orange Mint(オレンジミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0060,オレンジ,マンゴー,オレンジ||マンゴー,・オレンジミント×マンゴー – シンプルにマンゴーとオレンジの甘いフルーツミックス。,taste:sweetness|taste_role,ミックス|甘い,False,False,False,True,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0060,オレンジ,マンゴー,オレンジ||マンゴー,MALAKI – Orange Mint(オレンジミント)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,MALAKI – Orange Mint(オレンジミント),https://cloud-jp.net/malaki-orangemint/
+R0120,オレンジ,マンゴー,オレンジ||マンゴー,公式によると、ブラウニー、オレンジ、クリームの香りだそうです。,experience:aroma,香り,False,False,False,False,DOZAJ – Marshall(マーシャル)レビュー,https://cloud-jp.net/dozaj-marshall/
+R0120,オレンジ,マンゴー,オレンジ||マンゴー,また、バニラやキャラメル系も外れませんし、もったり南国系フルーツのバナナ、マンゴーあたりもバッチリの相性です。,experience:balance|taste_role,相性,False,False,False,True,DOZAJ – Marshall(マーシャル)レビュー,https://cloud-jp.net/dozaj-marshall/
+R0058,バナナ,マンゴー,バナナ||マンゴー,・グラニーズキス×バナナ×ゴールデンデリシャスアップル – 完熟し切っていないフルーツの特徴的な甘みを足したミックスです。,taste_role,ミックス,False,False,False,True,MALAKI – Granny’s Kiss(グラニーズキス),https://cloud-jp.net/malaki-grannyskiss/
+R0058,バナナ,マンゴー,バナナ||マンゴー,・グラニーズキス×マンゴー×ピーチ – ミックスジュース風のフルーツミックス。,taste_role,ミックス,False,False,False,True,MALAKI – Granny’s Kiss(グラニーズキス),https://cloud-jp.net/malaki-grannyskiss/
+R0105,バナナ,マンゴー,バナナ||マンゴー,tabu Banana(バナナ)の特徴,,,False,False,False,False,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,バナナ,マンゴー,バナナ||マンゴー,tabu Banana(バナナ)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,バナナ,マンゴー,バナナ||マンゴー,tabu Banana(バナナ)の特徴,,,False,False,False,False,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,バナナ,マンゴー,バナナ||マンゴー,tabu Banana(バナナ)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,バナナ,マンゴー,バナナ||マンゴー,また、マンゴーやパッションフルーツ、グアバなどとミックスして南国風トロピカルミックスもおすすめです！,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,バナナ,マンゴー,バナナ||マンゴー,Tabu(タブ) – Banana(バナナ)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0220,グレープ,ブルーベリー,グレープ||ブルーベリー,Al Fakher Grapeの特徴について,,,False,False,False,False,Al Fakher Grape(グレープ)レビュー,https://cloud-jp.net/alfakher-grape-review/
+R0220,グレープ,ブルーベリー,グレープ||ブルーベリー,AlFakherGrapeの煙について,experience:smoke,煙,False,False,False,False,Al Fakher Grape(グレープ)レビュー,https://cloud-jp.net/alfakher-grape-review/
+R0220,グレープ,ブルーベリー,グレープ||ブルーベリー,Al Fakher Grapeの特徴について,,,False,False,False,False,Al Fakher Grape(グレープ)レビュー,https://cloud-jp.net/alfakher-grape-review/
+R0220,グレープ,ブルーベリー,グレープ||ブルーベリー,Al Fakher Grapeの煙は、ボリューミーで吸いごたえがあります。,experience:smoke,煙,False,False,False,False,Al Fakher Grape(グレープ)レビュー,https://cloud-jp.net/alfakher-grape-review/
+R0220,グレープ,ブルーベリー,グレープ||ブルーベリー,AlFakherGrapeの煙について,experience:smoke,煙,False,False,False,False,Al Fakher Grape(グレープ)レビュー,https://cloud-jp.net/alfakher-grape-review/
+R0220,グレープ,ブルーベリー,グレープ||ブルーベリー,甘めのミックスにしたい場合は、ブルーベリーやピーチ、キウイなどもおすすめです。,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘め,False,True,False,True,Al Fakher Grape(グレープ)レビュー,https://cloud-jp.net/alfakher-grape-review/
+R0221,グレープ,ブルーベリー,グレープ||ブルーベリー,グレープ,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0221,グレープ,ブルーベリー,グレープ||ブルーベリー,グレープ,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0221,グレープ,ブルーベリー,グレープ||ブルーベリー,AFのGrape(グレープ)についてもっと詳しく知りたい方は,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0221,グレープ,ブルーベリー,グレープ||ブルーベリー,Al Fakher Grape(グレープ)レビュー,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0221,グレープ,ブルーベリー,グレープ||ブルーベリー,ブルーベリーのようなベリー系がメインで、そこにミントの爽快感が感じられます。,,,False,False,False,False,一度は必ず試してみるべきフレーバー – Al Fakher編,https://cloud-jp.net/alfakher-recommended-flavor/
+R0188,ココナッツ,バニラ,ココナッツ||バニラ,ミックスにおすすめのフレーバーは、ミルク、バニラ、ココナッツ、キャラメルなどの甘い系のフレーバーがおすすめです。,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,True,True,False,True,DeCloud Mango(マンゴー)レビュー,https://cloud-jp.net/decloud-mango/
+R0198,ココナッツ,バニラ,ココナッツ||バニラ,AlFakher(アルファーヘル)のVanilla(バニラ)のレビューです。,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ココナッツ,バニラ,ココナッツ||バニラ,AlFakher(アルファーヘル) Vanilla(バニラ)の特徴,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ココナッツ,バニラ,ココナッツ||バニラ,AlFakher(アルファーヘル) Vanilla(バニラ)を使ったMIX,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ココナッツ,バニラ,ココナッツ||バニラ,AlFakher(アルファーヘル) Vanilla(バニラ)の特徴,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ココナッツ,バニラ,ココナッツ||バニラ,AlFakher(アルファーヘル) Vanilla(バニラ)を使ったMIX,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,ココナッツ,バニラ,ココナッツ||バニラ,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,experience:balance|taste:sweetness|taste_role,ミックス|甘い|相性,False,False,False,True,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0061,ライチ,レモン,ライチ||レモン,・モヒート×マウンテンフォグ×レモン – 同系統のミックスで、ライムやレモンとの相性が非常に良いです。,evaluation:positive|experience:balance|taste_role,ミックス|相性|良い,False,True,False,True,MALAKI – Mojito(モヒート),https://cloud-jp.net/malaki-mojito/
+R0061,ライチ,レモン,ライチ||レモン,・モヒート×スイカ×ライチ – 甘スッキリフルーツとのミックスがモヒートとの相性抜群です。,experience:balance|taste_role,ミックス|相性,False,False,False,True,MALAKI – Mojito(モヒート),https://cloud-jp.net/malaki-mojito/
+R0064,ライチ,レモン,ライチ||レモン,・ミント×レモン×ライチ – ミントの幅の広さを考え、あえて王道に近いミックスを選びました。,taste_role,ミックス,True,False,False,True,MALAKI – Mint(ミント),https://cloud-jp.net/malaki-mint/
+R0120,ライム,レモン,ライム||レモン,DozajのTangerine、Lime、Lemonあたりですね。,,,True,False,False,False,DOZAJ – Marshall(マーシャル)レビュー,https://cloud-jp.net/dozaj-marshall/
+R0170,ライム,レモン,ライム||レモン,・【旬-SHUN-】 LEMON(30%)　＋　【旬-SHUN-】MINT(30%) ＋　【AZURE】LIME(40%),,,True,False,False,False,旬-SHUN- LEMON,https://cloud-jp.net/shun-lemon/
+R0170,ライム,レモン,ライム||レモン,・【旬-SHUN-】 LEMON(20%)　＋　【AZURE】MEXICOLA (50%) ＋　【AZURE】LIME(30%),,,True,False,False,False,旬-SHUN- LEMON,https://cloud-jp.net/shun-lemon/
+R0166,ペア,ミルク,ペア||ミルク,”PEAR”のレビュー,,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,”PEAR”の味,,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,“PEAR”の煙,experience:smoke,煙,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,“PEAR”で作るとき,,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,“PEAR”を使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,”PEAR”のレビュー,,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,”PEAR”の味,,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,“PEAR”の煙,experience:smoke,煙,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,“PEAR”で作るとき,,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,PEARを作る際は、立ち上げでフラットタイプの炭を３つ使用しましたが、焦げることなく吸うことができます。,,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,“PEAR”を使ったおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0166,ペア,ミルク,ペア||ミルク,・【旬-shun-】ペアー(40%)・【Debaj】ミルク(30%)・【AlFakher】バニラ(30%),,,False,False,False,False,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/
+R0196,ペア,ミルク,ペア||ミルク,Pear Chill,,,False,False,False,False,個人的におすすめなSocialSmokeのフレーバー5選,https://cloud-jp.net/ss-recommended/
+R0196,ペア,ミルク,ペア||ミルク,Hong Kong Milk Tea,,,False,False,False,False,個人的におすすめなSocialSmokeのフレーバー5選,https://cloud-jp.net/ss-recommended/
+R0196,ペア,ミルク,ペア||ミルク,Pear Chill,,,False,False,False,False,個人的におすすめなSocialSmokeのフレーバー5選,https://cloud-jp.net/ss-recommended/
+R0196,ペア,ミルク,ペア||ミルク,Hong Kong Milk Tea,,,False,False,False,False,個人的におすすめなSocialSmokeのフレーバー5選,https://cloud-jp.net/ss-recommended/
+R0047,ミント,ライチ,ミント||ライチ,MALAKI – Grape Mint(グレープミント)の特徴,,,False,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,ミント,ライチ,ミント||ライチ,MALAKI – Grape Mint(グレープミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,ミント,ライチ,ミント||ライチ,MALAKI – Grape Mint(グレープミント)の特徴,,,False,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,ミント,ライチ,ミント||ライチ,MALAKI – Grape Mint(グレープミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,ミント,ライチ,ミント||ライチ,・グレープミント×ジャスミン×ライチ – 華やかな香りを楽しむミックスです。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0047,ミント,ライチ,ミント||ライチ,MALAKI – Grape Mint(グレープミント)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/
+R0064,ミント,ライチ,ミント||ライチ,・ミント×レモン×ライチ – ミントの幅の広さを考え、あえて王道に近いミックスを選びました。,taste_role,ミックス,True,False,False,True,MALAKI – Mint(ミント),https://cloud-jp.net/malaki-mint/
+R0096,ハニー,マンゴー,ハニー||マンゴー,Tabu Mango(マンゴー)の特徴,,,False,False,False,False,Tabu – Mango(マンゴー)レビュー,https://cloud-jp.net/tabu-mango/
+R0096,ハニー,マンゴー,ハニー||マンゴー,Tabu Mango(マンゴー)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Mango(マンゴー)レビュー,https://cloud-jp.net/tabu-mango/
+R0096,ハニー,マンゴー,ハニー||マンゴー,Tabu Mango(マンゴー)の特徴,,,False,False,False,False,Tabu – Mango(マンゴー)レビュー,https://cloud-jp.net/tabu-mango/
+R0096,ハニー,マンゴー,ハニー||マンゴー,ただし、マンゴー特有の独特な香りは十分に再現されており、マンゴーが苦手な方は吸えないかもしれません。,experience:aroma,香り,False,False,False,False,Tabu – Mango(マンゴー)レビュー,https://cloud-jp.net/tabu-mango/
+R0096,ハニー,マンゴー,ハニー||マンゴー,中盤あたりに入ると、マンゴーの独特な香りに甘味が乗り、煙の濃厚さ、ジューシーさが増します。,experience:aroma|experience:smoke|taste:fruity|taste:richness,ジューシー|濃厚|煙|香り,False,False,False,False,Tabu – Mango(マンゴー)レビュー,https://cloud-jp.net/tabu-mango/
+R0096,ハニー,マンゴー,ハニー||マンゴー,Tabu Mango(マンゴー)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Mango(マンゴー)レビュー,https://cloud-jp.net/tabu-mango/
+R0096,ハニー,マンゴー,ハニー||マンゴー,他にも、ココナッツやミルク、ハニーなどの甘い系のフレーバーと合わせてマンゴージュースのような味わいのミックスにするのもおすすめです！,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,False,True,False,True,Tabu – Mango(マンゴー)レビュー,https://cloud-jp.net/tabu-mango/
+R0096,ハニー,マンゴー,ハニー||マンゴー,Tabu(タブ) – Mango(マンゴー)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,Tabu – Mango(マンゴー)レビュー,https://cloud-jp.net/tabu-mango/
+R0105,ハニー,マンゴー,ハニー||マンゴー,Tabuのバナナを使ったおすすめのミックスには、バナナの甘さを生かしてミルクやバニラ、シナモン、チョコ、キャラメル、ハニーなどをミックスしたバナナジュースのようなミックスがおすすめです。,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,ハニー,マンゴー,ハニー||マンゴー,また、マンゴーやパッションフルーツ、グアバなどとミックスして南国風トロピカルミックスもおすすめです！,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0021,バニラ,ブルーベリー,バニラ||ブルーベリー,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,,,False,False,False,False,Oduman blend – Choco Orange（チョコオレンジ） フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-chocoorange/
+R0021,バニラ,ブルーベリー,バニラ||ブルーベリー,チョコオレンジ × ブラウニー × バニラ – 大人なスイーツに寄せたミックス。,taste_role,ミックス,False,False,False,True,Oduman blend – Choco Orange（チョコオレンジ） フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-chocoorange/
+R0052,バニラ,ブルーベリー,バニラ||ブルーベリー,・ブルークラウド×ミントクリーム×バニラ – ブルーベリーのお菓子屋シェイクのようなミックスです。,taste_role,ミックス,True,False,False,True,MALAKI – Blue Cloud(ブルークラウド),https://cloud-jp.net/malaki-bluecloud/
+R0140,キャラメル,ミルク,キャラメル||ミルク,また、バニラ、キャラメル、ミルク、チョコでもったり甘々にしてもいいですし、意外なところでいうとグレープやベリー系統のフレーバーとの相性もいいです。,experience:balance|taste_role,相性,True,False,False,True,DOZAJ – Cappuccino(カプチーノ)レビュー,https://cloud-jp.net/dozaj-cappccino/
+R0152,キャラメル,ミルク,キャラメル||ミルク,・ヘーゼルナッツ、キャラメル、ミルク キャラメルでぐっとお菓子寄りに、ほんのりミルクを添えて。,,,True,False,False,False,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/
+R0210,グレープフルーツ,ミント,グレープフルーツ||ミント,Social Smoke Lime(ライム)を使ったMIXには、さっぱり系ではレモンやスイカ、オレンジ、ミント、グレープフルーツ、それ以外でもダブルアップルやハニー、アイススパイシーコーラ、ジンジャエールなど、幅広く活躍するフレーバーなので一度お試しあれ！,experience:coolness|taste:spicy,さっぱり|スパイシー,True,False,False,False,Social Smoke Lime(ライム)レビュー,https://cloud-jp.net/socialsmoke-lime-review/
+R0219,グレープフルーツ,ミント,グレープフルーツ||ミント,様々なブランドが数多くのフレーバーを展開している中でも、AlFakherのGrapeFruit with Mint(グレープフルーツミント)は誰もが認める定番といえます。,,,True,False,False,False,AlFakher GrapeFruit with Mintレビュー,https://cloud-jp.net/alfakher-grapefruitwithmint-review/
+R0105,ハニー,バナナ,ハニー||バナナ,tabu Banana(バナナ)の特徴,,,False,False,False,False,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,ハニー,バナナ,ハニー||バナナ,tabu Banana(バナナ)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,ハニー,バナナ,ハニー||バナナ,tabu Banana(バナナ)の特徴,,,False,False,False,False,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,ハニー,バナナ,ハニー||バナナ,tabu Banana(バナナ)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,ハニー,バナナ,ハニー||バナナ,Tabuのバナナを使ったおすすめのミックスには、バナナの甘さを生かしてミルクやバニラ、シナモン、チョコ、キャラメル、ハニーなどをミックスしたバナナジュースのようなミックスがおすすめです。,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0105,ハニー,バナナ,ハニー||バナナ,Tabu(タブ) – Banana(バナナ)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,Tabu – Banana(バナナ)レビュー,https://cloud-jp.net/tabu-banana/
+R0106,ハニー,バナナ,ハニー||バナナ,Tabu メロンを使ったおすすめのミックスは、ミルクや香港ミルクティー、バニラ、バナナ、ハニーなどでメロンジュースのような甘いミックスにしたり、,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,True,True,False,True,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,バニラ,メロン,バニラ||メロン,tabu Melon(メロン)の特徴,,,False,False,False,False,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,バニラ,メロン,バニラ||メロン,tabu Melon(メロン)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,バニラ,メロン,バニラ||メロン,tabu Melon(メロン)の特徴,,,False,False,False,False,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,バニラ,メロン,バニラ||メロン,tabu Melon(メロン)のおすすめミックス・組み合わせ,evaluation:positive|taste_role,おすすめ|ミックス|組み合わせ,False,True,False,True,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,バニラ,メロン,バニラ||メロン,Tabu メロンを使ったおすすめのミックスは、ミルクや香港ミルクティー、バニラ、バナナ、ハニーなどでメロンジュースのような甘いミックスにしたり、,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,False,True,False,True,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0106,バニラ,メロン,バニラ||メロン,Tabu(タブ) – Melon(メロン)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0198,バニラ,メロン,バニラ||メロン,AlFakher(アルファーヘル)のVanilla(バニラ)のレビューです。,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,メロン,バニラ||メロン,AlFakher(アルファーヘル) Vanilla(バニラ)の特徴,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,メロン,バニラ||メロン,AlFakher(アルファーヘル) Vanilla(バニラ)を使ったMIX,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,メロン,バニラ||メロン,AlFakher(アルファーヘル) Vanilla(バニラ)の特徴,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,メロン,バニラ||メロン,AlFakher(アルファーヘル) Vanilla(バニラ)を使ったMIX,,,False,False,False,False,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0198,バニラ,メロン,バニラ||メロン,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,experience:balance|taste:sweetness|taste_role,ミックス|甘い|相性,False,False,False,True,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/
+R0021,ブルーベリー,ミント,ブルーベリー||ミント,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,,,True,False,False,False,Oduman blend – Choco Orange（チョコオレンジ） フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-chocoorange/
+R0160,ブルーベリー,ミント,ブルーベリー||ミント,清涼感はAF BlueberryMintより強い。,experience:coolness|experience:heaviness,強い|清涼感,True,False,False,False,TROY – SPECIAL BLUEBERRY(スペシャルブルーベリー)レビュー,https://cloud-jp.net/troy-specialblueberry/
+R0152,シナモン,ミルク,シナモン||ミルク,・ヘーゼルナッツ、シナモン、バニラ ヘーゼルナッツとシナモンの上品な香りを楽しむミックス。,experience:aroma|taste_role,ミックス|香り,False,False,False,True,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/
+R0152,シナモン,ミルク,シナモン||ミルク,・ヘーゼルナッツ、キャラメル、ミルク キャラメルでぐっとお菓子寄りに、ほんのりミルクを添えて。,,,False,False,False,False,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/
+R0212,シナモン,ミルク,シナモン||ミルク,Debaj(デバジ) Cardamom Milk(カルダモンミルク)のレビューです。,,,False,False,False,False,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0212,シナモン,ミルク,シナモン||ミルク,Debaj Cardamom Milkの特徴,,,False,False,False,False,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0212,シナモン,ミルク,シナモン||ミルク,Debaj Cardamom Milkを使ったMIX,,,False,False,False,False,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0212,シナモン,ミルク,シナモン||ミルク,Debaj Cardamom Milkの特徴,,,False,False,False,False,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0212,シナモン,ミルク,シナモン||ミルク,Debaj Cardamom Milkを使ったMIX,,,False,False,False,False,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0212,シナモン,ミルク,シナモン||ミルク,Debaj Cardamom Milkを使ったおすすめのミックスには、キャラメルやミルクティー、メロン、チャイなどミルクの甘い香りを活かしたMIXがおすすめです。,evaluation:positive|experience:aroma|taste:sweetness|taste_role,おすすめ|ミックス|甘い|香り,False,True,False,True,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0212,シナモン,ミルク,シナモン||ミルク,その他にも、カルダモンを活かしてパンラズナやヒノキ、カルダモン、シナモン、ラベンダーなどもおすすめです。,evaluation:positive,おすすめ,False,True,False,False,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/
+R0106,バナナ,バニラ,バナナ||バニラ,Tabu メロンを使ったおすすめのミックスは、ミルクや香港ミルクティー、バニラ、バナナ、ハニーなどでメロンジュースのような甘いミックスにしたり、,evaluation:positive|taste:sweetness|taste_role,おすすめ|ミックス|甘い,True,True,False,True,Tabu – Melon(メロン)レビュー,https://cloud-jp.net/tabu-melon/
+R0155,バナナ,バニラ,バナナ||バニラ,ミックスに関して、ビターさを出してあげるのであればYa LaylのCoffeeやDookahのCoffeeあたり、甘みを足すのであればAl fakherのVanillaやSocial SmokeのDulce de leche、AzureのChocolate Cakeあたりが鉄板かと思います。,taste:bitterness|taste_role,ビター|ミックス|足す,False,False,False,True,TROY – CAPPUCCINO(カプチーノ)レビュー,https://cloud-jp.net/troy-cappuccino/
+R0155,バナナ,バニラ,バナナ||バニラ,フルーツ系であればAl FakherのCherryやSocial SmokeのBanana Fosterとのミックスをおすすめします。,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,TROY – CAPPUCCINO(カプチーノ)レビュー,https://cloud-jp.net/troy-cappuccino/
+R0120,オレンジ,レモン,オレンジ||レモン,公式によると、ブラウニー、オレンジ、クリームの香りだそうです。,experience:aroma,香り,False,False,False,False,DOZAJ – Marshall(マーシャル)レビュー,https://cloud-jp.net/dozaj-marshall/
+R0120,オレンジ,レモン,オレンジ||レモン,DozajのTangerine、Lime、Lemonあたりですね。,,,False,False,False,False,DOZAJ – Marshall(マーシャル)レビュー,https://cloud-jp.net/dozaj-marshall/
+R0120,オレンジ,レモン,オレンジ||レモン,Pink Lemonadeはあんまりかもしれません。,,,False,False,False,False,DOZAJ – Marshall(マーシャル)レビュー,https://cloud-jp.net/dozaj-marshall/
+R0205,オレンジ,レモン,オレンジ||レモン,Social Smoke Pear Chill(ペアーチル)は単体でさっぱりした味わいを楽しめるので、同系統でMIXするならグアバ、オレンジ、モヒート、レモン、シトラスティー。,experience:coolness|taste:acidity,さっぱり|シトラス,True,False,False,False,Social Smoke Pear Chill(ペアーチル)レビュー,https://cloud-jp.net/socialsmoke-pearchill-review/
+R0143,ベリー,レモン,ベリー||レモン,Black Currantは別名カシスと呼ばれ、ベリーの一種です。,,,False,False,False,False,DOZAJ – Black Currant(ブラックカラント)レビュー,https://cloud-jp.net/dozaj-blackcurrant/
+R0143,ベリー,レモン,ベリー||レモン,煙の質感として、喉にひっかかることはありませんが、ベリー、カシス系特有の重たさみたいなものを感じます。,experience:smoke,煙,False,False,False,False,DOZAJ – Black Currant(ブラックカラント)レビュー,https://cloud-jp.net/dozaj-blackcurrant/
+R0143,ベリー,レモン,ベリー||レモン,フルーツ系はプラム、レモン、ザクロあたりが間違いないんじゃないかと思います。,,,False,False,False,False,DOZAJ – Black Currant(ブラックカラント)レビュー,https://cloud-jp.net/dozaj-blackcurrant/
+R0209,ベリー,レモン,ベリー||レモン,ベリー系やマウンテンフォグ、ホワイトグミベア、レモン、ライムなどがおすすめです。,evaluation:positive,おすすめ,True,True,False,False,Social Smoke Grape Chill(グレープチル)レビュー,https://cloud-jp.net/socialsmoke-grapechill-review/
+R0044,ベリー,ミント,ベリー||ミント,・ベリー×ブルーヘブン×ミント – ベリーの甘酸っぱさ、ブルーヘブンのすっきりとした酸味・甘み・清涼感、そしてミントの清涼感の調和を楽しむミックスです。,experience:balance|experience:coolness|taste:acidity|taste_role,ミックス|清涼感|調和|酸味,True,False,False,True,MALAKI – Berry(ベリー),https://cloud-jp.net/malaki-berry/
+R0160,ベリー,ミント,ベリー||ミント,こちらの記事では、TROY(トロイ)のSpecial Blueberry(スペシャルブルーベリー)のフレーバーレビューをご紹介します。,,,False,False,False,False,TROY – SPECIAL BLUEBERRY(スペシャルブルーベリー)レビュー,https://cloud-jp.net/troy-specialblueberry/
+R0160,ベリー,ミント,ベリー||ミント,清涼感はAF BlueberryMintより強い。,experience:coolness|experience:heaviness,強い|清涼感,False,False,False,False,TROY – SPECIAL BLUEBERRY(スペシャルブルーベリー)レビュー,https://cloud-jp.net/troy-specialblueberry/
+R0160,ベリー,ミント,ベリー||ミント,お菓子系のケミカルさがあるようなブルーベリーとは違い、中東系ブルーベリーに見られるようなシンプルなブルーベリーの味わい。,,,False,False,False,False,TROY – SPECIAL BLUEBERRY(スペシャルブルーベリー)レビュー,https://cloud-jp.net/troy-specialblueberry/
+R0160,ベリー,ミント,ベリー||ミント,濃厚なブルーベリーの甘味というよりは、清涼感も相まって全体として爽やかな香りにまとまっている。,experience:aroma|experience:coolness|taste:richness,清涼感|濃厚|爽やか|香り,False,False,False,False,TROY – SPECIAL BLUEBERRY(スペシャルブルーベリー)レビュー,https://cloud-jp.net/troy-specialblueberry/
+R0160,ベリー,ミント,ベリー||ミント,高温帯になるとブルーベリーの甘味が飛ぶ印象があるので、低音でじっくり味を出すのがおすすめ。,evaluation:positive|taste_role,おすすめ|出す,False,True,False,True,TROY – SPECIAL BLUEBERRY(スペシャルブルーベリー)レビュー,https://cloud-jp.net/troy-specialblueberry/
+R0160,ベリー,ミント,ベリー||ミント,TROY(トロイ) – SPECIAL BLUEBERRY(スペシャルブルーベリー)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,TROY – SPECIAL BLUEBERRY(スペシャルブルーベリー)レビュー,https://cloud-jp.net/troy-specialblueberry/
+R0021,バニラ,ミント,バニラ||ミント,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,,,False,False,False,False,Oduman blend – Choco Orange（チョコオレンジ） フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-chocoorange/
+R0021,バニラ,ミント,バニラ||ミント,チョコオレンジ × ブラウニー × バニラ – 大人なスイーツに寄せたミックス。,taste_role,ミックス,False,False,False,True,Oduman blend – Choco Orange（チョコオレンジ） フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-chocoorange/
+R0041,バニラ,ミント,バニラ||ミント,MALAKI – Double Apple Mint(ダブルアップルミント)の特徴,,,False,False,False,False,MALAKI – Double Apple Mint(ダブルアップルミント),https://cloud-jp.net/malaki-doubleapplemint/
+R0041,バニラ,ミント,バニラ||ミント,MALAKI – Double Apple Mint(ダブルアップルミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,MALAKI – Double Apple Mint(ダブルアップルミント),https://cloud-jp.net/malaki-doubleapplemint/
+R0041,バニラ,ミント,バニラ||ミント,MALAKI – Double Apple Mint(ダブルアップルミント)の特徴,,,False,False,False,False,MALAKI – Double Apple Mint(ダブルアップルミント),https://cloud-jp.net/malaki-doubleapplemint/
+R0041,バニラ,ミント,バニラ||ミント,MALAKI – Double Apple Mint(ダブルアップルミント)のおすすめミックス,evaluation:positive|taste_role,おすすめ|ミックス,False,True,False,True,MALAKI – Double Apple Mint(ダブルアップルミント),https://cloud-jp.net/malaki-doubleapplemint/
+R0041,バニラ,ミント,バニラ||ミント,・ダブルアップルミント×バニラ×ゴールデンデリシャスアップル – リンゴのスムージー風に、甘さを活かしつつミントの清涼感でまとめるミックスです。,experience:coolness|taste_role,まとめる|ミックス|清涼感,False,False,False,True,MALAKI – Double Apple Mint(ダブルアップルミント),https://cloud-jp.net/malaki-doubleapplemint/
+R0041,バニラ,ミント,バニラ||ミント,MALAKI – Double Apple Mint(ダブルアップルミント)はCLOUD SHOPにてご購入いただけます！,,,False,False,False,False,MALAKI – Double Apple Mint(ダブルアップルミント),https://cloud-jp.net/malaki-doubleapplemint/
+R0117,ベリー,ミルク,ベリー||ミルク,ベリー系以外にも舌をこらしてみると、パインやバナナっぽさも感じます。,,,False,False,False,False,DOZAJ – The Bad(ザバッド)レビュー,https://cloud-jp.net/dozaj-thebad/
+R0117,ベリー,ミルク,ベリー||ミルク,DOZAJはCoconutsやMilkどちらも優秀なので、この機会に是非。,,,False,False,False,False,DOZAJ – The Bad(ザバッド)レビュー,https://cloud-jp.net/dozaj-thebad/
+R0213,ベリー,ミルク,ベリー||ミルク,キウイやゴールデンデリシャスアップル、ベリーなどで甘めに仕上げるのもあり。,taste:sweetness,甘め,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0213,ベリー,ミルク,ベリー||ミルク,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,,,False,False,False,False,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/
+R0116,ミルク,ミント,ミルク||ミント,もったりめな煙感なので、それに合わせるように甘めのバナナやマンゴー、ミルク、ココナッツといったフレーバーをミックスするのが良いと思います。,evaluation:positive|experience:smoke|taste:sweetness|taste_role,ミックス|煙|甘め|良い,False,True,False,True,DOZAJ – The Good(ザ・グッド)レビュー,https://cloud-jp.net/dozaj-thegood/
+R0116,ミルク,ミント,ミルク||ミント,個人的には、AzureのRoyal Queen✗TrifectaのPeppermint Shakeとのミックスが好きでした。,evaluation:positive|taste_role,ミックス|好き,False,True,False,True,DOZAJ – The Good(ザ・グッド)レビュー,https://cloud-jp.net/dozaj-thegood/
+R0122,ミルク,ミント,ミルク||ミント,おすすめミックスとしてはハーブっぽさやフローラルさを足すために、Azure LemonGrassやTrifecta DarkのLavenderMint、Dozaj Jasminあたりを入れてあげると、更に上品な香りが楽しめます。,evaluation:positive|experience:aroma|taste_role,おすすめ|ミックス|足す|香り,False,True,False,True,DOZAJ – LindenTea(リンデンティー)レビュー,https://cloud-jp.net/dozaj-lindentea/
+R0122,ミルク,ミント,ミルク||ミント,また、Social SmokeのHongKong MilkTeaを入れてミルクティーっぽく仕上げても美味しいところ。,evaluation:positive,美味しい,False,True,False,False,DOZAJ – LindenTea(リンデンティー)レビュー,https://cloud-jp.net/dozaj-lindentea/
