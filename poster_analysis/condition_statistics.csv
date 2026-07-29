@@ -1,0 +1,4 @@
+﻿condition,review_count,unique_flavor_count,unique_pair_count,average_flavor_count,median_flavor_count,max_flavor_count,network_node_count,network_edge_count,connected_components,largest_component_node_count,network_density
+all_multi,175,132,1136,4.582857142857143,4.0,17,132,1136,1,132,0.13139023826046728
+limited_2_5,121,95,417,3.322314049586777,3.0,5,95,417,1,95,0.09339305711086227
+mix_keyword_2_5,113,94,403,3.353982300884956,3.0,5,94,403,1,94,0.09219858156028368

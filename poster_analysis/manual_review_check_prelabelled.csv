@@ -1,0 +1,230 @@
+analysis_type,condition,pair_rank,flavor_a,flavor_b,pair_key,cooccurrence_count,lift,review_id,review_title,review_url,matched_context,extracted_flavors_in_review,flavor_count_in_review,has_mix_keyword,manual_label,manual_note,auto_label,auto_confidence,auto_reason,matched_rule,needs_manual_review,reviewer_label,reviewer_note
+conditionB_cooccurrence_top10,limited_2_5,1,グレープ,ミント,グレープ||ミント,7,3.102564102564100,R0044,MALAKI – Berry(ベリー),https://cloud-jp.net/malaki-berry/,・ベリー×ブルーヘブン×ミント – ベリーの甘酸っぱさ、ブルーヘブンのすっきりとした酸味・甘み・清涼感、そしてミントの清涼感の調和を楽しむミックスです。 ・ベリー×グレープ×グレナデン – ベリーとグレナデンの酸味を生かしつつ、グレープの優しい甘さのバランスを楽しむミックスです。,グレープ|ブルーヘブン|ベリー|ミント,4,TRUE,,,co_mention_only,medium,対象2フレーバーは同一レビュー内に出現するが、同一文脈では結び付いていない,separate_context_mentions,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_cooccurrence_top10,limited_2_5,1,グレープ,ミント,グレープ||ミント,7,3.102564102564100,R0047,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/,MALAKI – Grape Mint(グレープミント)の特徴,グレープ|グレープミント|ジャスミン|ミント|ライチ,5,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_cooccurrence_top10,limited_2_5,1,グレープ,ミント,グレープ||ミント,7,3.102564102564100,R0070,DOZAJ – Grape(グレープ)レビュー,https://cloud-jp.net/dozaj-grape/,・グレープ×ライム×ミント – スッキリとグレープを楽しみたい方に向けたミックス。,グレープ|パッションフルーツ|ミント|ライム,4,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_cooccurrence_top10,limited_2_5,2,アールグレイ,バニラ,アールグレイ||バニラ,6,3.882352941176470,R0035,MALAKI – Wild(ワイルド),https://cloud-jp.net/malaki-wild/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。 ・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,アールグレイ|コニャック|シガー|バニラ,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,2,アールグレイ,バニラ,アールグレイ||バニラ,6,3.882352941176470,R0037,MALAKI – Velvet(ベルベット),https://cloud-jp.net/malaki-velvet/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。 ・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,アールグレイ|コニャック|バニラ|ベルベット,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,2,アールグレイ,バニラ,アールグレイ||バニラ,6,3.882352941176470,R0038,MALAKI – Specra(スペクトラ),https://cloud-jp.net/malaki-specra/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。 ・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,アールグレイ|コニャック|スペクトラ|バニラ,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,3,ハニー,ミルク,ハニー||ミルク,6,1.8615384615384600,R0158,TROY – HONEY MILK(ハニーミルク)レビュー,https://cloud-jp.net/troy-honeymilk/,こちらの記事では、TROY(トロイ)のHoney Milk(ハニーミルク)のフレーバーレビューをご紹介します。,ココナッツ|ハニー|ミルク,3,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_cooccurrence_top10,limited_2_5,3,ハニー,ミルク,ハニー||ミルク,6,1.8615384615384600,R0161,TROY – BAKLAVA(バクラヴァ) レビュー,https://cloud-jp.net/troy-baklava/,"こちらの記事では、TROY(トロイ)のBaklava(バクラヴァ)のフレーバーレビューをご紹介します。TROYの概要、フレーバーレビュー、おすすめのミックスを紹介しておりますので是非ご覧ください！
+目次
+1
+TROYとは？
+2
+Baklavaの特徴
+3
+Baklavaを使ったおすすめミックス
+4
+ご購入はこちらから
+TROYとは？
+TROY(トロイ)は、TickTockと同じくAl Amasi社から発売されているトルコ産のシーシャフレーバーブランドの一つです。
+全体的に、香りに過度な誇張や変なクセがなく上品で再現度の高い香りと、シルキーできめ細かい煙が特徴です。じっくりと熱を加えることで奥深い",ハニー|ミルク,2,TRUE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,unclear,文脈で確認できない
+conditionB_cooccurrence_top10,limited_2_5,3,ハニー,ミルク,ハニー||ミルク,6,1.8615384615384600,R0169,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/,"の点は気をつける必要があります。
+ボウルに盛り付ける際に、きちんと大きさを調整して盛り合わせるようにしましょう。
+MELON(メロン）を使ったおすすめミックス
+ミルクと合わせて、まったりしたフルーツの甘みを生かした、”メロンジュース”の味を表現するのに、ミルクなどと合わせるのが個人的には非常におすすめです。
+また、他のフレーバーとの組み合わせにおいては、メロンさを追加したい場合、メロンさを強調したい際には、大活躍すると思います。
+他にもピーチやマンゴーなどのまったりとした甘味が特徴のフレーバーと合わせても非常にマッチした仕上がりになります。
+・【Social Smoke】 honeydew
+m",ハニー|ミルク|メロン,3,TRUE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,unclear,文脈で確認できない
+conditionB_cooccurrence_top10,limited_2_5,4,バニラ,ミルク,バニラ||ミルク,6,1.6425339366515800,R0140,DOZAJ – Cappuccino(カプチーノ)レビュー,https://cloud-jp.net/dozaj-cappccino/,また、バニラ、キャラメル、ミルク、チョコでもったり甘々にしてもいいですし、意外なところでいうとグレープやベリー系統のフレーバーとの相性もいいです。,カプチーノ|キャラメル|バニラ|ミルク,4,TRUE,,,co_mention_only,high,商品紹介・特徴説明・一覧文脈での同時言及に留まり、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,4,バニラ,ミルク,バニラ||ミルク,6,1.6425339366515800,R0152,DOZAJ – HazelNut(ヘーゼルナッツ)レビュー,https://cloud-jp.net/dozaj-hazelnut/,・ヘーゼルナッツ、シナモン、バニラ ヘーゼルナッツとシナモンの上品な香りを楽しむミックス。 バニラのまろやかな甘さを追加。 ・ヘーゼルナッツ、キャラメル、ミルク キャラメルでぐっとお菓子寄りに、ほんのりミルクを添えて。,キャラメル|シナモン|バニラ|ヘーゼルナッツ|ミルク,5,TRUE,,,co_mention_only,medium,対象2フレーバーは同一レビュー内に出現するが、同一文脈では結び付いていない,separate_context_mentions,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,4,バニラ,ミルク,バニラ||ミルク,6,1.6425339366515800,R0166,旬-SHUN- PEAR,https://cloud-jp.net/shun-pear/,・【旬-shun-】ペアー(40%)・【Debaj】ミルク(30%)・【AlFakher】バニラ(30%),アールグレイ|バニラ|ペア|ミルク|ライチ,5,TRUE,,,co_mention_only,medium,対象2フレーバーは同一レビュー内に出現するが、同一文脈では結び付いていない,separate_context_mentions,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,5,ミント,レモン,ミント||レモン,6,1.9206349206349200,R0051,MALAKI – Cool Breeze(クールブリーズ),https://cloud-jp.net/malaki-coolbreeze/,・クールブリーズ×ミント×レモン – レモンの酸味とミントの清涼感、そしてクールブリーズの特徴ある後味が調和されたミックスです。,クールブリーズ|ミント|メロン|レモン,4,TRUE,,,explicit_mix,medium,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,TRUE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_cooccurrence_top10,limited_2_5,5,ミント,レモン,ミント||レモン,6,1.9206349206349200,R0064,MALAKI – Mint(ミント),https://cloud-jp.net/malaki-mint/,・ミント×レモン×ライチ – ミントの幅の広さを考え、あえて王道に近いミックスを選びました。,ミント|ライチ|レモン,3,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_cooccurrence_top10,limited_2_5,5,ミント,レモン,ミント||レモン,6,1.9206349206349200,R0122,DOZAJ – LindenTea(リンデンティー)レビュー,https://cloud-jp.net/dozaj-lindentea/,"が楽しめます。
+また、Social SmokeのHongKong MilkTeaを入れてミルクティーっぽく仕上げても美味しいところ。
+他にはシトラスやグレープ、ミントといったフレーバーも間違いないです。(ただ、Al Fakherのように単体の味わいがしっかりしているフレーバーじゃないと香り負けする気がします。)
+ご購入はこちらから
+DOZAJ(ドザジ) – LindenTea(リンデンティー)はCLOUD SHOPにてご購入いただけます！",ミルク|ミント|リンデンティー|レモン,4,TRUE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,unclear,文脈で確認できない
+conditionB_cooccurrence_top10,limited_2_5,6,アールグレイ,コニャック,アールグレイ||コニャック,5,11.0,R0035,MALAKI – Wild(ワイルド),https://cloud-jp.net/malaki-wild/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。 ・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,アールグレイ|コニャック|シガー|バニラ,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,6,アールグレイ,コニャック,アールグレイ||コニャック,5,11.0,R0037,MALAKI – Velvet(ベルベット),https://cloud-jp.net/malaki-velvet/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。 ・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,アールグレイ|コニャック|バニラ|ベルベット,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,6,アールグレイ,コニャック,アールグレイ||コニャック,5,11.0,R0038,MALAKI – Specra(スペクトラ),https://cloud-jp.net/malaki-specra/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。 ・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,アールグレイ|コニャック|スペクトラ|バニラ,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,7,コニャック,バニラ,コニャック||バニラ,5,7.117647058823530,R0035,MALAKI – Wild(ワイルド),https://cloud-jp.net/malaki-wild/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,アールグレイ|コニャック|シガー|バニラ,4,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_cooccurrence_top10,limited_2_5,7,コニャック,バニラ,コニャック||バニラ,5,7.117647058823530,R0037,MALAKI – Velvet(ベルベット),https://cloud-jp.net/malaki-velvet/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,アールグレイ|コニャック|バニラ|ベルベット,4,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_cooccurrence_top10,limited_2_5,7,コニャック,バニラ,コニャック||バニラ,5,7.117647058823530,R0038,MALAKI – Specra(スペクトラ),https://cloud-jp.net/malaki-specra/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。,アールグレイ|コニャック|スペクトラ|バニラ,4,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_cooccurrence_top10,limited_2_5,8,バナナ,ミルク,バナナ||ミルク,5,2.1153846153846200,R0091,TROY – Banana Milk(バナナミルク)レビュー,https://cloud-jp.net/troy-bananamilk/,TROY – Banana Milk(バナナミルク)の特徴,バナナ|ミルク,2,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_cooccurrence_top10,limited_2_5,8,バナナ,ミルク,バナナ||ミルク,5,2.1153846153846200,R0157,TROY – ICE BANANA(アイスバナナ)レビュー,https://cloud-jp.net/troy-icebanana/,吸った瞬間はバナナオレからミルクの濃厚な甘さを抜いたような、バナナの風味をしっかりと感じられる。,バナナ|ミルク,2,TRUE,,,unclear,low,判定ルールが十分な根拠を持たず、人手確認が必要,conflicting_rules,TRUE,unclear,文脈で確認できない
+conditionB_cooccurrence_top10,limited_2_5,8,バナナ,ミルク,バナナ||ミルク,5,2.1153846153846200,R0213,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,カルダモンミルク|バナナ|ベリー|ミルク|モヒート,5,TRUE,,,co_mention_only,high,商品紹介・特徴説明・一覧文脈での同時言及に留まり、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_cooccurrence_top10,limited_2_5,9,ミルク,メロン,ミルク||メロン,5,2.326923076923080,R0090,TROY – Melon Milk(メロンミルク)レビュー,https://cloud-jp.net/troy-melonmilk/,TROY – Melon Milk(メロンミルク)の特徴,ミルク|メロン,2,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_cooccurrence_top10,limited_2_5,9,ミルク,メロン,ミルク||メロン,5,2.326923076923080,R0169,旬-SHUN- MELON,https://cloud-jp.net/shun-melon/,ミルクと合わせて、まったりしたフルーツの甘みを生かした、”メロンジュース”の味を表現するのに、ミルクなどと合わせるのが個人的には非常におすすめです。,ハニー|ミルク|メロン,3,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_cooccurrence_top10,limited_2_5,9,ミルク,メロン,ミルク||メロン,5,2.326923076923080,R0198,AlFakher Vanilla(バニラ)レビュー,https://cloud-jp.net/alfakher-vanilla-review/,アルファーヘルのバニラを使ったミックスには、チャイやキャラメル、メロン、ハニー、ココナッツ、ミルク、チョコレートなど甘いフレーバーとの相性は抜群です。,ココナッツ|ハニー|バニラ|ミルク|メロン,5,TRUE,,,co_mention_only,high,商品紹介・特徴説明・一覧文脈での同時言及に留まり、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,10,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,4,5.5,R0056,MALAKI – Bitter Sweet(ビタースイート),https://cloud-jp.net/malaki-bittersweet/,オレンジピールやグレープフルーツの苦味や渋味が強く感じられ、その奥に柑橘系の爽やかな香りが存在します。,オレンジ|グアバ|グレープフルーツ|パッションフルーツ|ビタースイート,5,TRUE,,,unclear,low,判定ルールが十分な根拠を持たず、人手確認が必要,conflicting_rules,TRUE,unclear,文脈で確認できない
+conditionB_cooccurrence_top10,limited_2_5,10,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,4,5.5,R0195,Al Fakher Grenadine(グレナデン)レビュー,https://cloud-jp.net/alfakher-grenadine-review/,グアバやレモン、グレープフルーツ、オレンジ、ベリー系などとミックスすれば間違いなしです。,オレンジ|グレープフルーツ|ベリー,3,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,co_mention_only,別々のミックス
+conditionB_cooccurrence_top10,limited_2_5,10,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,4,5.5,R0202,Social Smoke JapaneseYuzu(ジャパニーズユズ)レビュー,https://cloud-jp.net/socialsmoke-japaneseyuzu-review/,ジャパニーズゆずを使ったミックスには、グレープフルーツ、オレンジ、レモンなどの同系統は間違いなくぴったりです。,オレンジ|グレープフルーツ|ジャパニーズユズ,3,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,co_mention_only,別々のミックス
+conditionB_lift_top10_min2,limited_2_5,1,カルダモンミルク,モヒート,カルダモンミルク||モヒート,3,18.15,R0213,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー ALFAKHER MOJITO(モヒート)レビュー,カルダモンミルク|バナナ|ベリー|ミルク|モヒート,5,TRUE,,,co_mention_only,high,商品紹介・特徴説明・一覧文脈での同時言及に留まり、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,1,カルダモンミルク,モヒート,カルダモンミルク||モヒート,3,18.15,R0214,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー ALFAKHER MOJITO(モヒート)レビュー,BTS|カルダモンミルク|バナナ|ミルク|モヒート,5,TRUE,,,co_mention_only,high,商品紹介・特徴説明・一覧文脈での同時言及に留まり、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,1,カルダモンミルク,モヒート,カルダモンミルク||モヒート,3,18.15,R0216,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/,DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー ALFAKHER MOJITO(モヒート)レビュー,カルダモンミルク|バナナ|ミルク|モヒート|ローズ,5,TRUE,,,co_mention_only,high,商品紹介・特徴説明・一覧文脈での同時言及に留まり、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,2,カルダモン,チェリー,カルダモン||チェリー,2,12.1,R0054,MALAKI – Amazon(アマゾン),https://cloud-jp.net/malaki-amazon/,癖の少ないグアバやキウイフルーツの甘み、苦味、チェリーのような酸味、メインの印象で、カルダモンのようなスパイシーさも若干感じられます。,アマゾン|カルダモン|グアバ|チェリー|パイナップル,5,TRUE,,,unclear,low,判定ルールが十分な根拠を持たず、人手確認が必要,conflicting_rules,TRUE,unclear,文脈で確認できない
+conditionB_lift_top10_min2,limited_2_5,2,カルダモン,チェリー,カルダモン||チェリー,2,12.1,R0062,MALAKI – Gum Cinnamon(ガムシナモン),https://cloud-jp.net/malaki-gumcinnamon/,・ガムシナモン×カルダモン×レバニーズボムシェル – スパイシーでフローラルなカルダモンとウッディな森林の香りを足したミックスです。 ・ガムシナモン×パンドラボックス×チェリー – チェリーの甘酸っぱさを足すことで、アメリカのお菓子のような面白い味わいを実現します。,カルダモン|ガムシナモン|チェリー,3,TRUE,,,co_mention_only,medium,対象2フレーバーは同一レビュー内に出現するが、同一文脈では結び付いていない,separate_context_mentions,FALSE,co_mention_only,別々のミックス
+conditionB_lift_top10_min2,limited_2_5,3,アールグレイ,コニャック,アールグレイ||コニャック,5,11.0,R0035,MALAKI – Wild(ワイルド),https://cloud-jp.net/malaki-wild/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。 ・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,アールグレイ|コニャック|シガー|バニラ,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_lift_top10_min2,limited_2_5,3,アールグレイ,コニャック,アールグレイ||コニャック,5,11.0,R0037,MALAKI – Velvet(ベルベット),https://cloud-jp.net/malaki-velvet/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。 ・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,アールグレイ|コニャック|バニラ|ベルベット,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_lift_top10_min2,limited_2_5,3,アールグレイ,コニャック,アールグレイ||コニャック,5,11.0,R0038,MALAKI – Specra(スペクトラ),https://cloud-jp.net/malaki-specra/,・ワイルド×バニラ×コニャック – 甘さとスモーキーな香りを重ねて上品な香りを楽しむミックス。 ・ワイルド×ナワール×アールグレイ – お花と紅茶の香りを足して、ワイルドがいつものいい香りの後味をまとめてくれます。,アールグレイ|コニャック|スペクトラ|バニラ,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionB_lift_top10_min2,limited_2_5,4,グレープ,グレープミント,グレープ||グレープミント,2,9.307692307692310,R0047,MALAKI – Grape Mint(グレープミント),https://cloud-jp.net/malaki-grapemint/,MALAKI – Grape Mint(グレープミント)の特徴,グレープ|グレープミント|ジャスミン|ミント|ライチ,5,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,4,グレープ,グレープミント,グレープ||グレープミント,2,9.307692307692310,R0107,Tabu – Grape Mint(グレープミント)レビュー,https://cloud-jp.net/tabu-grapemint/,tabu Grape Mint(グレープミント)の特徴,キウイ|グレープ|グレープミント|ミント,4,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,5,グアバ,パッションフルーツ,グアバ||パッションフルーツ,3,9.075,R0056,MALAKI – Bitter Sweet(ビタースイート),https://cloud-jp.net/malaki-bittersweet/,・ビタースイート×グアバ×パッションフルーツ – 南国系のフルーツミックスにちょい足しです。,オレンジ|グアバ|グレープフルーツ|パッションフルーツ|ビタースイート,5,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_lift_top10_min2,limited_2_5,5,グアバ,パッションフルーツ,グアバ||パッションフルーツ,3,9.075,R0067,DOZAJ – Fig(フィグ)レビュー,https://cloud-jp.net/dozaj-fig/,・フィグ×グアバ×パッションフルーツ – 甘さのバランスがよく、後味の渋味で南国っぽい気分になれるミックスです。,グアバ|ココナッツ|ハニー|パッションフルーツ|フィグ,5,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_lift_top10_min2,limited_2_5,5,グアバ,パッションフルーツ,グアバ||パッションフルーツ,3,9.075,R0102,Tabu – Tropical Juice(トロピカルジュース)レビュー,https://cloud-jp.net/tabu-tropicaljuice/,"ースは、まさに夏を思い出させるフルーティーでジューシーな南国のトロピカルフルーツをふんだんに使ったようなフレーバーです。
+しっかり熟したマンゴーの芳醇な甘味に、パッションフルーツ、パイナップルの甘酸っぱさが相まって壮大な南国の恵みを感じさせてくれます。
+また、ジュースといっても単純にフルーティーで甘いだけでなく、酸味や渋みもしっかりと表現されており、味のバランス・再現度共に素晴らしいフレーバーです。
+火力を上げると酸味や渋みが少し強く出るので、よりフルーティーな香りを出したい場合は火力が上がりすぎないよう、温度帯に気をつけることをおすすめします。
+Tabu Tropical Juiceのおすす",グアバ|パッションフルーツ|レモン,3,TRUE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,unclear,文脈で確認できない
+conditionB_lift_top10_min2,limited_2_5,6,ブルーベリー,ミントクリーム,ブルーベリー||ミントクリーム,2,8.962962962962960,R0048,MALAKI – Gum(ガム),https://cloud-jp.net/malaki-gum/,・ガム×ブルーベリー×ミントクリーム – 清涼感のあるガムと、ブルーベリーの甘酸っぱくて爽やかな香りが良く合っています。,カルダモン|シナモン|ブルーベリー|ミントクリーム,4,TRUE,,,unclear,low,判定ルールが十分な根拠を持たず、人手確認が必要,conflicting_rules,TRUE,unclear,文脈で確認できない
+conditionB_lift_top10_min2,limited_2_5,6,ブルーベリー,ミントクリーム,ブルーベリー||ミントクリーム,2,8.962962962962960,R0052,MALAKI – Blue Cloud(ブルークラウド),https://cloud-jp.net/malaki-bluecloud/,・ブルークラウド×ミントクリーム×バニラ – ブルーベリーのお菓子屋シェイクのようなミックスです。,バニラ|ブルークラウド|ブルーヘブン|ブルーベリー|ミントクリーム,5,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionB_lift_top10_min2,limited_2_5,7,アサイー,ベリー,アサイー||ベリー,2,8.642857142857140,R0095,Tabu – Berry Tic-Tac(ベリーティックタック)レビュー,https://cloud-jp.net/tabu-berrytictac/,また、ラズベリーやストロベリー、アサイーベリーなど他のベリー系のフレーバーとミックスするのもおすすめです。,アサイー|ブルーベリー|ベリー|ラズベリー|ローズ,5,TRUE,,,explicit_mix,medium,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,TRUE,co_mention_only,別々のミックス
+conditionB_lift_top10_min2,limited_2_5,7,アサイー,ベリー,アサイー||ベリー,2,8.642857142857140,R0177,Afzal(アフザル)のおすすめシーシャフレーバー,https://cloud-jp.net/afzal-recommended-flavor/,アサイーベリー,アサイー|アールグレイ|スペシャルパン|ベリー|ライチ,5,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,8,カルダモン,シナモン,カルダモン||シナモン,2,8.642857142857140,R0048,MALAKI – Gum(ガム),https://cloud-jp.net/malaki-gum/,・ガム×シナモン×カルダモン – ガムシナモンにカルダモンを足したようなスパイシーでフローラルなミックス。,カルダモン|シナモン|ブルーベリー|ミントクリーム,4,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,unclear,文脈で確認できない
+conditionB_lift_top10_min2,limited_2_5,8,カルダモン,シナモン,カルダモン||シナモン,2,8.642857142857140,R0212,Debaj Cardamom Milk(カルダモンミルク)レビュー,https://cloud-jp.net/debaj-cardamommilk-review/,その他にも、カルダモンを活かしてパンラズナやヒノキ、カルダモン、シナモン、ラベンダーなどもおすすめです。,カルダモン|カルダモンミルク|シナモン|ミルク|メロン,5,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,9,カルダモンミルク,バナナ,カルダモンミルク||バナナ,3,8.25,R0213,AlFakher Mojito(モヒート)レビュー,https://cloud-jp.net/alfakher-mojito-review/,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,カルダモンミルク|バナナ|ベリー|ミルク|モヒート,5,TRUE,,,co_mention_only,high,商品紹介・特徴説明・一覧文脈での同時言及に留まり、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,9,カルダモンミルク,バナナ,カルダモンミルク||バナナ,3,8.25,R0214,Golden Layalina BTS(ビーティーエス)レビュー,https://cloud-jp.net/goldenlayalina-bts-review/,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,BTS|カルダモンミルク|バナナ|ミルク|モヒート,5,TRUE,,,co_mention_only,high,商品紹介・特徴説明・一覧文脈での同時言及に留まり、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,9,カルダモンミルク,バナナ,カルダモンミルク||バナナ,3,8.25,R0216,Al Fakher Rose(ローズ)レビュー,https://cloud-jp.net/alfakher-rose-review/,Social Smoke(ソーシャルスモーク) Banana Foster(バナナフォスター)のレビュー DEBAJ CARDAMOM MILK(カルダモンミルク)レビュー,カルダモンミルク|バナナ|ミルク|モヒート|ローズ,5,TRUE,,,co_mention_only,high,商品紹介・特徴説明・一覧文脈での同時言及に留まり、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionB_lift_top10_min2,limited_2_5,10,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,2,8.066666666666670,R0184,ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)レビュー,https://cloud-jp.net/icerockz-icewatermelon/,"この記事では、ICE ROCKZのIce-Watermelon(アイスウォーターメロン)のレビューを紹介しています。
+目次
+1
+ICE ROCKZ(アイスロッキーズ)の特徴
+2
+ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)の特徴
+3
+ICE ROCKZ Ice-Watermelon(アイスウォーターメロン)を使ったおすすめMIX
+4
+購入はこちらから
+ICE ROCKZ(アイスロッキーズ)の特徴
+ICE ROCKZは、ドイツのシーシャブランドAladinが販売する、ノンニコチン・ノンタ",ウォーターメロン/スイカ|メロン,2,FALSE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,unclear,文脈で確認できない
+conditionB_lift_top10_min2,limited_2_5,10,ウォーターメロン/スイカ,メロン,ウォーターメロン/スイカ||メロン,2,8.066666666666670,R0199,AlFakher Watermelon(スイカ)レビュー,https://cloud-jp.net/alfakher-watermelon-review/,"ツ、ミント、レモン、パッションフルーツなどがおすすめです。アイスボトルやアイスホースと合わせると相性抜群です！
+他にもフルーツ系の甘いミックスであればオレンジ、メロン、ストロベリーなどがおすすめです。
+その他のAlFakherフレーバーのレビューは
+こちら
+から。
+CLOUD - 日本最大級シーシャ情報サイト
+Al Fakher│CLOUD - 日本最大級シーシャ情報サイト
+Al Fakherのフレーバーレビューです。
+AlFakherはどのシーシャ屋でも必ず置いていると言っていいほどの定番…",ウォーターメロン/スイカ|ストロベリー|ミント|メロン|レモン,5,TRUE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,unclear,文脈で確認できない
+conditionA_rank_drop_top5,all_multi,1,ブルーベリー,ミント,ブルーベリー||ミント,21,2.1836007130124800,R0016,世界のDARKSIDE（シーシャブランド）が生み出した吸いやすいラインナップ？STARLINE（スターライン）とは？おすすめフレーバーは？,https://cloud-jp.net/starline-darkside/,柑橘系／スイーツ系／ベリー系／ミント系 が特に強い。 ■ 日本国内で購入できる STARLINE フレーバー（詳細レビュー込み）の詳細情報 ◎ Blueberry Crumble（ブルーベリークランブル）,アップルジュース|キャラメル|クリーム|コーラ|ストロベリー|ストロベリーミルフィーユ|ネクタリン|バター|パパイヤ|フリーキューバ|ブルーベリー|ブルーベリークランブル|ベリー|ベリーポップコーン|ベルギアンワッフル|ミント|レモンフィズ,17,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,1,ブルーベリー,ミント,ブルーベリー||ミント,21,2.1836007130124800,R0019,Oduman Blend – LTS フレーバーレビュー,https://cloud-jp.net/odumanblend-lts/,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,オレンジ|ゴールデンデリシャスアップル|ジンジャー|ジンジャーココナッツ|バニラ|ブルーベリー|ミント,7,TRUE,,,explicit_mix,medium,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,TRUE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,1,ブルーベリー,ミント,ブルーベリー||ミント,21,2.1836007130124800,R0020,Oduman blend – Berry Mix（ベリーミックス）フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-berrymix/,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,オレンジ|チェリー|ハニー|バニラ|ブルーヘブン|ブルーベリー|ベリー|ミント|ラズベリー,9,TRUE,,,explicit_mix,medium,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,TRUE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,2,オレンジ,ブルーベリー,オレンジ||ブルーベリー,17,3.005050505050510,R0019,Oduman Blend – LTS フレーバーレビュー,https://cloud-jp.net/odumanblend-lts/,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,オレンジ|ゴールデンデリシャスアップル|ジンジャー|ジンジャーココナッツ|バニラ|ブルーベリー|ミント,7,TRUE,,,explicit_mix,medium,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,TRUE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,2,オレンジ,ブルーベリー,オレンジ||ブルーベリー,17,3.005050505050510,R0020,Oduman blend – Berry Mix（ベリーミックス）フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-berrymix/,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,オレンジ|チェリー|ハニー|バニラ|ブルーヘブン|ブルーベリー|ベリー|ミント|ラズベリー,9,TRUE,,,explicit_mix,medium,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,TRUE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,2,オレンジ,ブルーベリー,オレンジ||ブルーベリー,17,3.005050505050510,R0021,Oduman blend – Choco Orange（チョコオレンジ） フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-chocoorange/,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,オレンジ|バニラ|ピスタチオブリーズ|ブルーベリー|ミント,5,TRUE,,,explicit_mix,medium,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,TRUE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,3,ブルーベリー,ベリー,ブルーベリー||ベリー,15,2.6515151515151500,R0016,世界のDARKSIDE（シーシャブランド）が生み出した吸いやすいラインナップ？STARLINE（スターライン）とは？おすすめフレーバーは？,https://cloud-jp.net/starline-darkside/,4位：Blueberry Crumble（ブルーベリークランブル）,アップルジュース|キャラメル|クリーム|コーラ|ストロベリー|ストロベリーミルフィーユ|ネクタリン|バター|パパイヤ|フリーキューバ|ブルーベリー|ブルーベリークランブル|ベリー|ベリーポップコーン|ベルギアンワッフル|ミント|レモンフィズ,17,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,3,ブルーベリー,ベリー,ブルーベリー||ベリー,15,2.6515151515151500,R0020,Oduman blend – Berry Mix（ベリーミックス）フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-berrymix/,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,オレンジ|チェリー|ハニー|バニラ|ブルーヘブン|ブルーベリー|ベリー|ミント|ラズベリー,9,TRUE,,,explicit_mix,medium,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,TRUE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,3,ブルーベリー,ベリー,ブルーベリー||ベリー,15,2.6515151515151500,R0026,Oduman blend – Smoke’n roll（スモーキンロール）フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-smokenroll/,また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。,オレンジ|ストロベリー|チェリー|パッションフルーツ|ブルーベリー|ベリー|ミント|レモン,8,TRUE,,,explicit_mix,medium,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,TRUE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,4,バニラ,ミント,バニラ||ミント,14,1.3344226579520700,R0001,【HT Review】2026年2月最新シーシャフレーバー注目度ランキング・シーシャのシガーリーフ、ダークリーフの世界の評価ランキング（JAPAN SHISHA BOOK),https://cloud-jp.net/ht-review-202602/,"清涼剤
+3
+Severniy
+North (セーベル / 北)
+168
+4.8
+強冷感・コスパ
+4
+Trofimoff’s
+Finlandia Vanila (バニラ)
+137
+4.6
+濃厚・デザート
+5
+Dogma
+Lemon Drops (レモンドロップ)
+135
+4.8
+甘酸っぱい・シガー
+6
+Tangiers
+Cane Mint (ケーンミント)
+135
+4.8
+伝説的・ミント
+7
+Trofimoff’s
+Mangifera (マンゴー)
+134
+4.6
+クリーミー・濃厚
+8
+Satyr
+Smena (スmena)
+91
+4.8
+複雑・フルーツ
+9
+Deus
+Catmint (キャット",アールグレイ|シガー|スーパーノヴァ|チョコレート|バター|バニラ|マンゴー|ミント|レモン,9,TRUE,,,co_mention_only,high,ランキング・一覧・紹介文脈での列挙が中心で、同一ミックスの根拠が弱い,product_list_context,FALSE,co_mention_only,別々のミックス
+conditionA_rank_drop_top5,all_multi,4,バニラ,ミント,バニラ||ミント,14,1.3344226579520700,R0014,【SHISHA BOOK】2025年12月24日時点での世界のユーザーのシーシャレビューに基づく、フレーバー注目度・評価ランキング（ダークリーフ、シガーリーフ）,https://cloud-jp.net/shisha-book20251224/,"合ランキング TOP 20
+順位
+ブランド / 製品名
+味の系統
+評価 (★)
+データ参照
+特徴・現地の声
+1
+SEBERO – Vanilla
+(セベロ / バニラ)
+バニラ
+5.0
+58件レビュー
+【不動の王者】
+評価数50件超えで満点を維持する異例の製品。プロ（Master）からの支持も厚い、バニラフレーバーの最高峰。
+2
+Sarma – Winter
+(サルマ / ウィンター)
+氷・清涼剤
+4.9
+41件コメント
+【話題性No.1】
+議論数ランキングで首位を獲得。「最高のコールドドリンク」と評される、今最も熱いアイス系フレーバー。
+3
+Northern – North
+(ノーザン /",アールグレイ|シガー|ジンジャー|ハニー|バター|バニラ|ピーナッツ|ペア|ポメロ|ミント|ライム|レモン,12,TRUE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,unclear,文脈で確認できない
+conditionA_rank_drop_top5,all_multi,4,バニラ,ミント,バニラ||ミント,14,1.3344226579520700,R0018,【SHISHA BOOK】2025年11月での世界のユーザーのシーシャレビューに基づく、フレーバー注目度・評価ランキング,https://cloud-jp.net/shishabook-20251201/,"MUSTHAVE
+Pinkman
+ストロベリー、グレープフルーツ、ラズベリーの甘酸っぱいミックス
+4.4
+2
+SEBERO
+Vanilla
+濃厚でクリーミーなバニラ（プロの支持多数）
+5
+3
+MUSTHAVE
+Prosecco
+華やかなシャンパンの香り
+4.6
+4
+DARKSIDE
+SUPERNOVA
+強烈な冷たさとメンソール（ミックス用として大定番）
+4.6
+5
+BLACKBURN
+Peach Yogurt
+甘いピーチとまろやかなヨーグルト
+4.6
+6
+BLACKBURN
+Lemon Shock
+酸味が効いたサワーレモン
+4.7
+7
+Sarma
+Winter
+ひんやりとした冷気（アイス系）",クリーム|グレープ|グレープフルーツ|コーラ|ストロベリー|スーパーノヴァ|ダークスープラ|バニラ|パイナップル|ベリー|ベルガモンスター|ミント|ラズベリー|レモン|ローズ,15,TRUE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,unclear,文脈で確認できない
+conditionA_rank_drop_top5,all_multi,5,オレンジ,レモン,オレンジ||レモン,11,1.6885964912280700,R0023,Oduman blend – Lemon colic（レモンコリック）フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-lemoncolic/,レモンコリック × オレンジミント × マウンテンフォグ – シトラスの香りをさらに強め、ミントで清涼感まで楽しめるオススメミックス。,アールグレイ|オレンジ|オレンジミント|カルダモン|ブルーベリー|ミント|レモン,7,TRUE,,,explicit_mix,high,本文中に明示的なミックス表現があり、対象2フレーバーが同一文脈に並記されている,explicit_keyword_with_both_flavors,FALSE,explicit_mix,対象2フレーバーが同一ミックス内に明記されている
+conditionA_rank_drop_top5,all_multi,5,オレンジ,レモン,オレンジ||レモン,11,1.6885964912280700,R0026,Oduman blend – Smoke’n roll（スモーキンロール）フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-smokenroll/,"キスを配合することで、より強くハイクオリティな香りを体験することができます。
+また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。
+Oduman Blendの購入ページは
+こちら
+から
+CLOUD SHOP
+Oduman Blend
+…
+Oduman blend – Smoke’n roll（スモーキンロール）の特徴
+公式",オレンジ|ストロベリー|チェリー|パッションフルーツ|ブルーベリー|ベリー|ミント|レモン,8,TRUE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,co_mention_only,商品名・単一フレーバー名
+conditionA_rank_drop_top5,all_multi,5,オレンジ,レモン,オレンジ||レモン,11,1.6885964912280700,R0027,Oduman blend – Vivido（ヴィヴィド）フレーバーレビュー・ミックス,https://cloud-jp.net/odumanblend-vivido/,"キスを配合することで、より強くハイクオリティな香りを体験することができます。
+また、”Premium+ Colorful”には、”Orange Tobacco(オレンジタバコ)”、”Green tobacco(グリーンタバコ)”、”Blue Tobacco(ブルータバコ)”の３種類があり、それぞれオレンジ、ミント、ブルーベリーのオリジナルフルーツエキスを使用することでそれぞれのカラーに着色されています。
+Oduman Blendの購入ページは
+こちら
+から
+CLOUD SHOP
+Oduman Blend
+…
+Oduman blend – Vivido（ヴィヴィド）の特徴
+ガムミント。全体として",オレンジ|ガムミント|ブルーベリー|ミント|ライム|レモン,6,TRUE,,,unclear,low,対象2フレーバーの両方が文脈内で確認できない,missing_target_flavor,TRUE,co_mention_only,商品名・単一フレーバー名

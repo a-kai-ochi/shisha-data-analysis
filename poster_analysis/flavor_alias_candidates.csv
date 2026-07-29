@@ -1,0 +1,21 @@
+﻿raw_flavor,normalized_candidate,match_type,confidence,manual_review,note
+CHOCOLATE,チョコレート,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+COLA,コーラ,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+EARL GREY,アールグレイ,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+GRAPE,グレープ,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+GRAPEFRUIT,グレープフルーツ,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+KIWI,キウイ,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+LYCHEE,ライチ,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+MANGO,マンゴー,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+アールグレイ,EARL GREY,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+キウイ,KIWI,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+グレープ,GRAPE,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+グレープフルーツ,GRAPEFRUIT,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+コーラ,COLA,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+チョコレート,CHOCOLATE,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+マンゴー,MANGO,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+ライチ,LYCHEE,verified_cross_language_alias,1.0,False,分析対象の基本フレーバーとして EN/JA の直訳同義を確認
+COLA,アイスコーラ,review_bilingual_pair,0.75,True,レビュー本文またはタイトルで EN/JA 併記を確認 (1件)。複合名の可能性があるため要確認
+GRAPE,ベリーグレープ,review_bilingual_pair,0.75,True,レビュー本文またはタイトルで EN/JA 併記を確認 (1件)。複合名の可能性があるため要確認
+アイスコーラ,COLA,review_bilingual_pair,0.75,True,レビュー本文またはタイトルで EN/JA 併記を確認 (1件)。複合名の可能性があるため要確認
+ベリーグレープ,GRAPE,review_bilingual_pair,0.75,True,レビュー本文またはタイトルで EN/JA 併記を確認 (1件)。複合名の可能性があるため要確認

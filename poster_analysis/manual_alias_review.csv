@@ -1,0 +1,5 @@
+﻿raw_flavor,normalized_candidate,match_type,confidence,note
+COLA,アイスコーラ,review_bilingual_pair,0.75,レビュー本文またはタイトルで EN/JA 併記を確認 (1件)。複合名の可能性があるため要確認
+GRAPE,ベリーグレープ,review_bilingual_pair,0.75,レビュー本文またはタイトルで EN/JA 併記を確認 (1件)。複合名の可能性があるため要確認
+アイスコーラ,COLA,review_bilingual_pair,0.75,レビュー本文またはタイトルで EN/JA 併記を確認 (1件)。複合名の可能性があるため要確認
+ベリーグレープ,GRAPE,review_bilingual_pair,0.75,レビュー本文またはタイトルで EN/JA 併記を確認 (1件)。複合名の可能性があるため要確認

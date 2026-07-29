@@ -1,0 +1,11 @@
+﻿metric,value
+raw_unique_flavor_count,144
+normalized_unique_flavor_count,136
+cooccurrence_top10_common_count,9
+cooccurrence_top10_jaccard,0.8181818181818182
+lift_top10_common_count,6
+lift_top10_jaccard,0.42857142857142855
+raw_lift_min_pair_count,2
+normalized_lift_min_pair_count,2
+source_reviews_csv,data/cloud_reviews_final.csv
+source_master_csv,data/aslaj_master_list.csv
