@@ -1,0 +1,4 @@
+﻿document_id,product_name,flavor_a,flavor_b,matched_text,reason
+R0047,MALAKI – Grape Mint(グレープミント),グレープ,グレープミント,MALAKI – Grape Mint(グレープミント),product_name_derived_without_explicit_mix
+R0084,TROY – Ice Blueberry(アイスブルーベリー)レビュー,ブルーベリー,ベリー,TROY – Ice Blueberry(アイスブルーベリー)レビュー,product_name_derived_without_explicit_mix
+R0047,MALAKI – Grape Mint(グレープミント),グレープミント,ミント,MALAKI – Grape Mint(グレープミント),product_name_derived_without_explicit_mix

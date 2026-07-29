@@ -37,6 +37,23 @@ MIX_KEYWORDS = [
     "配合",
 ]
 
+EXPLICIT_MIX_TERMS = [
+    "ミックス",
+    "混ぜる",
+    "混ぜ",
+    "組み合わせる",
+    "組み合わせ",
+    "加える",
+    "加え",
+    "足す",
+    "足し",
+    "入れる",
+    "入れ",
+]
+
+GENERIC_ROLE_TERMS = {"ミックス", "組み合わせ", "相性", "おすすめ"}
+JAPANESE_BOUNDARY_CHARS = set("とのにへがをやもでなだかはばまでよりねよぞさし")
+
 VERIFIED_CROSS_LANGUAGE_ALIASES = {
     "ライチ": ["LYCHEE"],
     "マンゴー": ["MANGO"],
@@ -106,9 +123,16 @@ class OutputPaths:
     pair_expression_features_csv: Path
     pair_expression_evidence_csv: Path
     pair_ranking_csv: Path
+    pair_ranking_tier1_csv: Path
+    pair_ranking_tier2_csv: Path
+    pair_ranking_excluded_csv: Path
+    excluded_product_name_pairs_csv: Path
+    excluded_parent_child_pairs_csv: Path
     manual_validation_candidates_csv: Path
     ranking_sensitivity_csv: Path
     ranking_sensitivity_md: Path
+    ranking_before_after_comparison_csv: Path
+    ranking_before_after_comparison_md: Path
     extended_summary_md: Path
     figure_centrality_png: Path
     figure_score_breakdown_png: Path
@@ -128,9 +152,16 @@ def output_paths(output_dir: Path) -> OutputPaths:
         pair_expression_features_csv=output_dir / "pair_expression_features.csv",
         pair_expression_evidence_csv=output_dir / "pair_expression_evidence.csv",
         pair_ranking_csv=output_dir / "pair_ranking.csv",
+        pair_ranking_tier1_csv=output_dir / "pair_ranking_tier1.csv",
+        pair_ranking_tier2_csv=output_dir / "pair_ranking_tier2.csv",
+        pair_ranking_excluded_csv=output_dir / "pair_ranking_excluded.csv",
+        excluded_product_name_pairs_csv=output_dir / "excluded_product_name_pairs.csv",
+        excluded_parent_child_pairs_csv=output_dir / "excluded_parent_child_pairs.csv",
         manual_validation_candidates_csv=output_dir / "manual_validation_candidates.csv",
         ranking_sensitivity_csv=output_dir / "ranking_sensitivity.csv",
         ranking_sensitivity_md=output_dir / "ranking_sensitivity.md",
+        ranking_before_after_comparison_csv=output_dir / "ranking_before_after_comparison.csv",
+        ranking_before_after_comparison_md=output_dir / "ranking_before_after_comparison.md",
         extended_summary_md=output_dir / "extended_analysis_summary.md",
         figure_centrality_png=output_dir / "figure_centrality_top20.png",
         figure_score_breakdown_png=output_dir / "figure_overall_score_breakdown.png",
@@ -274,6 +305,7 @@ def extract_flavors(
                 if (
                     unicodedata.category(prev_char) in ("Lo", "Ll", "Lu", "Nd")
                     and unicodedata.category(text[idx]) in ("Lo",)
+                    and prev_char not in JAPANESE_BOUNDARY_CHARS
                 ):
                     before_ok = False
             if end < len(text):
@@ -281,6 +313,7 @@ def extract_flavors(
                 if (
                     unicodedata.category(next_char) in ("Lo",)
                     and unicodedata.category(text[end - 1]) in ("Lo",)
+                    and next_char not in JAPANESE_BOUNDARY_CHARS
                 ):
                     after_ok = False
 
@@ -312,17 +345,23 @@ def load_documents(
 
     docs: list[dict[str, Any]] = []
     for idx, row in reviews_df.iterrows():
+        title = row.get("レビュータイトル", "")
+        summary = row.get("概要", "")
         body = row.get("レビュー本文", "")
         extracted = extract_flavors(body, sorted_patterns, pattern_to_canonical)
+        title_flavors = extract_flavors(str(title), sorted_patterns, pattern_to_canonical)
+        summary_flavors = extract_flavors(str(summary), sorted_patterns, pattern_to_canonical)
         docs.append(
             {
                 "document_id": make_document_id(idx),
-                "review_title": row.get("レビュータイトル", ""),
+                "review_title": title,
                 "review_date": row.get("更新日", ""),
                 "review_url": row.get("レビューURL", ""),
-                "review_summary": row.get("概要", ""),
+                "review_summary": summary,
                 "review_body": body,
                 "normalized_flavors": extracted,
+                "title_flavors": sorted(set(title_flavors)),
+                "summary_flavors": sorted(set(summary_flavors)),
                 "flavor_count": len(extracted),
                 "has_mix_keyword": bool(detect_mix_keywords(body)),
                 "mix_keywords": "|".join(detect_mix_keywords(body)),
@@ -477,10 +516,92 @@ def load_expression_dictionary(path: Path) -> dict[str, Any]:
         return json.load(fh)
 
 
+def load_template_sentence_patterns(path: Path) -> dict[str, list[str]]:
+    with path.open(encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def normalize_compare_text(text: str) -> str:
+    if not isinstance(text, str):
+        return ""
+    normalized = unicodedata.normalize("NFKC", text).lower()
+    return re.sub(r"[\s\-_/\|・･\.\(\)（）\[\]【】]+", "", normalized)
+
+
+def compile_template_patterns(patterns: dict[str, list[str]]) -> list[tuple[str, re.Pattern[str]]]:
+    compiled: list[tuple[str, re.Pattern[str]]] = []
+    for regex in patterns.get("regex", []):
+        compiled.append((regex, re.compile(regex)))
+    for term in patterns.get("contains", []):
+        compiled.append((term, re.compile(re.escape(term))))
+    return compiled
+
+
+def detect_template_sentence(
+    sentence: str,
+    compiled_patterns: list[tuple[str, re.Pattern[str]]],
+) -> tuple[bool, str]:
+    if not isinstance(sentence, str):
+        return False, ""
+    for pattern_text, pattern in compiled_patterns:
+        if pattern.search(sentence):
+            return True, pattern_text
+    return False, ""
+
+
+def detect_explicit_mix_expression(sentence: str, flavor_a: str, flavor_b: str) -> tuple[bool, str]:
+    if not isinstance(sentence, str):
+        return False, ""
+    if flavor_a not in sentence or flavor_b not in sentence:
+        return False, ""
+
+    escaped_a = re.escape(flavor_a)
+    escaped_b = re.escape(flavor_b)
+    separator_patterns = [
+        rf"{escaped_a}\s*(?:×|✕|x|X|\+|＋|/|／)\s*{escaped_b}",
+        rf"{escaped_b}\s*(?:×|✕|x|X|\+|＋|/|／)\s*{escaped_a}",
+    ]
+    for pattern in separator_patterns:
+        match = re.search(pattern, sentence)
+        if match:
+            return True, match.group(0)
+
+    phrase_patterns = [
+        rf"{escaped_a}.{{0,12}}{escaped_b}.{{0,12}}(?:ミックス|混ぜる|混ぜた|組み合わせる|組み合わせた|組み合わせ|加える|加えた|足す|足した)",
+        rf"{escaped_b}.{{0,12}}{escaped_a}.{{0,12}}(?:ミックス|混ぜる|混ぜた|組み合わせる|組み合わせた|組み合わせ|加える|加えた|足す|足した)",
+        rf"{escaped_a}と{escaped_b}.{{0,12}}(?:ミックス|混ぜる|混ぜた|組み合わせる|組み合わせた|組み合わせ)",
+        rf"{escaped_b}と{escaped_a}.{{0,12}}(?:ミックス|混ぜる|混ぜた|組み合わせる|組み合わせた|組み合わせ)",
+        rf"{escaped_a}に{escaped_b}を(?:加える|足す|混ぜる)",
+        rf"{escaped_b}に{escaped_a}を(?:加える|足す|混ぜる)",
+    ]
+    for pattern in phrase_patterns:
+        match = re.search(pattern, sentence)
+        if match:
+            return True, match.group(0)
+    return False, ""
+
+
+def detect_parent_child_pair(
+    flavor_a: str,
+    flavor_b: str,
+) -> tuple[bool, str]:
+    key_a = normalize_compare_text(flavor_a)
+    key_b = normalize_compare_text(flavor_b)
+    if not key_a or not key_b or key_a == key_b:
+        return False, ""
+    if key_a in key_b:
+        return True, f"{flavor_a} is contained in {flavor_b}"
+    if key_b in key_a:
+        return True, f"{flavor_b} is contained in {flavor_a}"
+    return False, ""
+
+
 def is_negated(text: str, start: int, end: int, negations: list[str]) -> bool:
     window = text[max(0, start - 4) : min(len(text), end + 8)]
     suffix = text[end : min(len(text), end + 8)]
     prefix = text[max(0, start - 4) : start]
+    if any(pattern in suffix for pattern in ["しない", "できない", "とは思わない"]):
+        return True
     for neg in negations:
         if neg in suffix:
             return True
@@ -514,6 +635,23 @@ def find_category_matches(
             pattern = rf"{stem}く(?:{neg_pattern})"
             if re.search(pattern, text):
                 negated_terms.append(term)
+                continue
+
+        if term.endswith("る") and len(term) >= 2:
+            stem = re.escape(term[:-1])
+            verb_patterns = [
+                rf"{stem}(?:ら)?ない",
+                rf"{stem}(?:ら)?なく",
+                rf"{stem}(?:ら)?なかった",
+                rf"{stem}(?:ら)?ません",
+                rf"{stem}とは思わない",
+                rf"{stem}しない",
+                rf"{stem}できない",
+            ]
+            for pattern in verb_patterns:
+                if re.search(pattern, text):
+                    negated_terms.append(term)
+                    break
 
     return matched_terms, negated_terms
 
@@ -901,6 +1039,959 @@ def build_manual_validation_candidates(
     ).reset_index(drop=True)
 
 
+def merge_pipe_values(values: list[str]) -> str:
+    unique = sorted({value for value in values if value})
+    return "|".join(unique)
+
+
+def role_terms_for_sentence(
+    sentence: str,
+    expression_dictionary: dict[str, Any],
+) -> tuple[bool, str, str, str]:
+    action_terms = expression_dictionary.get("taste_role_action_terms", [])
+    effect_terms = expression_dictionary.get("taste_role_effect_terms", [])
+
+    action = next((term for term in action_terms if term in sentence), "")
+    effect = next((term for term in effect_terms if term in sentence), "")
+    if action and effect:
+        return True, "action+effect", action, effect
+    if action:
+        return True, "action", action, ""
+    if effect:
+        return True, "effect", "", effect
+    return False, "", "", ""
+
+
+def deduplicate_evidence_rows(evidence_df: pd.DataFrame) -> pd.DataFrame:
+    if evidence_df.empty:
+        return evidence_df.copy()
+
+    group_keys = [
+        "document_id",
+        "flavor_a",
+        "flavor_b",
+        "sentence",
+        "matched_categories",
+        "matched_terms",
+    ]
+    rows: list[dict[str, Any]] = []
+    for _, group in evidence_df.groupby(group_keys, dropna=False, sort=False):
+        first = group.iloc[0].to_dict()
+        for column in [
+            "matched_negated_categories",
+            "matched_negated_terms",
+            "template_pattern",
+            "role_detection_rule",
+            "role_action_term",
+            "role_effect_term",
+            "explicit_mix_text",
+        ]:
+            if column in group.columns:
+                first[column] = merge_pipe_values(group[column].fillna("").tolist())
+        for column in [
+            "is_same_sentence_pair",
+            "has_explicit_mix_expression",
+            "is_template_sentence",
+            "has_positive_expression",
+            "has_negative_expression",
+            "has_taste_role_explanation",
+            "is_product_name_derived",
+        ]:
+            if column in group.columns:
+                first[column] = bool(group[column].fillna(False).any())
+        rows.append(first)
+    return pd.DataFrame(rows)
+
+
+def analyze_sentence_categories(
+    sentence: str,
+    expression_dictionary: dict[str, Any],
+) -> dict[str, Any]:
+    negations = expression_dictionary["negations"]
+    matched_categories: list[str] = []
+    matched_terms: list[str] = []
+    matched_negated_categories: list[str] = []
+    matched_negated_terms: list[str] = []
+    has_positive = False
+    has_negative = False
+
+    for group_name in ("taste", "experience", "evaluation"):
+        for category_name, terms in expression_dictionary[group_name].items():
+            if group_name == "evaluation" and category_name == "negative":
+                valid_terms = [term for term in terms if term in sentence]
+                negated_terms = []
+            else:
+                valid_terms, negated_terms = find_category_matches(sentence, terms, negations)
+            if valid_terms:
+                matched_categories.append(f"{group_name}:{category_name}")
+                matched_terms.extend(valid_terms)
+            if negated_terms:
+                matched_negated_categories.append(f"{group_name}:{category_name}")
+                matched_negated_terms.extend(negated_terms)
+            if group_name == "evaluation" and category_name == "positive" and valid_terms:
+                has_positive = True
+            if group_name == "evaluation" and category_name == "negative" and valid_terms:
+                has_negative = True
+            if group_name == "evaluation" and category_name == "positive" and negated_terms:
+                has_negative = True
+
+    return {
+        "matched_categories": merge_pipe_values(matched_categories),
+        "matched_terms": merge_pipe_values(matched_terms),
+        "matched_negated_categories": merge_pipe_values(matched_negated_categories),
+        "matched_negated_terms": merge_pipe_values(matched_negated_terms),
+        "has_positive_expression": has_positive,
+        "has_negative_expression": has_negative,
+    }
+
+
+def aggregate_pair_flags(
+    docs_df: pd.DataFrame,
+    pair_df: pd.DataFrame,
+    sorted_patterns: list[str],
+    pattern_to_canonical: dict[str, str],
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    flag_rows: list[dict[str, Any]] = []
+    excluded_product_rows: list[dict[str, Any]] = []
+    title_flavor_map = {
+        row.document_id: sorted(set(row.title_flavors) | set(row.summary_flavors))
+        for row in docs_df.itertuples(index=False)
+    }
+    title_map = {
+        row.document_id: row.review_title
+        for row in docs_df.itertuples(index=False)
+    }
+
+    for row in pair_df.itertuples(index=False):
+        is_parent_child_pair, parent_child_reason = detect_parent_child_pair(
+            row.flavor_a,
+            row.flavor_b,
+        )
+        product_name_doc_ids: list[str] = []
+        explicit_doc_ids: list[str] = []
+        for doc in docs_df.itertuples(index=False):
+            flavors = sorted(set(doc.normalized_flavors))
+            if row.flavor_a not in flavors or row.flavor_b not in flavors:
+                continue
+            title_flavors = title_flavor_map.get(doc.document_id, [])
+            if row.flavor_a in title_flavors and row.flavor_b in title_flavors:
+                product_name_doc_ids.append(doc.document_id)
+            for sentence in split_sentences(doc.review_body):
+                sentence_flavors = extract_flavors(sentence, sorted_patterns, pattern_to_canonical)
+                if row.flavor_a in sentence_flavors and row.flavor_b in sentence_flavors:
+                    has_explicit, _ = detect_explicit_mix_expression(sentence, row.flavor_a, row.flavor_b)
+                    if has_explicit:
+                        explicit_doc_ids.append(doc.document_id)
+                        break
+
+        is_product_name_derived = bool(product_name_doc_ids)
+        has_explicit_mix_expression = bool(explicit_doc_ids)
+        excluded_as_product_name_pair = is_product_name_derived and not has_explicit_mix_expression
+        if excluded_as_product_name_pair:
+            for document_id in sorted(set(product_name_doc_ids)):
+                excluded_product_rows.append(
+                    {
+                        "document_id": document_id,
+                        "product_name": title_map.get(document_id, ""),
+                        "flavor_a": row.flavor_a,
+                        "flavor_b": row.flavor_b,
+                        "matched_text": title_map.get(document_id, ""),
+                        "reason": "product_name_derived_without_explicit_mix",
+                    }
+                )
+
+        flag_rows.append(
+            {
+                "pair_key": row.pair_key,
+                "flavor_a": row.flavor_a,
+                "flavor_b": row.flavor_b,
+                "is_product_name_derived": is_product_name_derived,
+                "has_explicit_mix_expression": has_explicit_mix_expression,
+                "excluded_as_product_name_pair": excluded_as_product_name_pair,
+                "is_parent_child_pair": is_parent_child_pair,
+                "parent_child_reason": parent_child_reason,
+            }
+        )
+
+    return pd.DataFrame(flag_rows), pd.DataFrame(excluded_product_rows)
+
+
+def extract_pair_expression_features_v2(
+    docs_df: pd.DataFrame,
+    pair_df: pd.DataFrame,
+    sorted_patterns: list[str],
+    pattern_to_canonical: dict[str, str],
+    expression_dictionary: dict[str, Any],
+    template_patterns: dict[str, list[str]],
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    compiled_templates = compile_template_patterns(template_patterns)
+    pair_lookup = set(pair_df["pair_key"].tolist())
+    pair_documents: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in docs_df.itertuples(index=False):
+        flavors = sorted(set(row.normalized_flavors))
+        for flavor_a, flavor_b in combinations(flavors, 2):
+            pair_key = f"{flavor_a}||{flavor_b}"
+            if pair_key in pair_lookup:
+                pair_documents[pair_key].append(row._asdict())
+
+    pair_flag_df, excluded_product_df = aggregate_pair_flags(
+        docs_df,
+        pair_df,
+        sorted_patterns,
+        pattern_to_canonical,
+    )
+    feature_rows: list[dict[str, Any]] = []
+    evidence_rows: list[dict[str, Any]] = []
+    excluded_parent_child_rows: list[dict[str, Any]] = []
+    flag_map = pair_flag_df.set_index("pair_key").to_dict("index") if not pair_flag_df.empty else {}
+
+    for pair_row in pair_df.itertuples(index=False):
+        pair_key = pair_row.pair_key
+        flags = flag_map.get(pair_key, {})
+        doc_rows = pair_documents.get(pair_key, [])
+        flavor_a = pair_row.flavor_a
+        flavor_b = pair_row.flavor_b
+        document_positive_count = 0
+        document_negative_count = 0
+        document_role_count = 0
+        same_sentence_positive_count = 0
+        same_sentence_negative_count = 0
+        same_sentence_role_count = 0
+        same_sentence_cooccurrence_count = 0
+        same_sentence_evidence_document_count = 0
+        explicit_mix_count = 0
+        template_evidence_count = 0
+        positive_evidence_count = 0
+        negative_evidence_count = 0
+        role_evidence_count = 0
+
+        if flags.get("is_parent_child_pair"):
+            excluded_parent_child_rows.append(
+                {
+                    "flavor_a": flavor_a,
+                    "flavor_b": flavor_b,
+                    "pair_key": pair_key,
+                    "reason": flags.get("parent_child_reason", ""),
+                }
+            )
+
+        for doc in doc_rows:
+            sentences = split_sentences(doc["review_body"])
+            same_sentence_rows: list[dict[str, Any]] = []
+            fallback_rows: list[dict[str, Any]] = []
+
+            for sentence in sentences:
+                sentence_flavors = set(
+                    extract_flavors(sentence, sorted_patterns, pattern_to_canonical)
+                )
+                contains_a = flavor_a in sentence_flavors
+                contains_b = flavor_b in sentence_flavors
+                has_explicit_mix, explicit_mix_text = detect_explicit_mix_expression(
+                    sentence,
+                    flavor_a,
+                    flavor_b,
+                )
+                is_template_sentence, template_pattern = detect_template_sentence(
+                    sentence,
+                    compiled_templates,
+                )
+                category_info = analyze_sentence_categories(sentence, expression_dictionary)
+                has_role, role_rule, role_action_term, role_effect_term = role_terms_for_sentence(
+                    sentence,
+                    expression_dictionary,
+                )
+
+                row_dict = {
+                    "document_id": doc["document_id"],
+                    "review_title": doc["review_title"],
+                    "review_url": doc["review_url"],
+                    "product_name": doc["review_title"],
+                    "flavor_a": flavor_a,
+                    "flavor_b": flavor_b,
+                    "pair_key": pair_key,
+                    "sentence": sentence,
+                    "matched_categories": category_info["matched_categories"],
+                    "matched_terms": category_info["matched_terms"],
+                    "matched_negated_categories": category_info["matched_negated_categories"],
+                    "matched_negated_terms": category_info["matched_negated_terms"],
+                    "is_same_sentence_pair": contains_a and contains_b,
+                    "has_explicit_mix_expression": has_explicit_mix,
+                    "explicit_mix_text": explicit_mix_text,
+                    "is_template_sentence": is_template_sentence,
+                    "template_pattern": template_pattern,
+                    "has_positive_expression": category_info["has_positive_expression"],
+                    "has_negative_expression": category_info["has_negative_expression"],
+                    "has_taste_role_explanation": has_role,
+                    "role_detection_rule": role_rule,
+                    "role_action_term": role_action_term,
+                    "role_effect_term": role_effect_term,
+                    "is_product_name_derived": bool(flags.get("is_product_name_derived", False)),
+                    "is_parent_child_pair": bool(flags.get("is_parent_child_pair", False)),
+                    "parent_child_reason": flags.get("parent_child_reason", ""),
+                }
+
+                if contains_a and contains_b:
+                    same_sentence_rows.append(row_dict)
+                elif contains_a or contains_b:
+                    fallback_rows.append(row_dict)
+
+            if same_sentence_rows:
+                same_sentence_cooccurrence_count += 1
+                eligible_same_sentence = [
+                    row
+                    for row in same_sentence_rows
+                    if not row["is_template_sentence"]
+                ]
+                if eligible_same_sentence:
+                    same_sentence_evidence_document_count += 1
+                    doc_positive = any(row["has_positive_expression"] for row in eligible_same_sentence)
+                    doc_negative = any(row["has_negative_expression"] for row in eligible_same_sentence)
+                    doc_role = any(row["has_taste_role_explanation"] for row in eligible_same_sentence)
+                    if doc_positive:
+                        same_sentence_positive_count += 1
+                    if doc_negative:
+                        same_sentence_negative_count += 1
+                    if doc_role:
+                        same_sentence_role_count += 1
+                    if any(row["has_explicit_mix_expression"] for row in eligible_same_sentence):
+                        explicit_mix_count += 1
+                    for row in eligible_same_sentence:
+                        positive_evidence_count += int(row["has_positive_expression"])
+                        negative_evidence_count += int(row["has_negative_expression"])
+                        role_evidence_count += int(row["has_taste_role_explanation"])
+                template_evidence_count += sum(int(row["is_template_sentence"]) for row in same_sentence_rows)
+
+                doc_level_rows = eligible_same_sentence if eligible_same_sentence else []
+                if doc_level_rows:
+                    document_positive_count += int(any(row["has_positive_expression"] for row in doc_level_rows))
+                    document_negative_count += int(any(row["has_negative_expression"] for row in doc_level_rows))
+                    document_role_count += int(any(row["has_taste_role_explanation"] for row in doc_level_rows))
+
+                evidence_rows.extend(same_sentence_rows)
+            else:
+                non_template_fallback = [
+                    row for row in fallback_rows if not row["is_template_sentence"]
+                ]
+                if non_template_fallback:
+                    document_positive_count += int(
+                        any(row["has_positive_expression"] for row in non_template_fallback)
+                    )
+                    document_negative_count += int(
+                        any(row["has_negative_expression"] for row in non_template_fallback)
+                    )
+                    document_role_count += int(
+                        any(row["has_taste_role_explanation"] for row in non_template_fallback)
+                    )
+                template_evidence_count += sum(int(row["is_template_sentence"]) for row in fallback_rows)
+                evidence_rows.extend(fallback_rows)
+
+        document_cooccurrence_count = int(pair_row.pair_count)
+        feature_rows.append(
+            {
+                "flavor_a": flavor_a,
+                "flavor_b": flavor_b,
+                "pair_key": pair_key,
+                "pair_count": document_cooccurrence_count,
+                "document_cooccurrence_count": document_cooccurrence_count,
+                "same_sentence_cooccurrence_count": same_sentence_cooccurrence_count,
+                "same_sentence_evidence_document_count": same_sentence_evidence_document_count,
+                "explicit_mix_count": explicit_mix_count,
+                "document_level_positive_count": document_positive_count,
+                "document_level_negative_count": document_negative_count,
+                "document_level_role_count": document_role_count,
+                "same_sentence_positive_count": same_sentence_positive_count,
+                "same_sentence_negative_count": same_sentence_negative_count,
+                "same_sentence_role_count": same_sentence_role_count,
+                "document_level_positive_ratio": (
+                    document_positive_count / document_cooccurrence_count if document_cooccurrence_count else 0.0
+                ),
+                "document_level_negative_ratio": (
+                    document_negative_count / document_cooccurrence_count if document_cooccurrence_count else 0.0
+                ),
+                "document_level_role_ratio": (
+                    document_role_count / document_cooccurrence_count if document_cooccurrence_count else 0.0
+                ),
+                "same_sentence_positive_ratio": (
+                    same_sentence_positive_count / same_sentence_evidence_document_count
+                    if same_sentence_evidence_document_count
+                    else 0.0
+                ),
+                "same_sentence_negative_ratio": (
+                    same_sentence_negative_count / same_sentence_evidence_document_count
+                    if same_sentence_evidence_document_count
+                    else 0.0
+                ),
+                "same_sentence_role_ratio": (
+                    same_sentence_role_count / same_sentence_evidence_document_count
+                    if same_sentence_evidence_document_count
+                    else 0.0
+                ),
+                "template_evidence_count": template_evidence_count,
+                "positive_evidence_count": positive_evidence_count,
+                "negative_evidence_count": negative_evidence_count,
+                "role_evidence_count": role_evidence_count,
+                "is_product_name_derived": bool(flags.get("is_product_name_derived", False)),
+                "has_explicit_mix_expression": bool(flags.get("has_explicit_mix_expression", False)),
+                "excluded_as_product_name_pair": bool(flags.get("excluded_as_product_name_pair", False)),
+                "is_parent_child_pair": bool(flags.get("is_parent_child_pair", False)),
+                "parent_child_reason": flags.get("parent_child_reason", ""),
+            }
+        )
+
+    features_df = pd.DataFrame(feature_rows)
+    evidence_before_dedup = pd.DataFrame(evidence_rows)
+    before_count = len(evidence_before_dedup)
+    evidence_df = deduplicate_evidence_rows(evidence_before_dedup)
+    after_count = len(evidence_df)
+    if not features_df.empty:
+        features_df["evidence_rows_before_dedup"] = before_count
+        features_df["evidence_rows_after_dedup"] = after_count
+        features_df["evidence_duplicates_removed"] = before_count - after_count
+    if excluded_product_df.empty:
+        excluded_product_df = pd.DataFrame(
+            columns=["document_id", "product_name", "flavor_a", "flavor_b", "matched_text", "reason"]
+        )
+    excluded_parent_child_df = pd.DataFrame(excluded_parent_child_rows).drop_duplicates().reset_index(drop=True)
+    if excluded_parent_child_df.empty:
+        excluded_parent_child_df = pd.DataFrame(
+            columns=["flavor_a", "flavor_b", "pair_key", "reason"]
+        )
+    return (
+        features_df,
+        evidence_df,
+        excluded_product_df,
+        excluded_parent_child_df,
+    )
+
+
+def merge_pair_features_v2(
+    pair_df: pd.DataFrame,
+    centrality_pair_df: pd.DataFrame,
+    expression_df: pd.DataFrame,
+) -> pd.DataFrame:
+    merged = centrality_pair_df.merge(
+        expression_df,
+        on=["flavor_a", "flavor_b", "pair_key", "pair_count"],
+        how="left",
+    )
+    fill_zero_cols = [
+        column
+        for column in merged.columns
+        if column.endswith("_count")
+        or column.endswith("_ratio")
+        or column.startswith("centrality_")
+    ]
+    for column in fill_zero_cols:
+        merged[column] = merged[column].fillna(0.0)
+    for column in [
+        "is_product_name_derived",
+        "has_explicit_mix_expression",
+        "excluded_as_product_name_pair",
+        "is_parent_child_pair",
+    ]:
+        if column in merged.columns:
+            merged[column] = merged[column].fillna(False)
+    if "parent_child_reason" in merged.columns:
+        merged["parent_child_reason"] = merged["parent_child_reason"].fillna("")
+    return merged
+
+
+def add_normalized_features_v2(
+    pair_df: pd.DataFrame,
+    alpha: float = 3.0,
+    min_pair_count_for_context: int = 3,
+    min_same_sentence_docs_for_context: int = 2,
+) -> pd.DataFrame:
+    df = pair_df.copy()
+    df["support_log1p"] = np.log1p(df["support"])
+    df["pair_count_log1p"] = np.log1p(df["pair_count"])
+    df["lift_clipped"] = clip_series_upper(df["lift"], 0.99)
+    df["normalized_support"] = minmax_normalize(df["support_log1p"])
+    df["normalized_pair_count"] = minmax_normalize(df["pair_count_log1p"])
+    df["normalized_lift"] = minmax_normalize(df["lift_clipped"])
+    df["normalized_centrality_mean"] = minmax_normalize(df["centrality_mean"])
+
+    total_same_sentence_docs = float(df["same_sentence_evidence_document_count"].sum())
+    global_positive_rate = (
+        float(df["same_sentence_positive_count"].sum()) / total_same_sentence_docs
+        if total_same_sentence_docs
+        else 0.0
+    )
+    global_negative_rate = (
+        float(df["same_sentence_negative_count"].sum()) / total_same_sentence_docs
+        if total_same_sentence_docs
+        else 0.0
+    )
+    global_role_rate = (
+        float(df["same_sentence_role_count"].sum()) / total_same_sentence_docs
+        if total_same_sentence_docs
+        else 0.0
+    )
+
+    df["smoothed_positive_ratio"] = (
+        df["same_sentence_positive_count"] + alpha * global_positive_rate
+    ) / (df["same_sentence_evidence_document_count"] + alpha)
+    df["smoothed_negative_ratio"] = (
+        df["same_sentence_negative_count"] + alpha * global_negative_rate
+    ) / (df["same_sentence_evidence_document_count"] + alpha)
+    df["smoothed_role_ratio"] = (
+        df["same_sentence_role_count"] + alpha * global_role_rate
+    ) / (df["same_sentence_evidence_document_count"] + alpha)
+
+    df["context_score_eligible"] = (
+        (df["pair_count"] >= min_pair_count_for_context)
+        & (df["same_sentence_evidence_document_count"] >= min_same_sentence_docs_for_context)
+    )
+    df["smoothed_positive_ratio_for_score"] = np.where(
+        df["context_score_eligible"],
+        df["smoothed_positive_ratio"],
+        0.0,
+    )
+    df["smoothed_negative_ratio_for_score"] = np.where(
+        df["context_score_eligible"],
+        df["smoothed_negative_ratio"],
+        0.0,
+    )
+    df["smoothed_role_ratio_for_score"] = np.where(
+        df["context_score_eligible"],
+        df["smoothed_role_ratio"],
+        0.0,
+    )
+
+    df["normalized_smoothed_positive_ratio"] = minmax_normalize(
+        df["smoothed_positive_ratio_for_score"]
+    )
+    df["normalized_smoothed_negative_ratio"] = minmax_normalize(
+        df["smoothed_negative_ratio_for_score"]
+    )
+    df["normalized_smoothed_role_ratio"] = minmax_normalize(
+        df["smoothed_role_ratio_for_score"]
+    )
+    df["confidence_factor"] = np.minimum(1.0, df["pair_count"] / 5.0)
+    df["adjusted_lift"] = df["normalized_lift"] * df["confidence_factor"]
+    return df
+
+
+def build_pair_ranking_v2(pair_df: pd.DataFrame) -> pd.DataFrame:
+    ranked = pair_df.copy()
+    ranked["support_lift_score"] = 0.5 * ranked["normalized_support"] + 0.5 * ranked["adjusted_lift"]
+    ranked["overall_score_v2"] = (
+        0.30 * ranked["normalized_support"]
+        + 0.25 * ranked["adjusted_lift"]
+        + 0.15 * ranked["normalized_centrality_mean"]
+        + 0.15 * ranked["normalized_smoothed_positive_ratio"]
+        + 0.10 * ranked["normalized_smoothed_role_ratio"]
+        - 0.05 * ranked["normalized_smoothed_negative_ratio"]
+    )
+
+    ranked = stable_rank(ranked, "overall_score_v2", "rank_overall")
+    ranked = stable_rank(ranked, "support", "rank_support")
+    ranked = stable_rank(ranked, "lift", "rank_lift")
+    ranked = stable_rank(ranked, "support_lift_score", "rank_support_lift")
+
+    keep_columns = [
+        "rank_overall",
+        "rank_support",
+        "rank_lift",
+        "rank_support_lift",
+        "flavor_a",
+        "flavor_b",
+        "pair_key",
+        "pair_count",
+        "document_cooccurrence_count",
+        "same_sentence_cooccurrence_count",
+        "same_sentence_evidence_document_count",
+        "explicit_mix_count",
+        "support",
+        "lift",
+        "normalized_lift",
+        "adjusted_lift",
+        "confidence_factor",
+        "centrality_mean",
+        "smoothed_positive_ratio",
+        "smoothed_negative_ratio",
+        "smoothed_role_ratio",
+        "overall_score_v2",
+        "document_level_positive_ratio",
+        "document_level_negative_ratio",
+        "document_level_role_ratio",
+        "same_sentence_positive_ratio",
+        "same_sentence_negative_ratio",
+        "same_sentence_role_ratio",
+        "template_evidence_count",
+        "positive_evidence_count",
+        "negative_evidence_count",
+        "role_evidence_count",
+        "is_product_name_derived",
+        "has_explicit_mix_expression",
+        "excluded_as_product_name_pair",
+        "is_parent_child_pair",
+        "parent_child_reason",
+        "context_score_eligible",
+    ]
+    keep_columns += [
+        "normalized_support",
+        "normalized_pair_count",
+        "normalized_centrality_mean",
+        "normalized_smoothed_positive_ratio",
+        "normalized_smoothed_negative_ratio",
+        "normalized_smoothed_role_ratio",
+        "support_log1p",
+        "pair_count_log1p",
+        "lift_clipped",
+        "evidence_rows_before_dedup",
+        "evidence_rows_after_dedup",
+        "evidence_duplicates_removed",
+    ]
+    for column in keep_columns:
+        if column not in ranked.columns:
+            ranked[column] = 0.0
+    return ranked[keep_columns + [c for c in ranked.columns if c not in keep_columns]]
+
+
+def split_ranking_tiers_v2(pair_ranking_df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    df = pair_ranking_df.copy()
+    base_excluded = (
+        df["excluded_as_product_name_pair"]
+        | df["is_parent_child_pair"]
+        | (df["flavor_a"] == df["flavor_b"])
+        | (df["same_sentence_evidence_document_count"] == 0)
+    )
+    tier1_mask = (
+        ~base_excluded
+        & (df["pair_count"] >= 3)
+        & (df["same_sentence_evidence_document_count"] >= 2)
+    )
+    tier2_mask = (
+        ~base_excluded
+        & (df["pair_count"] >= 2)
+    )
+
+    excluded_reason = np.select(
+        [
+            df["excluded_as_product_name_pair"],
+            df["is_parent_child_pair"],
+            df["flavor_a"] == df["flavor_b"],
+            df["same_sentence_evidence_document_count"] == 0,
+        ],
+        [
+            "product_name_derived",
+            "parent_child_pair",
+            "self_loop",
+            "no_same_sentence_context",
+        ],
+        default="other",
+    )
+    df["ranking_tier"] = np.select(
+        [tier1_mask, tier2_mask],
+        ["Tier1", "Tier2"],
+        default="Excluded",
+    )
+    df["excluded_reason"] = excluded_reason
+
+    tier1_df = df[tier1_mask].copy()
+    tier2_df = df[tier2_mask].copy()
+    excluded_df = df[~tier2_mask].copy()
+    return tier1_df, tier2_df, excluded_df
+
+
+def representative_contexts_for_pair(
+    evidence_df: pd.DataFrame,
+    pair_key: str,
+) -> list[str]:
+    pair_evidence = evidence_df[evidence_df["pair_key"] == pair_key].copy()
+    if pair_evidence.empty:
+        return []
+    eligible = pair_evidence[
+        pair_evidence["is_same_sentence_pair"] | pair_evidence["has_explicit_mix_expression"]
+    ].copy()
+    if eligible.empty:
+        return []
+    eligible["priority"] = (
+        eligible["is_same_sentence_pair"].astype(int) * 100
+        + eligible["has_explicit_mix_expression"].astype(int) * 50
+        + (~eligible["is_template_sentence"]).astype(int) * 20
+        + (
+            eligible["has_positive_expression"].astype(int)
+            + eligible["has_negative_expression"].astype(int)
+            + eligible["has_taste_role_explanation"].astype(int)
+        )
+    )
+    eligible = eligible.sort_values(
+        by=["priority", "document_id", "sentence"],
+        ascending=[False, True, True],
+    )
+    contexts: list[str] = []
+    seen = set()
+    for sentence in eligible["sentence"].tolist():
+        if sentence in seen:
+            continue
+        seen.add(sentence)
+        contexts.append(sentence)
+        if len(contexts) >= 3:
+            break
+    return contexts
+
+
+def build_manual_validation_candidates_v2(
+    pair_ranking_df: pd.DataFrame,
+    evidence_df: pd.DataFrame,
+    top_k: int,
+) -> pd.DataFrame:
+    sources = []
+    for ranking_name in ("overall", "support", "lift", "support_lift"):
+        sources.append(top_pairs_for_ranking(pair_ranking_df, ranking_name, top_k))
+    source_df = pd.concat(sources, ignore_index=True)
+    aggregated = (
+        source_df.groupby("pair_key")
+        .agg(
+            {
+                "flavor_a": "first",
+                "flavor_b": "first",
+                "rank_overall": "first",
+                "rank_support": "first",
+                "rank_lift": "first",
+                "rank_support_lift": "first",
+                "pair_count": "first",
+                "same_sentence_evidence_document_count": "first",
+                "explicit_mix_count": "first",
+                "support": "first",
+                "adjusted_lift": "first",
+                "centrality_mean": "first",
+                "smoothed_positive_ratio": "first",
+                "smoothed_negative_ratio": "first",
+                "smoothed_role_ratio": "first",
+                "template_evidence_count": "first",
+                "positive_evidence_count": "first",
+                "negative_evidence_count": "first",
+                "role_evidence_count": "first",
+                "ranking_tier": "first",
+                "is_product_name_derived": "first",
+                "is_parent_child_pair": "first",
+                "ranking_source": lambda s: "|".join(sorted(set(s))),
+            }
+        )
+        .reset_index()
+    )
+
+    rows = []
+    for row in aggregated.itertuples(index=False):
+        contexts = representative_contexts_for_pair(evidence_df, row.pair_key)
+        rows.append(
+            {
+                **row._asdict(),
+                "representative_context_1": contexts[0] if len(contexts) >= 1 else "",
+                "representative_context_2": contexts[1] if len(contexts) >= 2 else "",
+                "representative_context_3": contexts[2] if len(contexts) >= 3 else "",
+                "mix_relation_label": "",
+                "evaluation_label": "",
+                "taste_role_label": "",
+                "recommendation_validity": "",
+                "reviewer_comment": "",
+            }
+        )
+
+    return pd.DataFrame(rows).sort_values(
+        by=["rank_overall", "pair_count", "adjusted_lift", "flavor_a", "flavor_b"],
+        ascending=[True, False, False, True, True],
+    ).reset_index(drop=True)
+
+
+def compute_sensitivity_v2(pair_ranking_df: pd.DataFrame, top_k: int) -> tuple[pd.DataFrame, pd.DataFrame]:
+    setting_weights = {
+        "SettingA_balanced": {
+            "normalized_support": 0.30,
+            "adjusted_lift": 0.25,
+            "normalized_centrality_mean": 0.15,
+            "normalized_smoothed_positive_ratio": 0.15,
+            "normalized_smoothed_role_ratio": 0.10,
+            "normalized_smoothed_negative_ratio": -0.05,
+        },
+        "SettingB_cooccurrence": {
+            "normalized_support": 0.40,
+            "adjusted_lift": 0.30,
+            "normalized_centrality_mean": 0.10,
+            "normalized_smoothed_positive_ratio": 0.10,
+            "normalized_smoothed_role_ratio": 0.05,
+            "normalized_smoothed_negative_ratio": -0.05,
+        },
+        "SettingC_context": {
+            "normalized_support": 0.20,
+            "adjusted_lift": 0.15,
+            "normalized_centrality_mean": 0.15,
+            "normalized_smoothed_positive_ratio": 0.25,
+            "normalized_smoothed_role_ratio": 0.20,
+            "normalized_smoothed_negative_ratio": -0.05,
+        },
+    }
+
+    ranking_frames = []
+    top_lists: dict[str, list[str]] = {}
+    rank_maps: dict[str, dict[str, int]] = {}
+    setting_rows = []
+    for setting_name, weights in setting_weights.items():
+        temp_df = pair_ranking_df.copy()
+        temp_df["score"] = weighted_score(temp_df, weights)
+        temp_df = stable_rank(temp_df, "score", f"rank_{setting_name}")
+        temp_df["setting"] = setting_name
+        ranking_frames.append(temp_df)
+        top_df = temp_df.nsmallest(top_k, f"rank_{setting_name}")
+        top_lists[setting_name] = top_df["pair_key"].tolist()
+        rank_maps[setting_name] = dict(
+            zip(top_df["pair_key"].tolist(), top_df[f"rank_{setting_name}"].tolist())
+        )
+        setting_rows.append(
+            {
+                "row_type": "setting",
+                "setting": setting_name,
+                "top_k": top_k,
+                "product_name_pair_count_topk": int(top_df["excluded_as_product_name_pair"].sum()),
+                "parent_child_pair_count_topk": int(top_df["is_parent_child_pair"].sum()),
+                "pair_count_2_topk": int((top_df["pair_count"] == 2).sum()),
+                "same_sentence_evidence_0_topk": int(
+                    (top_df["same_sentence_evidence_document_count"] == 0).sum()
+                ),
+            }
+        )
+
+    comparison_rows = []
+    setting_names = list(setting_weights.keys())
+    for idx, left_name in enumerate(setting_names):
+        for right_name in setting_names[idx + 1 :]:
+            left_set = set(top_lists[left_name])
+            right_set = set(top_lists[right_name])
+            intersection = sorted(left_set & right_set)
+            union = left_set | right_set
+            comparison_rows.append(
+                {
+                    "row_type": "comparison",
+                    "setting_a": left_name,
+                    "setting_b": right_name,
+                    "top_k": top_k,
+                    "common_candidate_count": len(intersection),
+                    "jaccard_topk": len(intersection) / len(union) if union else 0.0,
+                    "spearman_rank_correlation": spearman_rank_correlation(
+                        [rank_maps[left_name][pair_key] for pair_key in intersection],
+                        [rank_maps[right_name][pair_key] for pair_key in intersection],
+                    )
+                    if len(intersection) >= 2
+                    else None,
+                    "common_pairs": "|".join(intersection),
+                }
+            )
+
+    detail_df = pd.concat(ranking_frames, ignore_index=True)
+    summary_df = pd.concat(
+        [pd.DataFrame(comparison_rows), pd.DataFrame(setting_rows)],
+        ignore_index=True,
+        sort=False,
+    )
+    return detail_df, summary_df
+
+
+def write_sensitivity_markdown_v2(summary_df: pd.DataFrame, path: Path) -> None:
+    comparison_df = summary_df[summary_df["row_type"] == "comparison"].copy()
+    setting_df = summary_df[summary_df["row_type"] == "setting"].copy()
+    lines = [
+        "# ランキング感度分析 v2",
+        "",
+        "## Settingごとの上位20件監査",
+        "",
+        "| Setting | pair_count=2 | same_sentence=0 | product_name | parent_child |",
+        "| --- | ---: | ---: | ---: | ---: |",
+    ]
+    for row in setting_df.itertuples(index=False):
+        lines.append(
+            f"| {row.setting} | {int(row.pair_count_2_topk)} | "
+            f"{int(row.same_sentence_evidence_0_topk)} | {int(row.product_name_pair_count_topk)} | "
+            f"{int(row.parent_child_pair_count_topk)} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Setting間比較",
+            "",
+            "| Setting A | Setting B | Common | Jaccard | Spearman |",
+            "| --- | --- | ---: | ---: | ---: |",
+        ]
+    )
+    for row in comparison_df.itertuples(index=False):
+        spearman = "" if row.spearman_rank_correlation is None else f"{row.spearman_rank_correlation:.4f}"
+        lines.append(
+            f"| {row.setting_a} | {row.setting_b} | {int(row.common_candidate_count)} | "
+            f"{row.jaccard_topk:.4f} | {spearman} |"
+        )
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def compute_before_after_comparison(
+    before_df: pd.DataFrame,
+    after_df: pd.DataFrame,
+    top_k: int = 20,
+) -> tuple[pd.DataFrame, dict[str, Any]]:
+    before_top = before_df.nsmallest(top_k, "rank_overall")[["pair_key", "rank_overall"]].rename(
+        columns={"rank_overall": "before_rank"}
+    )
+    after_top = after_df.nsmallest(top_k, "rank_overall")[["pair_key", "rank_overall"]].rename(
+        columns={"rank_overall": "after_rank"}
+    )
+    merged = before_top.merge(after_top, on="pair_key", how="outer")
+    merged["status"] = np.select(
+        [
+            merged["before_rank"].notna() & merged["after_rank"].notna(),
+            merged["before_rank"].notna(),
+        ],
+        ["common", "removed"],
+        default="new",
+    )
+    common = merged[merged["status"] == "common"].copy()
+    common_keys = common["pair_key"].tolist()
+    summary = {
+        "top_k": top_k,
+        "common_candidate_count": int((merged["status"] == "common").sum()),
+        "removed_candidate_count": int((merged["status"] == "removed").sum()),
+        "new_candidate_count": int((merged["status"] == "new").sum()),
+        "jaccard_topk": (
+            int((merged["status"] == "common").sum())
+            / int(len(set(before_top["pair_key"]) | set(after_top["pair_key"])))
+            if len(set(before_top["pair_key"]) | set(after_top["pair_key"])) > 0
+            else 0.0
+        ),
+        "spearman_rank_correlation": spearman_rank_correlation(
+            common["before_rank"].astype(int).tolist(),
+            common["after_rank"].astype(int).tolist(),
+        )
+        if len(common_keys) >= 2
+        else None,
+    }
+    return merged.sort_values(["status", "before_rank", "after_rank"], na_position="last"), summary
+
+
+def write_before_after_comparison_markdown(
+    comparison_df: pd.DataFrame,
+    summary: dict[str, Any],
+    path: Path,
+) -> None:
+    lines = [
+        "# Ranking Before/After Comparison",
+        "",
+        f"- top_k: {summary['top_k']}",
+        f"- common_candidate_count: {summary['common_candidate_count']}",
+        f"- removed_candidate_count: {summary['removed_candidate_count']}",
+        f"- new_candidate_count: {summary['new_candidate_count']}",
+        f"- jaccard_topk: {summary['jaccard_topk']:.4f}",
+        f"- spearman_rank_correlation: {summary['spearman_rank_correlation'] if summary['spearman_rank_correlation'] is not None else 'NA'}",
+        "",
+        "| pair_key | before_rank | after_rank | status |",
+        "| --- | ---: | ---: | --- |",
+    ]
+    for row in comparison_df.itertuples(index=False):
+        before_rank = "" if pd.isna(row.before_rank) else int(row.before_rank)
+        after_rank = "" if pd.isna(row.after_rank) else int(row.after_rank)
+        lines.append(f"| {row.pair_key} | {before_rank} | {after_rank} | {row.status} |")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def spearman_rank_correlation(series_a: list[int], series_b: list[int]) -> float | None:
     if len(series_a) < 2 or len(series_b) < 2:
         return None
@@ -1019,6 +2110,37 @@ def write_extended_summary(
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_extended_summary_v2(
+    path: Path,
+    docs_df: pd.DataFrame,
+    conditioned_df: pd.DataFrame,
+    tier1_df: pd.DataFrame,
+    tier2_df: pd.DataFrame,
+    excluded_df: pd.DataFrame,
+    excluded_product_df: pd.DataFrame,
+    excluded_parent_child_df: pd.DataFrame,
+    evidence_df: pd.DataFrame,
+) -> None:
+    lines = [
+        "# Extended Analysis Summary v2",
+        "",
+        f"- total_reviews: {len(docs_df)}",
+        f"- condition_reviews: {len(conditioned_df)}",
+        f"- tier1_candidate_count: {len(tier1_df)}",
+        f"- tier2_candidate_count: {len(tier2_df)}",
+        f"- excluded_candidate_count: {len(excluded_df)}",
+        f"- excluded_product_name_pair_rows: {len(excluded_product_df)}",
+        f"- excluded_parent_child_pair_rows: {len(excluded_parent_child_df)}",
+        f"- template_evidence_rows: {int(evidence_df.get('is_template_sentence', pd.Series(dtype=bool)).sum()) if not evidence_df.empty else 0}",
+        f"- negative_evidence_rows: {int(evidence_df.get('has_negative_expression', pd.Series(dtype=bool)).sum()) if not evidence_df.empty else 0}",
+        "- document-level cooccurrence is retained for Support/Lift.",
+        "- context scoring uses same-sentence evidence and explicit mix context only.",
+        "- product-name-derived pairs and parent-child pairs are excluded from standard ranking.",
+        "- smoothed context ratios and confidence-adjusted lift are used in v2 ranking.",
+    ]
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def create_bar_plot(
     df: pd.DataFrame,
     x: str,
@@ -1045,15 +2167,27 @@ def create_score_breakdown_plot(pair_ranking_df: pd.DataFrame, path: Path, top_k
     plot_df = pair_ranking_df.nsmallest(top_k, "rank_overall").copy()
     plot_df = plot_df.sort_values("rank_overall", ascending=False)
     fig, ax = plt.subplots(figsize=(12, 8), dpi=240)
-    components = [
-        ("normalized_support", "#4C78A8"),
-        ("normalized_lift", "#F58518"),
-        ("normalized_centrality_mean", "#54A24B"),
-        ("normalized_positive_document_ratio", "#E45756"),
-        ("normalized_taste_role_explanation_ratio", "#72B7B2"),
-    ]
+    if "normalized_smoothed_positive_ratio" in plot_df.columns:
+        components = [
+            ("normalized_support", "#4C78A8"),
+            ("adjusted_lift", "#F58518"),
+            ("normalized_centrality_mean", "#54A24B"),
+            ("normalized_smoothed_positive_ratio", "#E45756"),
+            ("normalized_smoothed_role_ratio", "#72B7B2"),
+            ("normalized_smoothed_negative_ratio", "#B279A2"),
+        ]
+    else:
+        components = [
+            ("normalized_support", "#4C78A8"),
+            ("normalized_lift", "#F58518"),
+            ("normalized_centrality_mean", "#54A24B"),
+            ("normalized_positive_document_ratio", "#E45756"),
+            ("normalized_taste_role_explanation_ratio", "#72B7B2"),
+        ]
     left = np.zeros(len(plot_df))
     for column, color in components:
+        if column not in plot_df.columns:
+            continue
         values = plot_df[column].to_numpy()
         ax.barh(plot_df["pair_key"], values, left=left, color=color, label=column)
         left += values

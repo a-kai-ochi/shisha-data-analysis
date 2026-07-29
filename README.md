@@ -26,31 +26,38 @@
 - Support / Lift の計算
 - 人手確認用データの作成
 
-追加実験では、これに加えて以下を実施する。
+修正版の追加実験では、これに加えて以下を実施する。
 
 - 媒介中心性を用いた接続性評価
+- 文書単位の共起に基づく Support / Lift と、同一文文脈に基づく評価特徴の分離
 - Support / Lift / 媒介中心性 / 文脈特徴を統合した総合ランキング
 - 評価表現・味覚表現・体験表現の辞書ベース抽出
+- 単一商品名由来ペア、親子語・部分一致ペア、テンプレート文の除外
 - 味の役割説明の抽出
 - 人手評価候補の拡張
 - ランキング感度分析
 
 ## 総合スコア
-標準の総合スコアは次式で定義している。
+修正版の標準スコアは次式で定義している。
 
 ```text
-overall_score =
+overall_score_v2 =
     0.30 * normalized_support
-  + 0.25 * normalized_lift
-  + 0.20 * normalized_centrality_mean
-  + 0.15 * normalized_positive_document_ratio
-  + 0.10 * normalized_taste_role_explanation_ratio
+  + 0.25 * adjusted_lift
+  + 0.15 * normalized_centrality_mean
+  + 0.15 * normalized_smoothed_positive_ratio
+  + 0.10 * normalized_smoothed_role_ratio
+  - 0.05 * normalized_smoothed_negative_ratio
 ```
 
-この重みは研究上確定したものではなく、初期設定である。感度分析では別設定も比較する。
+正の重みと負のペナルティは研究上確定したものではなく、暫定設定である。感度分析では別設定も比較する。
+
+`adjusted_lift` は、文書単位 Lift に出現回数による信頼度補正をかけた値である。文脈比率には縮約を適用し、`pair_count < 3` または `same_sentence_evidence_document_count < 2` の候補は文脈加点を得ない。
 
 ## 評価語抽出
 評価語抽出は LLM や外部APIを使わず、`config/taste_expression_dictionary.json` に定義した辞書ベースで実装している。味覚表現、体験・吸い心地表現、肯定/否定評価、味の役割説明を対象とする。
+
+共起は文書単位で計算するが、評価表現・否定表現・役割表現のスコアには、原則として同一文に両フレーバーが現れる文脈だけを利用する。テンプレート文や見出しは `config/template_sentence_patterns.json` で除外し、単一商品名由来のペアや親子語・部分一致ペアは標準ランキングから除外する。
 
 ### 否定表現処理の限界
 - `ない`
@@ -62,14 +69,15 @@ overall_score =
 のような否定表現には最低限対応しているが、複雑な文脈依存の否定や皮肉表現までは扱っていない。
 
 ## 実行コマンド
-追加実験は以下で一括実行できる。
+修正版の追加実験は以下で一括実行できる。
 
 ```bash
 python3 scripts/run_extended_analysis.py \
   --input data/cloud_reviews_final.csv \
-  --output-dir outputs/extended_analysis \
+  --output-dir outputs/extended_analysis_v2 \
   --top-k 20 \
   --dictionary config/taste_expression_dictionary.json \
+  --template-patterns config/template_sentence_patterns.json \
   --min-pair-count 2 \
   --random-seed 42
 ```
@@ -85,18 +93,28 @@ python3 scripts/summarize_manual_validation.py \
 ```
 
 ## 出力ファイル
-追加実験の主な出力は `outputs/extended_analysis/` に保存する。
+修正版追加実験の主な出力は `outputs/extended_analysis_v2/` に保存する。
 
 - `flavor_centrality.csv`
   - フレーバーごとの次数、重み付き次数、媒介中心性
 - `flavor_centrality_top20.md`
   - 媒介中心性上位20件の表
 - `pair_expression_features.csv`
-  - フレーバーペアごとの文脈特徴量
+  - フレーバーペアごとの文書単位・同一文単位の文脈特徴量
 - `pair_expression_evidence.csv`
-  - 抽出根拠となる文
+  - 抽出根拠となる文。テンプレート文フラグや role 判定根拠も含む
 - `pair_ranking.csv`
-  - Support / Lift / 総合ランキング
+  - Tier 1 の標準ランキング
+- `pair_ranking_tier1.csv`
+  - Tier 1 の強い候補
+- `pair_ranking_tier2.csv`
+  - Tier 2 の探索的候補
+- `pair_ranking_excluded.csv`
+  - 除外候補と除外理由
+- `excluded_product_name_pairs.csv`
+  - 単一商品名由来として除外した監査用CSV
+- `excluded_parent_child_pairs.csv`
+  - 親子語・部分一致として除外した監査用CSV
 - `manual_validation_candidates.csv`
   - 人手評価用候補CSV
 - `manual_validation_summary.csv`
@@ -107,6 +125,10 @@ python3 scripts/summarize_manual_validation.py \
   - 重み設定別ランキング
 - `ranking_sensitivity.md`
   - 感度分析の要約
+- `ranking_before_after_comparison.csv`
+  - 修正前後ランキング比較
+- `ranking_before_after_comparison.md`
+  - 修正前後ランキング比較の要約
 - `figure_*.png`
   - 可視化図
 
@@ -125,6 +147,22 @@ python3 scripts/summarize_manual_validation.py \
 
 入力後に `scripts/summarize_manual_validation.py` を実行すると、ランキング方式ごとの妥当率などを集計できる。
 
+## Tierの考え方
+- Tier 1
+  - `pair_count >= 3`
+  - `same_sentence_evidence_document_count >= 2`
+  - 商品名由来ペア・親子語ペアを除外
+- Tier 2
+  - `pair_count >= 2`
+  - 商品名由来ペア・親子語ペアを除外
+  - 推薦の確定候補ではなく探索的候補として扱う
+
+## 限界と注意
+- 辞書ベース抽出であるため、複雑な言い換え・皮肉・長距離依存は扱えない
+- 明示的ミックス表現の網羅性には限界がある
+- 複合商品名と実ミックスの完全な識別は困難である
+- ランキングは推薦候補の探索支援であり、推薦の有効性を保証しない
+
 ## 現時点の対象外
 - 銘柄粒度の分析
 - 店舗の提案品質改善そのものの直接検証
@@ -139,6 +177,7 @@ python3 scripts/summarize_manual_validation.py \
 ├── requirements.txt
 ├── config/
 │   └── taste_expression_dictionary.json
+│   └── template_sentence_patterns.json
 ├── data/
 │   ├── aslaj_master_list.csv
 │   ├── aslaj_test_with_desc.csv
