@@ -1,0 +1,29 @@
+{
+  "start_url": "https://shisha-lagos.com/category/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/",
+  "source_site": "shisha_lagos",
+  "source_type": "editorial_review",
+  "scraped_at": "2026-07-29T10:47:41Z",
+  "scraper_version": "0.2.0",
+  "git_commit": "bc387301da859248c38e71105c5de5eac0048d7b",
+  "request_delay": 2.0,
+  "user_agent": "ShishaResearchBot/1.0 (+research scraping for JCEEE paper)",
+  "max_pages": 100,
+  "category_page_count": 2,
+  "article_url_count": 13,
+  "successful_article_count": 13,
+  "failed_article_count": 0,
+  "robots_txt_url": "https://shisha-lagos.com/robots.txt",
+  "robots_txt_status": 200,
+  "output_files": [
+    "data/processed/shisha_lagos_articles.csv",
+    "data/processed/shisha_lagos_paragraphs.csv",
+    "data/processed/shisha_lagos_tables.csv",
+    "data/processed/shisha_lagos_list_items.csv",
+    "data/processed/shisha_lagos_recommended_mix_sections.csv",
+    "data/processed/shisha_lagos_duplicates.csv",
+    "outputs/shisha_lagos_scraping_summary.csv",
+    "outputs/shisha_lagos_scraping_report.md",
+    "outputs/paper_shisha_lagos_dataset_statistics.csv",
+    "outputs/paper_shisha_lagos_dataset_draft.md"
+  ]
+}

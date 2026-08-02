@@ -6,6 +6,7 @@
 ## データの出典
 - 販売データ: [ASLAJ](https://www.aslaj.com/)
 - レビューデータ: [CLOUD](https://cloud-jp.net/)
+- 追加収集対象: [Shisha Cafe & Bar LAGOS](https://shisha-lagos.com/)
 
 ## 入力データ
 主要な入力ファイルは以下の2つである。
@@ -16,6 +17,17 @@
   - 主な列: `レビュータイトル`, `更新日`, `概要`, `レビューURL`, `レビュー本文`
 
 追加実験で利用する本文列は主に `レビュー本文` であり、数値の評価値列は現時点では含まれていない。
+
+## LAGOSデータの位置づけ
+LAGOSサイトの「フレーバーレビュー」カテゴリは、既存の `CLOUD` レビューとは性質が異なる可能性がある。そのため、本ディレクトリでは以下のように区別して扱う。
+
+- `CLOUD`
+  - 既存のユーザー投稿・レビュー系コーパスとして扱う
+- `Shisha Cafe & Bar LAGOS`
+  - `editorial_review` として扱う
+  - 既存レビューコーパスへ自動統合せず、単独の出力として保存する
+
+論文や分析で利用する際は、取得日、対象件数、`source_type` を明記し、既存レビューと混在させる場合も `source_type` 別に集計する。
 
 ## 既存実験と追加実験
 既存実験では、以下を実装している。
@@ -91,6 +103,111 @@ python3 scripts/summarize_manual_validation.py \
   --input outputs/extended_analysis/manual_validation_candidates.csv \
   --output-dir outputs/extended_analysis
 ```
+
+## LAGOSスクレイピング
+Shisha Cafe & Bar LAGOS の収集は、対象カテゴリを `フレーバーレビュー` に限定して実行する。スクレイピングは管理者の許可を得たうえで行い、`robots.txt` の内容も毎回確認・記録する。LAGOSデータは `editorial_review` として扱い、既存のユーザーレビューとは別ソースのまま保存する。
+
+### dry-run
+まずはカテゴリ巡回と記事本文のプレビューだけを行う。
+
+```bash
+uv run --with requests --with beautifulsoup4 --with pandas \
+python scripts/scrape_shisha_lagos.py \
+  --start-url "https://shisha-lagos.com/category/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/" \
+  --output-dir data/processed \
+  --raw-dir data/raw/shisha_lagos \
+  --report-dir outputs \
+  --delay 2.0 \
+  --max-pages 2 \
+  --dry-run
+```
+
+dry-run では以下のみを行う。
+
+- カテゴリページの確認
+- 記事URLの列挙
+- ページネーションの確認
+- 本文取得は最大3記事まで
+- 恒久的なCSVやraw HTMLは出力しない
+
+### 本収集
+dry-run で問題がなければ、以下のように本収集を行う。
+
+```bash
+uv run --with requests --with beautifulsoup4 --with pandas \
+python scripts/scrape_shisha_lagos.py \
+  --start-url "https://shisha-lagos.com/category/%E3%83%95%E3%83%AC%E3%83%BC%E3%83%90%E3%83%BC%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/" \
+  --output-dir data/processed \
+  --raw-dir data/raw/shisha_lagos \
+  --report-dir outputs \
+  --delay 2.0 \
+  --max-pages 100 \
+  --resume
+```
+
+### 2026-07-29 時点の収集結果
+
+- 収集日: `2026-07-29`
+- 対象カテゴリページ数: `2`
+- 収集記事数: `13`
+- source_type: `editorial_review`
+- 記事本文抽出成功: `13/13`
+- おすすめミックス節検出: `13/13`
+- brand 抽出成功: `13/13`
+- target_flavor 抽出成功: `13/13`
+
+既存の `CLOUD` レビューとは性質が異なるため、この13件は既存レビューコーパスへ直接追記せず、別ソースのまま保持する。既存分析へ統合する前に、`source_type` 別の検証とバイアス確認を行う。
+
+### 安全設定
+
+- `User-Agent` は研究目的を明示した値を使用する
+- 連絡先は環境変数 `SHISHA_SCRAPER_CONTACT` または CLI 引数で指定する
+- デフォルトの待機時間は2秒で、ランダムジッターを加える
+- 並列アクセスは行わない
+- `429` と `5xx` は retry と exponential backoff で処理する
+- `robots.txt` を確認し、矛盾がある場合は自動実行を停止する
+- `--resume` 指定時は保存済みHTMLを再利用する
+
+### LAGOS出力ファイル
+
+- `data/processed/shisha_lagos_articles.csv`
+- `data/processed/shisha_lagos_paragraphs.csv`
+- `data/processed/shisha_lagos_tables.csv`
+- `data/processed/shisha_lagos_list_items.csv`
+- `data/processed/shisha_lagos_recommended_mix_sections.csv`
+- `data/processed/shisha_lagos_duplicates.csv`
+- `outputs/shisha_lagos_scraping_summary.csv`
+- `outputs/shisha_lagos_scraping_report.md`
+- `outputs/shisha_lagos_scraping_metadata.json`
+- `outputs/shisha_lagos_article_length_outliers.csv`
+- `outputs/shisha_lagos_heading_frequency.csv`
+- `outputs/shisha_lagos_recommended_heading_variants.csv`
+- `outputs/shisha_lagos_missing_recommended_sections.csv`
+- `outputs/shisha_lagos_flavor_extraction_audit.csv`
+- `outputs/shisha_lagos_metadata_inconsistencies.csv`
+- `outputs/shisha_lagos_repeated_paragraphs.csv`
+- `outputs/source_schema_comparison.csv`
+- `outputs/source_characteristics.md`
+- `outputs/shisha_lagos_dictionary_coverage.csv`
+- `outputs/shisha_lagos_unmatched_flavor_candidates.csv`
+- `outputs/paper_shisha_lagos_dataset_statistics.csv`
+- `outputs/paper_shisha_lagos_dataset_draft.md`
+
+### 生HTML
+再現性のため、raw HTML は以下に保存できる。
+
+- `data/raw/shisha_lagos/category_pages/`
+- `data/raw/shisha_lagos/articles/`
+
+### 論文利用時の注意
+
+- 記事本文を大量転載しない
+- 元URLを保持する
+- 取得日と対象件数を明記する
+- `editorial_review` であることを明示する
+- 記事本文とおすすめミックス節は別保存していることを明記する
+- 既存ユーザーレビューと直接同一視しない
+- 統合前に `source_type` 別の検証が必要である
 
 ## 出力ファイル
 修正版追加実験の主な出力は `outputs/extended_analysis_v2/` に保存する。

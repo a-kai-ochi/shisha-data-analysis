@@ -1,0 +1,8 @@
+﻿metric,value,numerator,denominator,note
+article_count,13,13,13,
+articles_with_1plus_flavor_match,13,13,13,13/13 (100.0%)
+articles_with_2plus_flavor_match,13,13,13,13/13 (100.0%)
+recommended_sections_with_2plus_flavor_match,13,13,13,13/13 (100.0%)
+unmatched_title_target_flavor_count,2,2,13,2/13 (15.4%) : スイカ | グレナデン
+brand_flavor_name_conflicts,0,0,13,no direct overlap detected in conservative audit
+parent_child_partial_match_candidates,5,5,37,ベリー~ラズベリー | ベリー~ブルーベリー | ベリー~ストロベリー | レモン~レモングラス | グレープ~グレープフルーツ

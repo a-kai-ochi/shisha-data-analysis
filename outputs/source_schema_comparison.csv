@@ -1,0 +1,5 @@
+﻿source_name,source_type,row_unit,article_or_review_count,text_column,title_column,url_column,date_column,brand_column,flavor_column,recommended_mix_section_available,paragraph_structure_available,encoding,duplicate_handling
+CLOUD_full,user_review_like,review,222,,レビュータイトル,レビューURL,更新日,,,no,no,utf-8-sig,not recorded in file
+CLOUD_final,user_review_like,review,222,レビュー本文,レビュータイトル,レビューURL,更新日,,,no,no,utf-8-sig,not recorded in file
+Shisha_LAGOS_articles,editorial_review,article,13,main_text,article_title,article_url,published_date,brand,target_flavor,yes,yes,utf-8-sig,url/canonical/slug/title/text hash audit
+Shisha_LAGOS_paragraphs,editorial_review,paragraph,293,paragraph_text,article_title,article_url,,,,yes,yes,utf-8-sig,inherits article-level audit
