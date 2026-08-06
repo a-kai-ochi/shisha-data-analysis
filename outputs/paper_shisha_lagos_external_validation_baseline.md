@@ -1,0 +1,27 @@
+# Baseline: Shisha LAGOS External Validation
+
+- article_count: 13
+- extracted_row_count: 200
+- valid_row_count: 151
+- unresolved_row_count: 47
+- excluded_row_count: 2
+- unique_pair_count: 133
+- common_pair_count: 17
+- lagos_only_pair_count: 116
+- top10_common_count: 5
+- top20_common_count: 11
+- top50_common_count: 17
+- precision_at_10: 0.5
+- precision_at_20: 0.55
+- precision_at_50: 0.34
+- recall_at_10: 0.03759398496240601
+- recall_at_20: 0.08270676691729323
+- recall_at_50: 0.12781954887218044
+- jaccard_at_10: 0.036231884057971016
+- jaccard_at_20: 0.07746478873239436
+- jaccard_at_50: 0.10240963855421686
+- ranking_file: outputs/extended_analysis_v2/pair_ranking_tier2.csv
+- ranking_columns: rank_overall, flavor_a, flavor_b, pair_key, pair_count, support, lift, adjusted_lift, centrality_mean, smoothed_positive_ratio, smoothed_negative_ratio, smoothed_role_ratio, overall_score_v2, ranking_tier
+- dictionary_hash: 2083e9fe032cdd88730f2f7aa6b0d6abea73dd8d1487636c04eaa29996599599
+- executed_at: 2026-08-02T14:42:04
+- git_commit_hash: 0b9f4d41a2108240e0287eec7b2ecc9774852ddc

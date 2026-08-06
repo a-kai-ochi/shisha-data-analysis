@@ -1,0 +1,20 @@
+﻿metric,value,definition
+ranking_file,outputs/extended_analysis_v2/pair_ranking_tier2.csv,今回の Top-K 比較に使用したランキングCSV。
+ranking_row_count,52,比較対象ランキングの総行数。
+included_tiers,Tier1 | Tier2,ranking_tier 列に含まれる tier 値。
+rank_overall_min,1,rank_overall の最小値。
+rank_overall_max,52,rank_overall の最大値。
+pair_count_min,2,ランキングに残った候補の pair_count 最小値。
+pair_count_max,7,ランキングに残った候補の pair_count 最大値。
+same_sentence_evidence_document_count_min,1,same_sentence_evidence_document_count の最小値。
+same_sentence_evidence_document_count_max,5,same_sentence_evidence_document_count の最大値。
+all_context_score_eligible,False,比較対象ランキングが文脈加点の適用条件を満たした候補のみか。
+excluded_pairs_removed,20,pair_expression_features から除外され pair_ranking_tier2 へ入っていないペア数。
+pair_expression_feature_pair_count,72,特徴量計算後の全 pair_key 数。
+ranking_is_non_excluded_pool,True,pair_ranking_tier2 が除外後の非除外候補全体になっているか。
+contains_tier1_rows,True,Tier1 候補を含むか。
+contains_tier2_rows,True,Tier2 候補を含むか。
+is_tier2_only,False,Tier2 のみで構成されるか。
+usable_for_top50_comparison,True,Top50 比較に必要な件数を満たすか。
+better_full_ranking_candidate,outputs/extended_analysis_v2/pair_expression_features.csv,より広い母集団に近い候補。ただし順位列がないため現状のTop-K比較には直接使っていない。
+pair_ranking_csv_note,outputs/extended_analysis_v2/pair_ranking.csv は 17 行の Tier1 のみ,従来の pair_ranking.csv は Top50 比較に不足する。

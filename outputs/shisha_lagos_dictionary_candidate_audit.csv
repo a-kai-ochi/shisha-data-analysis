@@ -1,0 +1,14 @@
+﻿raw表記,出現記事数,出現行数,出現記事URL,target側かrecommended側か,文脈,正規化候補,自動追加可否,判断理由
+すいか,1,1,https://shisha-lagos.com/af-vanilla-review/,recommended,ストロベリー/バナナ ピーチ/マンゴー ブルーベリー/ライチ 洋ナシ/ラズベリー メロン/すいか ココナッツ/オレンジ,,no,existing_master_unmatched
+ゆず,2,2,https://shisha-lagos.com/af-mango-review/ | https://shisha-lagos.com/af-mint-review/,recommended,ピーチ/グアバ レモン/オレンジ ゆず/グレープ パッションフルーツ パイン/ココナッツ || レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,デクラウド　ゆず,no,possible_alias_or_partial_match:デクラウド　ゆず
+りんご,1,1,https://shisha-lagos.com/af-orange-review/,recommended,レモン/ライム グレープフルーツ パッションフルーツ グアバ/マンゴー ピーチ/グレナデン パイン/りんご メロン,,no,existing_master_unmatched
+グレナデン,5,5,https://shisha-lagos.com/af-grapefruit-review/ | https://shisha-lagos.com/af-kiwi-review/ | https://shisha-lagos.com/af-orange-review/ | https://shisha-lagos.com/af-peach-review/ | https://shisha-lagos.com/af-strawberry-review/,recommended,レモン/ライム グレープフルーツ パッションフルーツ グアバ/マンゴー ピーチ/グレナデン パイン/りんご メロン || レモン/オレンジ グアバ/グレープ グレナデン/ピーチ パッションフルーツ || レモン/ライム グレナデン/グレープ パッションフルーツ グアバ || マンゴー/ココナッツ オレンジ/バナナ/ グアバ/ライチ グレナデン/レモン パッションフルーツ || ブルーベリー/ラズベリー ココナッツ/グレナデン ライチ(Afzal),,no,existing_master_unmatched
+グレナデン,1,17,https://shisha-lagos.com/af-grenadine-review/,target,ブルーベリー/ラズベリー キウイ/チェリー ストロベリー/レモン パッションフルーツ ライチ/グレープフルーツ オレンジ/ピーチ,,no,existing_master_unmatched
+コーヒー,2,2,https://shisha-lagos.com/af-coconut-review/ | https://shisha-lagos.com/af-vanilla-review/,recommended,バニラ/ミルク キャラメル/コーヒー チョコレート || ミルク/コーヒー キャラメル ミルクティ,コーヒーミルク,no,possible_alias_or_partial_match:コーヒーミルク
+スイカ,1,1,https://shisha-lagos.com/af-melon-review/,recommended,スイカ/グアバ オレンジ/レモン ピーチ/ココナッツ ライチ/マンゴー,デクラウド　スイカ,no,possible_alias_or_partial_match:デクラウド　スイカ
+スイカ,1,10,https://shisha-lagos.com/af-watermelon-review/,target,レモン/オレンジ ライム/グアバ メロン/マンゴー,デクラウド　スイカ,no,possible_alias_or_partial_match:デクラウド　スイカ
+チャイ,1,1,https://shisha-lagos.com/af-vanilla-review/,recommended,チャイ/シナモン カルダモン アールグレイ ローズ,スパイスドチャイ,no,possible_alias_or_partial_match:スパイスドチャイ
+パイン,4,4,https://shisha-lagos.com/af-coconut-review/ | https://shisha-lagos.com/af-mango-review/ | https://shisha-lagos.com/af-mint-review/ | https://shisha-lagos.com/af-orange-review/,recommended,ピーチ/マンゴー パイン/ライチ ストロベリー/レモン ブルーベリー/メロン ライム || レモン/ライム グレープフルーツ パッションフルーツ グアバ/マンゴー ピーチ/グレナデン パイン/りんご メロン || ピーチ/グアバ レモン/オレンジ ゆず/グレープ パッションフルーツ パイン/ココナッツ || レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,,no,existing_master_unmatched
+ミルクティ,1,1,https://shisha-lagos.com/af-vanilla-review/,recommended,ミルク/コーヒー キャラメル ミルクティ,ミルク,no,possible_alias_or_partial_match:ミルク
+ミルクティー,1,1,https://shisha-lagos.com/af-peach-review/,recommended,バニラ/ミルク ハニー/ミルクティー,ミルク,no,possible_alias_or_partial_match:ミルク
+洋ナシ,1,1,https://shisha-lagos.com/af-vanilla-review/,recommended,ストロベリー/バナナ ピーチ/マンゴー ブルーベリー/ライチ 洋ナシ/ラズベリー メロン/すいか ココナッツ/オレンジ,,no,existing_master_unmatched

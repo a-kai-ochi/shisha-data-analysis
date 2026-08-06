@@ -1,0 +1,2 @@
+﻿article_count,articles_with_recommended_tables,recommended_table_count,extracted_row_count,valid_row_count,unique_pair_count,target_flavor_missing_count,target_flavor_unregistered_count,recommended_flavor_missing_count,recommended_flavor_unregistered_count,self_pair_count,duplicate_pair_count,unresolved_row_count,excluded_row_count,article_url_missing_count,source_text_missing_count,mix_pair_key_blank_count,pair_key_order_normalized
+13,13,13,200,151,133,0,27,1,20,0,0,47,2,0,0,49,True

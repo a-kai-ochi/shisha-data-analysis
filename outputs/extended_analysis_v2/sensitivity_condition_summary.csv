@@ -1,0 +1,22 @@
+﻿setting,tier1_count,tier2_count,tier_move_count,top10_dropped_pairs,top10_new_pairs,max_rank_shift_pair,max_rank_shift,median_rank_shift,top5_valid_rate,top10_valid_rate,top5_partially_valid_rate,top10_partially_valid_rate
+baseline,17,35,0,,,アイス||オレンジ,0,0.0,1.0,0.7,0.0,0.3
+drop_normalized_support,17,35,0,オレンジ||グレープフルーツ | グレープ||ミント | コニャック||バニラ | ミント||ライム,グアバ||レモン | グレープ||ベリー | バニラ||ミント | ミルク||メロン,グアバ||グレープフルーツ,18,3.0,0.6,0.4444444444444444,0.4,0.5555555555555556
+half_normalized_support,17,35,0,オレンジ||グレープフルーツ,ミルク||メロン,グアバ||グレープフルーツ,5,0.0,0.8,0.6,0.2,0.4
+double_normalized_support,17,35,0,バニラ||ミルク | ベリー||レモン,オレンジ||レモン | ミント||ライチ,アイス||ミント,4,0.0,1.0,0.6666666666666666,0.0,0.3333333333333333
+drop_adjusted_lift,17,35,0,,,ガムシナモン||バブルガム,27,1.0,0.8,0.7,0.2,0.3
+half_adjusted_lift,17,35,0,,,ツーアップル||リコリス,8,1.0,1.0,0.7,0.0,0.3
+double_adjusted_lift,17,35,0,,,ガムシナモン||バブルガム,8,2.0,1.0,0.7,0.0,0.3
+drop_normalized_centrality_mean,17,35,0,ベリー||レモン | ミント||ライム,グレープ||ベリー | ミルク||メロン,バニラ||ミント,30,5.5,1.0,0.7,0.0,0.3
+half_normalized_centrality_mean,17,35,0,ミント||ライム,ミルク||メロン,ゴールデンデリシャスアップル||ダブルアップル,7,2.0,1.0,0.7,0.0,0.3
+double_normalized_centrality_mean,17,35,0,オレンジ||グレープフルーツ,グアバ||ミント,ツーアップル||リコリス,8,2.0,0.8,0.6666666666666666,0.2,0.3333333333333333
+drop_normalized_smoothed_positive_ratio,17,35,0,アイス||ミント | バニラ||ミルク | ベリー||レモン,オレンジ||レモン | ミルク||メロン | ミント||ライチ,グレープ||ベリー,14,1.0,1.0,0.6666666666666666,0.0,0.3333333333333333
+half_normalized_smoothed_positive_ratio,17,35,0,バニラ||ミルク | ベリー||レモン,オレンジ||レモン | ミント||ライチ,グレープ||ベリー,5,0.0,1.0,0.6666666666666666,0.0,0.3333333333333333
+double_normalized_smoothed_positive_ratio,17,35,0,オレンジ||グレープフルーツ,グレープ||ベリー,グレープ||ベリー,6,0.0,0.8,0.6,0.2,0.4
+drop_normalized_smoothed_role_ratio,17,35,0,,,ミルク||メロン,10,0.0,1.0,0.7,0.0,0.3
+half_normalized_smoothed_role_ratio,17,35,0,,,ミルク||メロン,4,0.0,1.0,0.7,0.0,0.3
+double_normalized_smoothed_role_ratio,17,35,0,オレンジ||グレープフルーツ,ミルク||メロン,ミルク||メロン,7,0.0,0.8,0.6,0.2,0.4
+drop_normalized_smoothed_negative_ratio,17,35,0,,,グアバ||グレープフルーツ,3,0.0,1.0,0.7,0.0,0.3
+half_normalized_smoothed_negative_ratio,17,35,0,,,グアバ||グレープフルーツ,1,0.0,1.0,0.7,0.0,0.3
+double_normalized_smoothed_negative_ratio,17,35,0,,,グアバ||グレープフルーツ,5,0.0,1.0,0.7,0.0,0.3
+statistics_centered,17,35,0,アイス||ミント | バニラ||ミルク | ベリー||レモン,オレンジ||レモン | グアバ||ミント | ミント||ライチ,ミルク||メロン,8,1.0,1.0,0.75,0.0,0.25
+context_centered,17,35,0,オレンジ||グレープフルーツ | コニャック||バニラ,グレープ||ベリー | ミルク||メロン,ミルク||メロン,9,2.0,0.4,0.5,0.6,0.5

@@ -1,0 +1,134 @@
+﻿mix_pair_key,flavor_a,flavor_b,valid_row_count,unique_directed_pair_count,directed_pair_values,article_count,article_ids,article_urls,same_article_repeat_count,max_rows_in_single_article,row_index_values,table_row_keys,is_multi_article_pair,is_repeated_mix_pair
+オレンジ||グレープフルーツ,オレンジ,グレープフルーツ,2,2,オレンジ -> グレープフルーツ | グレープフルーツ -> オレンジ,2,lagos_af-grapefruit-review | lagos_af-orange-review,https://shisha-lagos.com/af-grapefruit-review/ | https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-grapefruit-review::3::2 | lagos_af-orange-review::3::2,True,True
+オレンジ||バニラ,オレンジ,バニラ,2,2,オレンジ -> バニラ | バニラ -> オレンジ,2,lagos_af-orange-review | lagos_af-vanilla-review,https://shisha-lagos.com/af-orange-review/ | https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-orange-review::3::2 | lagos_af-vanilla-review::3::2,True,True
+オレンジ||ピーチ,オレンジ,ピーチ,2,2,オレンジ -> ピーチ | ピーチ -> オレンジ,2,lagos_af-orange-review | lagos_af-peach-review,https://shisha-lagos.com/af-orange-review/ | https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-orange-review::3::2 | lagos_af-peach-review::3::2,True,True
+オレンジ||マンゴー,オレンジ,マンゴー,2,2,オレンジ -> マンゴー | マンゴー -> オレンジ,2,lagos_af-mango-review | lagos_af-orange-review,https://shisha-lagos.com/af-mango-review/ | https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-mango-review::3::2 | lagos_af-orange-review::3::2,True,True
+オレンジ||メロン,オレンジ,メロン,2,2,オレンジ -> メロン | メロン -> オレンジ,2,lagos_af-melon-review | lagos_af-orange-review,https://shisha-lagos.com/af-melon-review/ | https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-melon-review::3::2 | lagos_af-orange-review::3::2,True,True
+ココナッツ||ストロベリー,ココナッツ,ストロベリー,2,2,ココナッツ -> ストロベリー | ストロベリー -> ココナッツ,2,lagos_af-coconut-review | lagos_af-strawberry-review,https://shisha-lagos.com/af-coconut-review/ | https://shisha-lagos.com/af-strawberry-review/,0,1,3:2,lagos_af-coconut-review::3::2 | lagos_af-strawberry-review::3::2,True,True
+ココナッツ||バニラ,ココナッツ,バニラ,2,2,ココナッツ -> バニラ | バニラ -> ココナッツ,2,lagos_af-coconut-review | lagos_af-vanilla-review,https://shisha-lagos.com/af-coconut-review/ | https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-coconut-review::3::2 | lagos_af-vanilla-review::3::2,True,True
+ココナッツ||ピーチ,ココナッツ,ピーチ,2,2,ココナッツ -> ピーチ | ピーチ -> ココナッツ,2,lagos_af-coconut-review | lagos_af-peach-review,https://shisha-lagos.com/af-coconut-review/ | https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-coconut-review::3::2 | lagos_af-peach-review::3::2,True,True
+ココナッツ||ブルーベリー,ココナッツ,ブルーベリー,2,2,ココナッツ -> ブルーベリー | ブルーベリー -> ココナッツ,2,lagos_af-blueberry-review | lagos_af-coconut-review,https://shisha-lagos.com/af-blueberry-review/ | https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-blueberry-review::3::2 | lagos_af-coconut-review::3::2,True,True
+ココナッツ||マンゴー,ココナッツ,マンゴー,2,2,ココナッツ -> マンゴー | マンゴー -> ココナッツ,2,lagos_af-coconut-review | lagos_af-mango-review,https://shisha-lagos.com/af-coconut-review/ | https://shisha-lagos.com/af-mango-review/,0,1,3:2,lagos_af-coconut-review::3::2 | lagos_af-mango-review::3::2,True,True
+ココナッツ||メロン,ココナッツ,メロン,2,2,ココナッツ -> メロン | メロン -> ココナッツ,2,lagos_af-coconut-review | lagos_af-melon-review,https://shisha-lagos.com/af-coconut-review/ | https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-coconut-review::3::2 | lagos_af-melon-review::3::2,True,True
+ストロベリー||バニラ,ストロベリー,バニラ,2,2,ストロベリー -> バニラ | バニラ -> ストロベリー,2,lagos_af-strawberry-review | lagos_af-vanilla-review,https://shisha-lagos.com/af-strawberry-review/ | https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-strawberry-review::3::2 | lagos_af-vanilla-review::3::2,True,True
+ストロベリー||ブルーベリー,ストロベリー,ブルーベリー,2,2,ストロベリー -> ブルーベリー | ブルーベリー -> ストロベリー,2,lagos_af-blueberry-review | lagos_af-strawberry-review,https://shisha-lagos.com/af-blueberry-review/ | https://shisha-lagos.com/af-strawberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2 | lagos_af-strawberry-review::3::2,True,True
+バニラ||ピーチ,バニラ,ピーチ,2,2,バニラ -> ピーチ | ピーチ -> バニラ,2,lagos_af-peach-review | lagos_af-vanilla-review,https://shisha-lagos.com/af-peach-review/ | https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-peach-review::3::2 | lagos_af-vanilla-review::3::2,True,True
+バニラ||ブルーベリー,バニラ,ブルーベリー,2,2,バニラ -> ブルーベリー | ブルーベリー -> バニラ,2,lagos_af-blueberry-review | lagos_af-vanilla-review,https://shisha-lagos.com/af-blueberry-review/ | https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-blueberry-review::3::2 | lagos_af-vanilla-review::3::2,True,True
+バニラ||マンゴー,バニラ,マンゴー,2,2,バニラ -> マンゴー | マンゴー -> バニラ,2,lagos_af-mango-review | lagos_af-vanilla-review,https://shisha-lagos.com/af-mango-review/ | https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-mango-review::3::2 | lagos_af-vanilla-review::3::2,True,True
+バニラ||メロン,バニラ,メロン,2,2,バニラ -> メロン | メロン -> バニラ,2,lagos_af-melon-review | lagos_af-vanilla-review,https://shisha-lagos.com/af-melon-review/ | https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-melon-review::3::2 | lagos_af-vanilla-review::3::2,True,True
+ピーチ||マンゴー,ピーチ,マンゴー,2,2,ピーチ -> マンゴー | マンゴー -> ピーチ,2,lagos_af-mango-review | lagos_af-peach-review,https://shisha-lagos.com/af-mango-review/ | https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-mango-review::3::2 | lagos_af-peach-review::3::2,True,True
+アールグレイ||オレンジ,アールグレイ,オレンジ,1,1,オレンジ -> アールグレイ,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+アールグレイ||ココナッツ,アールグレイ,ココナッツ,1,1,ココナッツ -> アールグレイ,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+アールグレイ||バニラ,アールグレイ,バニラ,1,1,バニラ -> アールグレイ,1,lagos_af-vanilla-review,https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-vanilla-review::3::2,False,False
+アールグレイ||ピーチ,アールグレイ,ピーチ,1,1,ピーチ -> アールグレイ,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+アールグレイ||マンゴー,アールグレイ,マンゴー,1,1,マンゴー -> アールグレイ,1,lagos_af-mango-review,https://shisha-lagos.com/af-mango-review/,0,1,3:2,lagos_af-mango-review::3::2,False,False
+アールグレイ||ミント,アールグレイ,ミント,1,1,ミント -> アールグレイ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+オレンジ||カルダモン,オレンジ,カルダモン,1,1,オレンジ -> カルダモン,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+オレンジ||グアバ,オレンジ,グアバ,1,1,オレンジ -> グアバ,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+オレンジ||シナモン,オレンジ,シナモン,1,1,オレンジ -> シナモン,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+オレンジ||ジャスミン,オレンジ,ジャスミン,1,1,オレンジ -> ジャスミン,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+オレンジ||ジンジャーエール,オレンジ,ジンジャーエール,1,1,オレンジ -> ジンジャーエール,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+オレンジ||チョコレート,オレンジ,チョコレート,1,1,オレンジ -> チョコレート,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+オレンジ||パッションフルーツ,オレンジ,パッションフルーツ,1,1,オレンジ -> パッションフルーツ,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+オレンジ||ミルク,オレンジ,ミルク,1,1,オレンジ -> ミルク,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+オレンジ||ミント,オレンジ,ミント,1,1,ミント -> オレンジ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+オレンジ||ライム,オレンジ,ライム,1,1,オレンジ -> ライム,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+オレンジ||レモン,オレンジ,レモン,1,1,オレンジ -> レモン,1,lagos_af-orange-review,https://shisha-lagos.com/af-orange-review/,0,1,3:2,lagos_af-orange-review::3::2,False,False
+カルダモン||キウイ,カルダモン,キウイ,1,1,キウイ -> カルダモン,1,lagos_af-kiwi-review,https://shisha-lagos.com/af-kiwi-review/,0,1,3:2,lagos_af-kiwi-review::3::2,False,False
+カルダモン||グレープフルーツ,カルダモン,グレープフルーツ,1,1,グレープフルーツ -> カルダモン,1,lagos_af-grapefruit-review,https://shisha-lagos.com/af-grapefruit-review/,0,1,3:2,lagos_af-grapefruit-review::3::2,False,False
+カルダモン||ココナッツ,カルダモン,ココナッツ,1,1,ココナッツ -> カルダモン,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+カルダモン||バニラ,カルダモン,バニラ,1,1,バニラ -> カルダモン,1,lagos_af-vanilla-review,https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-vanilla-review::3::2,False,False
+カルダモン||ピーチ,カルダモン,ピーチ,1,1,ピーチ -> カルダモン,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+カルダモン||ブルーベリー,カルダモン,ブルーベリー,1,1,ブルーベリー -> カルダモン,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+カルダモン||マンゴー,カルダモン,マンゴー,1,1,マンゴー -> カルダモン,1,lagos_af-mango-review,https://shisha-lagos.com/af-mango-review/,0,1,3:2,lagos_af-mango-review::3::2,False,False
+カルダモン||ミント,カルダモン,ミント,1,1,ミント -> カルダモン,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+カルダモン||メロン,カルダモン,メロン,1,1,メロン -> カルダモン,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False
+キウイ||グアバ,キウイ,グアバ,1,1,キウイ -> グアバ,1,lagos_af-kiwi-review,https://shisha-lagos.com/af-kiwi-review/,0,1,3:2,lagos_af-kiwi-review::3::2,False,False
+キウイ||グレープ,キウイ,グレープ,1,1,キウイ -> グレープ,1,lagos_af-kiwi-review,https://shisha-lagos.com/af-kiwi-review/,0,1,3:2,lagos_af-kiwi-review::3::2,False,False
+キウイ||ジンジャーエール,キウイ,ジンジャーエール,1,1,キウイ -> ジンジャーエール,1,lagos_af-kiwi-review,https://shisha-lagos.com/af-kiwi-review/,0,1,3:2,lagos_af-kiwi-review::3::2,False,False
+キウイ||パッションフルーツ,キウイ,パッションフルーツ,1,1,キウイ -> パッションフルーツ,1,lagos_af-kiwi-review,https://shisha-lagos.com/af-kiwi-review/,0,1,3:2,lagos_af-kiwi-review::3::2,False,False
+キウイ||ミント,キウイ,ミント,1,1,ミント -> キウイ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+キウイ||ライム,キウイ,ライム,1,1,キウイ -> ライム,1,lagos_af-kiwi-review,https://shisha-lagos.com/af-kiwi-review/,0,1,3:2,lagos_af-kiwi-review::3::2,False,False
+キウイ||レモン,キウイ,レモン,1,1,キウイ -> レモン,1,lagos_af-kiwi-review,https://shisha-lagos.com/af-kiwi-review/,0,1,3:2,lagos_af-kiwi-review::3::2,False,False
+キウイ||レモングラス,キウイ,レモングラス,1,1,キウイ -> レモングラス,1,lagos_af-kiwi-review,https://shisha-lagos.com/af-kiwi-review/,0,1,3:2,lagos_af-kiwi-review::3::2,False,False
+キャラメル||ココナッツ,キャラメル,ココナッツ,1,1,ココナッツ -> キャラメル,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+キャラメル||バニラ,キャラメル,バニラ,1,1,バニラ -> キャラメル,1,lagos_af-vanilla-review,https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-vanilla-review::3::2,False,False
+キャラメル||ブルーベリー,キャラメル,ブルーベリー,1,1,ブルーベリー -> キャラメル,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+キャラメル||メロン,キャラメル,メロン,1,1,メロン -> キャラメル,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False
+グアバ||グレープフルーツ,グアバ,グレープフルーツ,1,1,グレープフルーツ -> グアバ,1,lagos_af-grapefruit-review,https://shisha-lagos.com/af-grapefruit-review/,0,1,3:2,lagos_af-grapefruit-review::3::2,False,False
+グアバ||ピーチ,グアバ,ピーチ,1,1,ピーチ -> グアバ,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+グアバ||ブルーベリー,グアバ,ブルーベリー,1,1,ブルーベリー -> グアバ,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+グアバ||マンゴー,グアバ,マンゴー,1,1,マンゴー -> グアバ,1,lagos_af-mango-review,https://shisha-lagos.com/af-mango-review/,0,1,3:2,lagos_af-mango-review::3::2,False,False
+グアバ||ミント,グアバ,ミント,1,1,ミント -> グアバ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+グアバ||メロン,グアバ,メロン,1,1,メロン -> グアバ,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False
+グレープ||ブルーベリー,グレープ,ブルーベリー,1,1,ブルーベリー -> グレープ,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+グレープ||マンゴー,グレープ,マンゴー,1,1,マンゴー -> グレープ,1,lagos_af-mango-review,https://shisha-lagos.com/af-mango-review/,0,1,3:2,lagos_af-mango-review::3::2,False,False
+グレープフルーツ||ジャスミン,グレープフルーツ,ジャスミン,1,1,グレープフルーツ -> ジャスミン,1,lagos_af-grapefruit-review,https://shisha-lagos.com/af-grapefruit-review/,0,1,3:2,lagos_af-grapefruit-review::3::2,False,False
+グレープフルーツ||ツーアップル,グレープフルーツ,ツーアップル,1,1,グレープフルーツ -> ツーアップル,1,lagos_af-grapefruit-review,https://shisha-lagos.com/af-grapefruit-review/,0,1,3:2,lagos_af-grapefruit-review::3::2,False,False
+グレープフルーツ||ハニー,グレープフルーツ,ハニー,1,1,グレープフルーツ -> ハニー,1,lagos_af-grapefruit-review,https://shisha-lagos.com/af-grapefruit-review/,0,1,3:2,lagos_af-grapefruit-review::3::2,False,False
+グレープフルーツ||パッションフルーツ,グレープフルーツ,パッションフルーツ,1,1,グレープフルーツ -> パッションフルーツ,1,lagos_af-grapefruit-review,https://shisha-lagos.com/af-grapefruit-review/,0,1,3:2,lagos_af-grapefruit-review::3::2,False,False
+グレープフルーツ||ピーチ,グレープフルーツ,ピーチ,1,1,グレープフルーツ -> ピーチ,1,lagos_af-grapefruit-review,https://shisha-lagos.com/af-grapefruit-review/,0,1,3:2,lagos_af-grapefruit-review::3::2,False,False
+グレープフルーツ||ミント,グレープフルーツ,ミント,1,1,ミント -> グレープフルーツ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+グレープフルーツ||レモン,グレープフルーツ,レモン,1,1,グレープフルーツ -> レモン,1,lagos_af-grapefruit-review,https://shisha-lagos.com/af-grapefruit-review/,0,1,3:2,lagos_af-grapefruit-review::3::2,False,False
+ココナッツ||シナモン,ココナッツ,シナモン,1,1,ココナッツ -> シナモン,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+ココナッツ||ジンジャーエール,ココナッツ,ジンジャーエール,1,1,ココナッツ -> ジンジャーエール,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+ココナッツ||チョコレート,ココナッツ,チョコレート,1,1,ココナッツ -> チョコレート,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+ココナッツ||ミルク,ココナッツ,ミルク,1,1,ココナッツ -> ミルク,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+ココナッツ||ライチ,ココナッツ,ライチ,1,1,ココナッツ -> ライチ,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+ココナッツ||ライム,ココナッツ,ライム,1,1,ココナッツ -> ライム,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+ココナッツ||レモン,ココナッツ,レモン,1,1,ココナッツ -> レモン,1,lagos_af-coconut-review,https://shisha-lagos.com/af-coconut-review/,0,1,3:2,lagos_af-coconut-review::3::2,False,False
+ザクロ||ブルーベリー,ザクロ,ブルーベリー,1,1,ブルーベリー -> ザクロ,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+シナモン||ストロベリー,シナモン,ストロベリー,1,1,ストロベリー -> シナモン,1,lagos_af-strawberry-review,https://shisha-lagos.com/af-strawberry-review/,0,1,3:2,lagos_af-strawberry-review::3::2,False,False
+シナモン||バニラ,シナモン,バニラ,1,1,バニラ -> シナモン,1,lagos_af-vanilla-review,https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-vanilla-review::3::2,False,False
+シナモン||ブルーベリー,シナモン,ブルーベリー,1,1,ブルーベリー -> シナモン,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+シナモン||ミント,シナモン,ミント,1,1,ミント -> シナモン,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+シナモン||メロン,シナモン,メロン,1,1,メロン -> シナモン,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False
+ジャスミン||ピーチ,ジャスミン,ピーチ,1,1,ピーチ -> ジャスミン,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+ジャスミン||ブルーベリー,ジャスミン,ブルーベリー,1,1,ブルーベリー -> ジャスミン,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+ジャスミン||ミント,ジャスミン,ミント,1,1,ミント -> ジャスミン,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ジンジャーエール||マンゴー,ジンジャーエール,マンゴー,1,1,マンゴー -> ジンジャーエール,1,lagos_af-mango-review,https://shisha-lagos.com/af-mango-review/,0,1,3:2,lagos_af-mango-review::3::2,False,False
+ストロベリー||チョコレート,ストロベリー,チョコレート,1,1,ストロベリー -> チョコレート,1,lagos_af-strawberry-review,https://shisha-lagos.com/af-strawberry-review/,0,1,3:2,lagos_af-strawberry-review::3::2,False,False
+ストロベリー||ミルク,ストロベリー,ミルク,1,1,ストロベリー -> ミルク,1,lagos_af-strawberry-review,https://shisha-lagos.com/af-strawberry-review/,0,1,3:2,lagos_af-strawberry-review::3::2,False,False
+ストロベリー||ライチ,ストロベリー,ライチ,1,1,ストロベリー -> ライチ,1,lagos_af-strawberry-review,https://shisha-lagos.com/af-strawberry-review/,0,1,3:2,lagos_af-strawberry-review::3::2,False,False
+ストロベリー||ラズベリー,ストロベリー,ラズベリー,1,1,ストロベリー -> ラズベリー,1,lagos_af-strawberry-review,https://shisha-lagos.com/af-strawberry-review/,0,1,3:2,lagos_af-strawberry-review::3::2,False,False
+ストロベリー||ローズ,ストロベリー,ローズ,1,1,ストロベリー -> ローズ,1,lagos_af-strawberry-review,https://shisha-lagos.com/af-strawberry-review/,0,1,3:2,lagos_af-strawberry-review::3::2,False,False
+チョコレート||ミント,チョコレート,ミント,1,1,ミント -> チョコレート,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ハニー||ピーチ,ハニー,ピーチ,1,1,ピーチ -> ハニー,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+バナナ||バニラ,バナナ,バニラ,1,1,バニラ -> バナナ,1,lagos_af-vanilla-review,https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-vanilla-review::3::2,False,False
+バナナ||ピーチ,バナナ,ピーチ,1,1,ピーチ -> バナナ,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+バニラ||ミルク,バニラ,ミルク,1,1,バニラ -> ミルク,1,lagos_af-vanilla-review,https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-vanilla-review::3::2,False,False
+バニラ||ミント,バニラ,ミント,1,1,ミント -> バニラ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+バニラ||ライチ,バニラ,ライチ,1,1,バニラ -> ライチ,1,lagos_af-vanilla-review,https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-vanilla-review::3::2,False,False
+バニラ||ラズベリー,バニラ,ラズベリー,1,1,バニラ -> ラズベリー,1,lagos_af-vanilla-review,https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-vanilla-review::3::2,False,False
+バニラ||ローズ,バニラ,ローズ,1,1,バニラ -> ローズ,1,lagos_af-vanilla-review,https://shisha-lagos.com/af-vanilla-review/,0,1,3:2,lagos_af-vanilla-review::3::2,False,False
+パッションフルーツ||ピーチ,パッションフルーツ,ピーチ,1,1,ピーチ -> パッションフルーツ,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+パッションフルーツ||ブルーベリー,パッションフルーツ,ブルーベリー,1,1,ブルーベリー -> パッションフルーツ,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+パッションフルーツ||マンゴー,パッションフルーツ,マンゴー,1,1,マンゴー -> パッションフルーツ,1,lagos_af-mango-review,https://shisha-lagos.com/af-mango-review/,0,1,3:2,lagos_af-mango-review::3::2,False,False
+パッションフルーツ||ミント,パッションフルーツ,ミント,1,1,ミント -> パッションフルーツ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ピーチ||ミルク,ピーチ,ミルク,1,1,ピーチ -> ミルク,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+ピーチ||ミント,ピーチ,ミント,1,1,ミント -> ピーチ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ピーチ||メロン,ピーチ,メロン,1,1,メロン -> ピーチ,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False
+ピーチ||ライチ,ピーチ,ライチ,1,1,ピーチ -> ライチ,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+ピーチ||レモン,ピーチ,レモン,1,1,ピーチ -> レモン,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+ピーチ||ローズ,ピーチ,ローズ,1,1,ピーチ -> ローズ,1,lagos_af-peach-review,https://shisha-lagos.com/af-peach-review/,0,1,3:2,lagos_af-peach-review::3::2,False,False
+ブルーベリー||ミルク,ブルーベリー,ミルク,1,1,ブルーベリー -> ミルク,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+ブルーベリー||ミント,ブルーベリー,ミント,1,1,ミント -> ブルーベリー,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ブルーベリー||ライチ,ブルーベリー,ライチ,1,1,ブルーベリー -> ライチ,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+ブルーベリー||ラズベリー,ブルーベリー,ラズベリー,1,1,ブルーベリー -> ラズベリー,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+ブルーベリー||レモン,ブルーベリー,レモン,1,1,ブルーベリー -> レモン,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+ブルーベリー||ローズ,ブルーベリー,ローズ,1,1,ブルーベリー -> ローズ,1,lagos_af-blueberry-review,https://shisha-lagos.com/af-blueberry-review/,0,1,3:2,lagos_af-blueberry-review::3::2,False,False
+プラム||ミント,プラム,ミント,1,1,ミント -> プラム,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+マンゴー||ミルク,マンゴー,ミルク,1,1,マンゴー -> ミルク,1,lagos_af-mango-review,https://shisha-lagos.com/af-mango-review/,0,1,3:2,lagos_af-mango-review::3::2,False,False
+マンゴー||ミント,マンゴー,ミント,1,1,ミント -> マンゴー,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+マンゴー||メロン,マンゴー,メロン,1,1,メロン -> マンゴー,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False
+マンゴー||レモン,マンゴー,レモン,1,1,マンゴー -> レモン,1,lagos_af-mango-review,https://shisha-lagos.com/af-mango-review/,0,1,3:2,lagos_af-mango-review::3::2,False,False
+ミルク||ミント,ミルク,ミント,1,1,ミント -> ミルク,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ミルク||メロン,ミルク,メロン,1,1,メロン -> ミルク,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False
+ミント||ライチ,ミント,ライチ,1,1,ミント -> ライチ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ミント||ライム,ミント,ライム,1,1,ミント -> ライム,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ミント||ラズベリー,ミント,ラズベリー,1,1,ミント -> ラズベリー,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ミント||レモン,ミント,レモン,1,1,ミント -> レモン,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+ミント||ローズ,ミント,ローズ,1,1,ミント -> ローズ,1,lagos_af-mint-review,https://shisha-lagos.com/af-mint-review/,0,1,3:2,lagos_af-mint-review::3::2,False,False
+メロン||ライチ,メロン,ライチ,1,1,メロン -> ライチ,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False
+メロン||レモン,メロン,レモン,1,1,メロン -> レモン,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False
+メロン||ローズ,メロン,ローズ,1,1,メロン -> ローズ,1,lagos_af-melon-review,https://shisha-lagos.com/af-melon-review/,0,1,3:2,lagos_af-melon-review::3::2,False,False

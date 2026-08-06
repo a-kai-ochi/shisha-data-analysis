@@ -1,0 +1,81 @@
+﻿K,existing_rank,flavor_a,flavor_b,mix_pair_key,present_in_lagos,lagos_article_count,lagos_row_count,lagos_article_urls,lagos_source_text,dictionary_status,comparison_status
+10,1,グレープフルーツ,レモン,グレープフルーツ||レモン,True,1,1,https://shisha-lagos.com/af-grapefruit-review/,レモン/オレンジ グアバ/グレープ グレナデン/ピーチ パッションフルーツ,matched_valid_lagos_pair,common_pair
+10,2,グレープ,ミント,グレープ||ミント,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+10,3,ミント,レモン,ミント||レモン,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+10,4,ライム,レモン,ライム||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+10,5,コニャック,バニラ,コニャック||バニラ,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+10,6,アイス,ミント,アイス||ミント,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+10,7,ベリー,レモン,ベリー||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+10,8,バニラ,ミルク,バニラ||ミルク,True,1,1,https://shisha-lagos.com/af-vanilla-review/,ミルク/コーヒー キャラメル ミルクティ,matched_valid_lagos_pair,common_pair
+10,9,ミント,ライム,ミント||ライム,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+10,10,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,True,2,2,https://shisha-lagos.com/af-grapefruit-review/ | https://shisha-lagos.com/af-orange-review/,レモン/オレンジ グアバ/グレープ グレナデン/ピーチ パッションフルーツ || レモン/ライム グレープフルーツ パッションフルーツ グアバ/マンゴー ピーチ/グレナデン パイン/りんご メロン,matched_valid_lagos_pair,common_pair
+20,1,グレープフルーツ,レモン,グレープフルーツ||レモン,True,1,1,https://shisha-lagos.com/af-grapefruit-review/,レモン/オレンジ グアバ/グレープ グレナデン/ピーチ パッションフルーツ,matched_valid_lagos_pair,common_pair
+20,2,グレープ,ミント,グレープ||ミント,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+20,3,ミント,レモン,ミント||レモン,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+20,4,ライム,レモン,ライム||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+20,5,コニャック,バニラ,コニャック||バニラ,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+20,6,アイス,ミント,アイス||ミント,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+20,7,ベリー,レモン,ベリー||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+20,8,バニラ,ミルク,バニラ||ミルク,True,1,1,https://shisha-lagos.com/af-vanilla-review/,ミルク/コーヒー キャラメル ミルクティ,matched_valid_lagos_pair,common_pair
+20,9,ミント,ライム,ミント||ライム,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+20,10,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,True,2,2,https://shisha-lagos.com/af-grapefruit-review/ | https://shisha-lagos.com/af-orange-review/,レモン/オレンジ グアバ/グレープ グレナデン/ピーチ パッションフルーツ || レモン/ライム グレープフルーツ パッションフルーツ グアバ/マンゴー ピーチ/グレナデン パイン/りんご メロン,matched_valid_lagos_pair,common_pair
+20,11,オレンジ,レモン,オレンジ||レモン,True,1,1,https://shisha-lagos.com/af-orange-review/,レモン/ライム グレープフルーツ パッションフルーツ グアバ/マンゴー ピーチ/グレナデン パイン/りんご メロン,matched_valid_lagos_pair,common_pair
+20,12,ミルク,メロン,ミルク||メロン,True,1,1,https://shisha-lagos.com/af-melon-review/,バニラ/ミルク キャラメル,matched_valid_lagos_pair,common_pair
+20,13,ミント,ライチ,ミント||ライチ,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+20,14,グレープ,ベリー,グレープ||ベリー,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+20,15,グアバ,レモン,グアバ||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+20,16,グアバ,ミント,グアバ||ミント,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+20,17,グアバ,グレープフルーツ,グアバ||グレープフルーツ,True,1,1,https://shisha-lagos.com/af-grapefruit-review/,レモン/オレンジ グアバ/グレープ グレナデン/ピーチ パッションフルーツ,matched_valid_lagos_pair,common_pair
+20,18,ライチ,レモン,ライチ||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+20,19,ベリー,ミント,ベリー||ミント,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+20,20,キャラメル,ココナッツ,キャラメル||ココナッツ,True,1,1,https://shisha-lagos.com/af-coconut-review/,バニラ/ミルク キャラメル/コーヒー チョコレート,matched_valid_lagos_pair,common_pair
+50,1,グレープフルーツ,レモン,グレープフルーツ||レモン,True,1,1,https://shisha-lagos.com/af-grapefruit-review/,レモン/オレンジ グアバ/グレープ グレナデン/ピーチ パッションフルーツ,matched_valid_lagos_pair,common_pair
+50,2,グレープ,ミント,グレープ||ミント,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,3,ミント,レモン,ミント||レモン,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+50,4,ライム,レモン,ライム||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,5,コニャック,バニラ,コニャック||バニラ,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,6,アイス,ミント,アイス||ミント,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,7,ベリー,レモン,ベリー||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,8,バニラ,ミルク,バニラ||ミルク,True,1,1,https://shisha-lagos.com/af-vanilla-review/,ミルク/コーヒー キャラメル ミルクティ,matched_valid_lagos_pair,common_pair
+50,9,ミント,ライム,ミント||ライム,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+50,10,オレンジ,グレープフルーツ,オレンジ||グレープフルーツ,True,2,2,https://shisha-lagos.com/af-grapefruit-review/ | https://shisha-lagos.com/af-orange-review/,レモン/オレンジ グアバ/グレープ グレナデン/ピーチ パッションフルーツ || レモン/ライム グレープフルーツ パッションフルーツ グアバ/マンゴー ピーチ/グレナデン パイン/りんご メロン,matched_valid_lagos_pair,common_pair
+50,11,オレンジ,レモン,オレンジ||レモン,True,1,1,https://shisha-lagos.com/af-orange-review/,レモン/ライム グレープフルーツ パッションフルーツ グアバ/マンゴー ピーチ/グレナデン パイン/りんご メロン,matched_valid_lagos_pair,common_pair
+50,12,ミルク,メロン,ミルク||メロン,True,1,1,https://shisha-lagos.com/af-melon-review/,バニラ/ミルク キャラメル,matched_valid_lagos_pair,common_pair
+50,13,ミント,ライチ,ミント||ライチ,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+50,14,グレープ,ベリー,グレープ||ベリー,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,15,グアバ,レモン,グアバ||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,16,グアバ,ミント,グアバ||ミント,True,1,1,https://shisha-lagos.com/af-mint-review/,レモン/ライム/オレンジ グレープフルーツ/ゆず グアバ/マンゴー/ピーチ ブルーベリー/ラズベリー ライチ/キウイ/プラム パッションフルーツ パイン,matched_valid_lagos_pair,common_pair
+50,17,グアバ,グレープフルーツ,グアバ||グレープフルーツ,True,1,1,https://shisha-lagos.com/af-grapefruit-review/,レモン/オレンジ グアバ/グレープ グレナデン/ピーチ パッションフルーツ,matched_valid_lagos_pair,common_pair
+50,18,ライチ,レモン,ライチ||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,19,ベリー,ミント,ベリー||ミント,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,20,キャラメル,ココナッツ,キャラメル||ココナッツ,True,1,1,https://shisha-lagos.com/af-coconut-review/,バニラ/ミルク キャラメル/コーヒー チョコレート,matched_valid_lagos_pair,common_pair
+50,21,ダブルアップル,リコリス,ダブルアップル||リコリス,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,22,バニラ,ミント,バニラ||ミント,True,1,1,https://shisha-lagos.com/af-mint-review/,バニラ/ミルク チョコレート,matched_valid_lagos_pair,common_pair
+50,23,オレンジ,グアバ,オレンジ||グアバ,True,1,1,https://shisha-lagos.com/af-orange-review/,レモン/ライム グレープフルーツ パッションフルーツ グアバ/マンゴー ピーチ/グレナデン パイン/りんご メロン,matched_valid_lagos_pair,common_pair
+50,24,ダブルアップル,ミント,ダブルアップル||ミント,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,25,ガムシナモン,バブルガム,ガムシナモン||バブルガム,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,26,ジャスミン,ミント,ジャスミン||ミント,True,1,1,https://shisha-lagos.com/af-mint-review/,シナモン アールグレイ カルダモン ローズ ジャスミン,matched_valid_lagos_pair,common_pair
+50,27,グレープフルーツ,ライム,グレープフルーツ||ライム,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,28,バナナ,ミルク,バナナ||ミルク,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,29,ツーアップル,リコリス,ツーアップル||リコリス,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,30,カルダモン,レモン,カルダモン||レモン,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,31,キャラメル,バニラ,キャラメル||バニラ,True,1,1,https://shisha-lagos.com/af-vanilla-review/,ミルク/コーヒー キャラメル ミルクティ,matched_valid_lagos_pair,common_pair
+50,32,グアバ,ダブルアップル,グアバ||ダブルアップル,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,33,ダブルアップル,ツーアップル,ダブルアップル||ツーアップル,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,34,グアバ,リコリス,グアバ||リコリス,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,35,グアバ,ブルーベリー,グアバ||ブルーベリー,True,1,1,https://shisha-lagos.com/af-blueberry-review/,ストロベリー/ザクロ ライチ パッションフルーツ ラズベリー/グアバ レモン/ココナッツ グレープ,matched_valid_lagos_pair,common_pair
+50,36,グアバ,ベリー,グアバ||ベリー,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,37,グアバ,パイナップル,グアバ||パイナップル,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,38,ジャスミン,ダブルアップル,ジャスミン||ダブルアップル,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,39,グアバ,パッションフルーツ,グアバ||パッションフルーツ,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,40,ゴールデンデリシャスアップル,ダブルアップル,ゴールデンデリシャスアップル||ダブルアップル,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,41,カルダモン,チェリー,カルダモン||チェリー,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,42,キウイ,ピーチ,キウイ||ピーチ,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,43,ハニー,ミルク,ハニー||ミルク,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,44,ココナッツ,ハニー,ココナッツ||ハニー,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,45,グレープフルーツ,ライチ,グレープフルーツ||ライチ,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,46,シガー,チョコレート,シガー||チョコレート,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,47,オレンジ,ベリー,オレンジ||ベリー,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,48,ピーチ,マンゴー,ピーチ||マンゴー,True,2,2,https://shisha-lagos.com/af-mango-review/ | https://shisha-lagos.com/af-peach-review/,ピーチ/グアバ レモン/オレンジ ゆず/グレープ パッションフルーツ パイン/ココナッツ || マンゴー/ココナッツ オレンジ/バナナ/ グアバ/ライチ グレナデン/レモン パッションフルーツ,matched_valid_lagos_pair,common_pair
+50,49,アイス,ライチ,アイス||ライチ,False,0,0,,,not_present_in_lagos_baseline,ranking_only
+50,50,アイス,オレンジ,アイス||オレンジ,False,0,0,,,not_present_in_lagos_baseline,ranking_only

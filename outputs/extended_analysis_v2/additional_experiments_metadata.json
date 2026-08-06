@@ -1,0 +1,8 @@
+{
+  "executed_at":"2026-08-06T14:10:00",
+  "seed":0,
+  "git_commit_hash":"0b9f4d41a2108240e0287eec7b2ecc9774852ddc",
+  "manual_validation_source":"reviewer1_recommendation_validity",
+  "ranking_file":"datascience\/outputs\/extended_analysis_v2\/pair_ranking_tier2.csv",
+  "dictionary_hash":"2083e9fe032cdd88730f2f7aa6b0d6abea73dd8d1487636c04eaa29996599599"
+}

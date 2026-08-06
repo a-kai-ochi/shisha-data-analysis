@@ -1,0 +1,26 @@
+﻿metric,value,definition
+article_count,13,LAGOS 対象記事数。
+extracted_row_count,200,抽出総行数。
+valid_row_count,151,有効行数。
+unresolved_row_count,47,未解決行数。
+excluded_row_count,2,除外行数。
+unique_pair_count,133,ユニークペア数。
+common_pair_count,17,既存ランキングとの共通ペア数。
+lagos_only_pair_count,116,LAGOS 固有ペア数。
+top10_common_count,5,Top10 一致数。
+top20_common_count,11,Top20 一致数。
+top50_common_count,17,Top50 一致数。
+precision_at_10,0.5,Precision@10。
+precision_at_20,0.55,Precision@20。
+precision_at_50,0.34,Precision@50。
+recall_at_10,0.03759398496240601,Recall@10。
+recall_at_20,0.08270676691729323,Recall@20。
+recall_at_50,0.12781954887218044,Recall@50。
+jaccard_at_10,0.036231884057971016,Jaccard@10。
+jaccard_at_20,0.07746478873239436,Jaccard@20。
+jaccard_at_50,0.10240963855421686,Jaccard@50。
+ranking_file,outputs/extended_analysis_v2/pair_ranking_tier2.csv,比較に用いたランキングファイル。
+ranking_columns,"rank_overall, flavor_a, flavor_b, pair_key, pair_count, support, lift, adjusted_lift, centrality_mean, smoothed_positive_ratio, smoothed_negative_ratio, smoothed_role_ratio, overall_score_v2, ranking_tier",比較で参照した主要列。
+dictionary_hash,2083e9fe032cdd88730f2f7aa6b0d6abea73dd8d1487636c04eaa29996599599,辞書ファイルの sha256。
+executed_at,2026-08-02T14:42:04,baseline 作成日時。
+git_commit_hash,0b9f4d41a2108240e0287eec7b2ecc9774852ddc,Git commit hash。

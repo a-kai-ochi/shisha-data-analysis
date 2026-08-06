@@ -1,0 +1,12 @@
+﻿metric,value,definition
+valid_row_count,151,有効抽出行の総数。
+unique_mix_pair_count,133,順序なし pair key 単位で集約したユニークペア数。
+surplus_valid_rows_over_unique_pairs,18,有効行数とユニークペア数の差分。複数出現分の総和。
+fully_identical_valid_rows,0,有効行どうしで全列が完全一致する重複行数。
+same_article_table_row_duplicate_rows,0,同一記事・同一表・同一行で同じ directed_pair_key が重複した行数。
+repeated_directed_pair_key_count,0,同一 directed_pair_key が2回以上出現した key 数。
+repeated_mix_pair_key_count,18,同一 mix_pair_key が2回以上出現した key 数。
+multi_article_mix_pair_count,18,複数記事に出現した mix_pair_key 数。
+within_article_repeated_mix_pair_count,0,同一記事内で2回以上出現した mix_pair_key 数。
+max_mix_pair_row_count,2,1つの mix_pair_key が持つ最大出現行数。
+max_mix_pair_article_count,2,1つの mix_pair_key が出現した最大記事数。
